@@ -38,30 +38,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span class="icon-bar"></span>
 								</button>
 								<h1>
-									<a class="navbar-brand" href="index.html">Plunge</a>
+									<a class="navbar-brand" href="index.html">CONTACT</a>
 								</h1>
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
+							<li><a href="{{ route('master') }}">HOME</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE<b class="caret"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Web Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
+									<li><a href="">Fish</a></li>
+									<li><a href="">Coral</a></li>
+									<li><a href="">Turtle</a></li>
 								</ul>
 							</li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="contact.html" class="active">Contact</a></li>
+							<li><a href="{{ route('event') }}">EVENT</a></li>
+							<li><a href="{{ route('contact') }}" class="active">CONTACT</a></li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div>	
 				</nav>
 							<div class="clearfix"> </div>
 		</div>
-		<h2 class="inner-title-w3">Contact</h2>
+		{{-- <h2 class="inner-title-w3">Contact</h2> --}}
 	</div>	
 </div>	
 <!-- //Header -->
@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="agile_inner_breadcrumb">
 
            <ul class="w3_short">
-				<li><a href="index.html">Home</a><i>|</i></li>
+				<li><a href="{{ route('master') }}">Home</a><i>|</i></li>
 				<li>Contact</li>
 			</ul>
 		 </div>

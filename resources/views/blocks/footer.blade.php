@@ -9,9 +9,9 @@
                 <h3 class="white-w3ls">Navigation</h3>
                 <ul class="agileits_w3layouts_footer_grid_list">
                     <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('master') }}">Home</a></li>
-                    <li><i class="fa fa-tint" aria-hidden="true"></i><a href="about.html">Marine</a></li>
+                    <li><i class="fa fa-tint" aria-hidden="true"></i><a href="">Marine</a></li>
                     <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('event') }}">Event</a></li>
-                    <li><i class="fa fa-tint" aria-hidden="true"></i><a href="contact.html">Contact</a></li>
+                    <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
             <div class="col-md-4 w3_agile_footer_grid">

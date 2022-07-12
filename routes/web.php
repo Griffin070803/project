@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'master'])->name('master');
 Route::get('/event', [HomeController::class, 'event'])->name('event');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/information', [HomeController::class, 'information'])->name('information');
+// Route::get('/information', [HomeController::class, 'information'])->name('information');
 
 Route::get('login', [LoginController::class, 'getlogin'])->name('getlogin');
 Route::post('login', [LoginController::class, 'postlogin'])->name('postlogin');

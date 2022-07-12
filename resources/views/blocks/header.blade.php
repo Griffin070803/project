@@ -26,7 +26,7 @@
 								</ul>
 							</li>
 							<li><a href="{{ route('event') }}">EVENT</a></li>
-							<li><a href="">CONTACT</a></li>
+							<li><a href="{{ route('contact') }}">CONTACT</a></li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div>	
