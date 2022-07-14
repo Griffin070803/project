@@ -38,16 +38,24 @@
                 </div>
         </div>
         <div class="form-group card-body">
+            <label>Schedule</label>
+            <textarea  class="form-control" name="schedule" >{{$event->schedule}}</textarea>
+        </div>
+        <div class="form-group card-body">
                 <label>Details</label>
                 <textarea  class="form-control" name="details" >{{$event->details}}</textarea>
         </div>
         <div class="form-group card-body">
-            <label>Time</label>
-            <input type="date" name="time"  value="{{old('time')}}" min="2022-01-01" max="2023-01-01"  class="form-control">
+            <label>Time Start</label>
+            <input type="datetime-local" name="timestart">
+        </div>
+        <div class="form-group card-body">
+            <label>Time End</label>
+            <input type="datetime-local" name="timeend">
         </div>
         <div class="form-group card-body">
             <label>Slot</label>
-            <input type="text" name="slot" class="form-control" value="{{old('slot')}}">
+            <input type="text" name="slot" class="form-control" value="{{$event->slot}}">
         </div>
         <div class="form-group card-body">
                 <label>Price</label>

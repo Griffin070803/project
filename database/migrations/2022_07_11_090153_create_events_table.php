@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('details');
-            $table->date('time');
+            $table->longText('details');
+            $table->string('schedule');
+            $table->dateTime('timestart');
+            $table->dateTime('timeend');
             $table->string('slot');
             $table->string('price');
-            $table->unsignedBigInteger('categorys_id');
+            $table->unsignedBigInteger('categorys_id')->nullable();
             $table->foreign('categorys_id')->references('id')->on('categorys');
             $table->rememberToken();
             $table->timestamps();

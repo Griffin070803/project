@@ -18,8 +18,10 @@
             <tr>
                 <th>Name</th>
                 <th>Image</th>
+                <th>Schedule</th>
                 <th>Details</th>
-                <th>Time</th>
+                <th>Time Start</th>
+                <th>Time End</th>
                 <th>Slot</th>
                 <th>Price</th>
                 <th>Created_at</th>
@@ -36,14 +38,17 @@
                     @endphp
                     <img src="{{$image_url}}" width="100">
                 </td>
+                <td>{{$event->schedule}}</td>
                 <td>{{$event->details}}</td>
-                <td>{{$event->time}}</td>
+                <td>{{$event->timestart}}</td>
+                <td>{{$event->timeend}}</td>
                 <td>{{$event->slot}}</td>
-                <td>{{$event->price}}</td>
+                <td>@php echo number_format($event->price,0,"",".")@endphp</td> 
+                {{-- <td>{{$event->categorys_id}}</td> --}}
                 <td>{{ date('d/m/Y : H:i:s', strtotime($event->created_at)) }}</td>
                 <td><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}">Xóa</td>
                 <td><a href="{{route('admin.event.edit',['id'=>$event->id])}}">Sửa</td>
-            </tr>   
+            </tr> 
             @endforeach
     </table>
     </div>

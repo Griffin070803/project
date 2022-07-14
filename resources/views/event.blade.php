@@ -87,7 +87,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-6 services-right-agileits">
 					<h4>{{ $event->name }}</h4>
 					<p class="para-agileits-w3layouts">{{ $event->details }}</p>
-					<p class="para-agileits-w3layouts">Time: {{ $event->time }}</p>
+					<p class="para-agileits-w3layouts">Time Start: {{ $event->timestart }}</p>
+					<p class="para-agileits-w3layouts">Time End: {{ $event->timeend }}</p>
 					<p class="para-agileits-w3layouts">Slot: {{ $event->slot }}</p>
 					<p class="para-agileits-w3layouts">Price: {{ $event->price }}</p>
 					<a class="read-agileits"  href="">Buy</a>	

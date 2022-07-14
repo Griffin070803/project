@@ -16,7 +16,7 @@
                         <th style="width: 40px">Sửa</th>
                     </tr>
                 </thead>
-                {{-- {{categorySelect($categories)}} --}}
+                {{categorySelect($categories)}}
             </table>
         </div>
     </div>

@@ -12,22 +12,15 @@ use App\Mail\NotifyMail;
 
 class CartController extends Controller
 {
-    public function index() {
-        return view('index');
+    public function index($id) {
+        $datas = DB::table('events')->where('id',$id)->first();
+        return view('index',['datas'=>$datas]); 
     }
 
-    // public function addToCart($id){
-    //     $product = DB::table('product')->where('id',$id)->first();
-    //     Cart::add($id, $product->name, 1, $product->price);
-
-    //     return redirect()->route('cart');
-    // }
-
-    // public function cart() {
-    //     $cart = Cart::content();
-
-    //     return view('fontend.cart',['cart'=>$cart]);
-    // }
+    public function addToCart($id){
+        $product = DB::table('events')->where('id',$id)->first();
+        return redirect()->route('index',['id'=>$product->id]);
+    }
     public function storeCart(Request $request) {
         $data=$request->except('_token');
         $data['created_at'] = new \DateTime();
@@ -40,12 +33,24 @@ class CartController extends Controller
     {
         $email = DB::table('information_people')->where('id',$id)->first();
         Mail::to($email->email)->send(new NotifyMail());
-        return redirect()->route('index');
-    } 
-    // public function takeEmail($id)
-    // {
-    //     $data = DB::table('information_people')->where('id',$id)->first();
-    //     Mail::to('avatar23599@gmail.com')->send(new TakeMail());
-    //     return redirect()->route('index');
-    // }
+        return redirect()->route('index',['id' => $id]);
+    }
+    public function getRegister() {
+        $data = DB::table('information_people')->get();
+        return view('admin.register.index',['data'=>$data]);
+
+    }
+    public function edit($id){
+        $product = DB::table(('information_people'))->where('id',$id)->first();
+        return view('admin.register.edit',['product'=>$product]);
+    }
+    public function updateEdit(Request $request,$id){
+        $data = $request->except('_token');
+        DB::table('information_people')->where('id','=',$id)->update($data);
+        return redirect()->route('getRegister')->with('success','Edit Successfully');
+    }
+    public function delete($id){
+        DB::table('information_people')->where('id',$id)->delete();
+        return redirect()->route('getRegister')->with('success','Delete Successfully');
+    }
 }

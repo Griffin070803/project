@@ -23,8 +23,9 @@
 <script type="text/javascript">
 //chuyển đổi tiền tệ
     
-        $(document).ready(function(){
+$(document).ready(function(){
             total = 0;
+            var gia_ve = parseInt($("#gia-ve").text());
             const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'VND',
@@ -32,24 +33,18 @@
             });
             $("#children").keyup(function(){
                 var children = $(this).val();
-                var gia_tre_em = $("#hien-gia-children").html(children+`* 120,000`);
+                var gia_tre_em = $("#hien-gia-children").html(children+`*`+formatter.format(gia_ve/2));
                
             });
            
             $("#adult").keyup(function(){
                 var adult = $(this).val();
-                var gia_nguoi_lon = $("#hien-gia-adult").html(adult+`* 180,000`);
+                var gia_nguoi_lon = $("#hien-gia-adult").html(adult+`*`+formatter.format(gia_ve));
                 
             });
 
-            $("#phong").change(function(){
-                var phong = $(this).val();
-                var gia_phong = $("#hien-gia-phong").html(phong+`* 1800000 `);
-                
-                
-            });
             $("#tinh-tien").click(function(){
-                total += ($("#adult").val()*180000) + ($("#children").val()*120000) + ($("#phong").val()*1800000)
+                total += ($("#adult").val()*gia_ve) + ($("#children").val()*gia_ve/2)
                 $("#result").html(formatter.format(total))
             })
             $(".qty1").on("keyup", function(){
@@ -59,7 +54,7 @@
                     sum += parseInt($(this).val(), 10);   
                 });
             
-                $("#hanh-khach").html(sum+` Người`);
+                $("#hanh-khach").html(sum+` <i class="fa-solid fa-user-group"></i>`);
             });
     })
 </script>

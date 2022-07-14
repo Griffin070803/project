@@ -80,8 +80,8 @@
             </div>
             <div class="clearfix"> </div>
         </div>
-        <div class="agileinfo_copyright">
+        {{-- <div class="agileinfo_copyright">
             <p>© 2017 Plunge. All Rights Reserved | Design by <a href="https://w3layouts.com/">W3layouts</a></p>
-        </div>
+        </div> --}}
     </div>
 </div>

@@ -28,12 +28,20 @@
         </div>
     </div>
     <div class="form-group card-body">
+        <label>Schedule</label>
+        <textarea  class="form-control" name="schedule" >{{old('schedule')}}</textarea>
+    </div>
+    <div class="form-group card-body">
             <label>Details</label>
             <textarea  class="form-control" name="details" >{{old('details')}}</textarea>
     </div>
     <div class="form-group card-body">
-        <label>Time</label>
-        <input type="date" name="time"  value="2022-07-07" min="2022-01-01" max="2025-01-01"  class="form-control">
+        <label>Time Start</label>
+        <input type="datetime-local" name="timestart" class="form-control" value="{{old('timestart')}}">
+    </div>
+    <div class="form-group card-body">
+        <label>Time End</label>
+        <input type="datetime-local" name="timeend" class="form-control" value="{{old('timeend')}}">
     </div>
     <div class="form-group card-body">
         <label>Slot</label>
@@ -42,6 +50,15 @@
     <div class="form-group card-body">
             <label>Price</label>
             <input type="text" name="price" class="form-control" value="{{old('price')}}">
+    </div>
+    <div class="form-group card-body">
+        <label>Categorys_id</label>
+        <select name="categorys_id" class="form-control">
+            @foreach ($categories as $category)
+            <option value="">--ROOT--</option>
+            <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach;
+        </select>
     </div>
     <div class="card-body">
         <button type="submit" class="btn btn-info">Add</button>

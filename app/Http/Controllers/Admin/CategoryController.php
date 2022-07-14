@@ -21,7 +21,7 @@ class CategoryController extends Controller
     public function store (Request $request){
         $data = $request->except('_token'); // lay du lieu duoc nhap
         $data['created_at'] = new \DateTime();
-        DB::table('category')->insert($data); //lay du lieu duoc nhap dua vafo table
+        DB::table('categorys')->insert($data); //lay du lieu duoc nhap dua vafo table
         
         return redirect()->route('admin.category.index'); //sau khi hoan thanh chuyeen den trang index
     }

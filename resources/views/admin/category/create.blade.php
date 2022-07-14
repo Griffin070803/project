@@ -20,7 +20,7 @@
             <label>Father Genre</label>
             <select class="form-control" name="parent">
                 <option value="0">----- ROOT -----</option>
-                            {{-- {{list_categories (($categories),0)}} --}}
+                            {{list_categories (($categories),0)}}
                             
             </select>
             <div class="form-group">
