@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MARINE</title>
+<title>JENKINSON SEA LIFE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Plunge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!--//banner-below-->
 <!-- Gallery -->
 
-<div class="about">
+{{-- <div class="about">
     <div class="container">
 		<h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
     	<div id="horizontalTab">
@@ -91,20 +91,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p class="para-agileits-w3layouts">Time End: {{ $event->timeend }}</p>
 					<p class="para-agileits-w3layouts">Slot: {{ $event->slot }}</p>
 					<p class="para-agileits-w3layouts">Price: {{ $event->price }}</p>
-					<a class="read-agileits"  href="">Buy</a>	
+					<a class="read-agileits"  href="{{ route('event',['id'=>$event->id]) }}">Details</a>
+					<a class="read-agileits"  href="{{ route('index',['id'=>$event->id]) }}">Buy</a>	
 				</div>
-				<div class="col-md-6 services-right-agileits">
-					{{-- <img src="{{ asset('assets/images/ab.jpg')}}" class="ab">	 --}}
+				<div class="col-md-6 services-right-agileits">	
 					@php
 						$images = $event->image == NULL ? 'no-image.png' : $event->image;
 						$image_url = asset('assets/dist/img/'.$images)
 					@endphp
-					<img src="{{$image_url}}" width="300" height="auto"  class="ab">
+					<img src="{{$image_url}}" class="ab">
+
 				</div>
 			@endforeach
         </div>
     </div>
-</div>
+</div> --}}
+{{-- <div class="reasons-agileits-w3layouts">
+	<div class="container"> --}}
+		{{-- <h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
+		@foreach($events as $event)    
+			<div class="col-md-4 about-w3-grids" style="margin-left: 10px; margin-right: 10px">
+				<h3>{{$event->name}}</h3>
+				@php
+					$images = $event->image == NULL ? 'no-image.png' : $event->image;
+					$image_url = asset('assets/dist/img/'.$images)
+				@endphp
+				<img src="{{$image_url}}" class="marine">
+				<a class="read-agileits" href="{{ route('infor',['id'=>$event->id]) }}">Read More</a>
+			</div>
+		@endforeach
+			<div class="clearfix"></div>	 --}}
+			@yield('event')		
+	{{-- </div>
+</div> --}}
 <!-- //Gallery -->
 
 <!-- footer -->

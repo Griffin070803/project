@@ -23,17 +23,17 @@
     <div class="form-group  card-body">
         <label >Image</label>
         <div class="custom-file">
-            <input type="file" name="image" class="custom-file-input" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose File</label>
+            <input type="file" name="image" class="custom-file-input" id="customFile" style="height: 40px;"> 
+            <label class="custom-file-label" for="customFile"></label>
         </div>
     </div>
     <div class="form-group card-body">
         <label>Schedule</label>
-        <textarea  class="form-control" name="schedule" >{{old('schedule')}}</textarea>
+        <textarea  class="form-control" name="schedule" id="ckeditor">{{old('schedule')}}</textarea>
     </div>
     <div class="form-group card-body">
             <label>Details</label>
-            <textarea  class="form-control" name="details" >{{old('details')}}</textarea>
+            <textarea  class="form-control" name="details" id="ckeditor1">{{old('details')}}</textarea>
     </div>
     <div class="form-group card-body">
         <label>Time Start</label>
@@ -54,8 +54,8 @@
     <div class="form-group card-body">
         <label>Categorys_id</label>
         <select name="categorys_id" class="form-control">
-            @foreach ($categories as $category)
             <option value="">--ROOT--</option>
+            @foreach ($categories as $category)
             <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach;
         </select>

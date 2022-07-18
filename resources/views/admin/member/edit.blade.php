@@ -27,15 +27,15 @@
         </div>
         <div class="form-group card-body">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" id="" value="{{old('username')}}">
+                <input type="text" name="username" class="form-control" id="" value="{{$member->username}}">
         </div>
         <div class="form-group card-body">
             <label>Password</label>
-            <input type="password" name="password" class="form-control" id="" value="{{old('password')}}">
+            <input type="password" name="password" class="form-control" id="">
         </div>
         <div class="form-group card-body">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" id="" value="{{old('email')}}">
+            <input type="email" name="email" class="form-control" id="" value="{{$member->email}}">
         </div>
         <div class="form-group  card-body">
             <label>Old Avatar</label>

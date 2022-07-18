@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Vien hai duong hoc</title>
+        <title>JENKINSON SEA LIFE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="Plunge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -47,7 +47,7 @@
         </div>
         <!-- //Gallery -->
         <!-- footer -->
-        @include('block.footer')
+        @include('blocks.footer')
         <!-- Modal1 -->
         @include('block.modal')
         <!-- //Modal1 -->

@@ -1,4 +1,4 @@
-@extends('admin-master')
+@extends('information')
 @section('content')
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -12,7 +12,7 @@
 <form action="{{route('storeCart')}}" style="height:570px" method="post">
     @csrf
    
-    <div  class="" style="width:60%;display:inline-block;">
+    <div class="" style="margin-left: 20px;width:60%;display:inline-block;">
         <h2 class="">Thông tin liên lạc</h2>
         <hr>
         <div style="background-color:#eef0f5;border-radius:10px">
@@ -49,7 +49,7 @@
             </table>
         </div>
     </div>
-    <div style="float:right;width:35%" id="tom-tat-chuyen-di">
+    <div style="margin-right: 20px;float:right;width:35%" id="tom-tat-chuyen-di">
         <div style="border:1px solid rgb(207, 208, 211);padding:15px">
             <h2>Hóa đơn</h2>
             <hr>
@@ -57,9 +57,9 @@
                 <div style="margin:20px 0">
                     @php
                         $images = $datas->image == NULL ? 'no-image.png' : $datas->image;
-                        $image_url = asset('assets/images/'.$images)
+                        $image_url = asset('assets/dist/img/'.$images)
                     @endphp
-<img src="{{$image_url}}" width="100"> 
+                    <img src="{{$image_url}}" width="100"> 
                     <label style="margin:10px 0;font-size:18px">{{$datas->name}}</label>
                 </div>
                 <div style="margin-bottom:13px">

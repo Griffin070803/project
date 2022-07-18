@@ -8,6 +8,14 @@
     </div>
     @endif
 </div>
+<div>
+    @if (Session::has('warning'))
+    <div class="alert alert-danger alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
+            <strong>{{ Session::get('warning') }}</strong>
+    </div>
+    @endif
+</div>
     <div class="card-header">
     <h3 class="card-title">Member | <a href="{{route('admin.member.create')}}">Add Member</a></h3>
     </div>
@@ -32,7 +40,7 @@
                     $avatar = $member->avatar == NULL ? 'no-avatar.png' : $member->avatar;
                     $image_url = asset('assets/dist/img/' . $avatar)
                     @endphp
-                    <img src="{{ $image_url }}" width="50px" height="50px" alt="">
+                    <img src="{{ $image_url }}" width="100px" height="50px" alt="">
                 </td>
                 <td>{{$member->username}}</td>
                 <td>{{$member->email}}</td>

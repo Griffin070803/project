@@ -30,7 +30,7 @@
     <div class="form-group card-body">
       <label for="">Nội dung</label>
       {{-- <input type="text" name="content" value="{{old ('content')}}" class="form-control"  placeholder="Vui lòng nhập nội dung"/> --}}
-      <textarea  class="form-control" name="content" placeholder="Vui lòng nhập nội dung">{{old('content')}}</textarea>
+      <textarea  class="form-control" name="content" id="ckeditor2" placeholder="Vui lòng nhập nội dung">{{old('content')}}</textarea>
     </div> 
   <div class="form-group card-body">
     <label>Trạng thái </label>

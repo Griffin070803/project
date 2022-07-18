@@ -21,3 +21,11 @@
       return false;
     }
   </script>
+  <script type="text/javascript">
+    function delete () {
+      if (window.confirm('okok')) {
+          return true;
+      }
+      return false;
+    }
+  </script>

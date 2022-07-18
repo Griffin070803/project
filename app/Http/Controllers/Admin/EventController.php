@@ -28,7 +28,7 @@ class EventController extends Controller
 
         return view('admin.event.edit',['id' => $id],['event' => $event]);
     } 
-    public function update (Request $request,$id) {
+    public function update (UpdateRequest $request,$id) {
 
         $data = $request->except('_token', 'image');
         if (!empty($request->image)) {
@@ -42,10 +42,10 @@ class EventController extends Controller
             $data['image'] = $imageName;
         }
         DB::table('events')->where('id', $id)->update($data);
-        return redirect()->route('admin.event.index')->with('success', 'Insert Successfully');;
+        return redirect()->route('admin.event.index')->with('success', 'Edit Successfully');
 
     } 
-    public function store (Request $request) {
+    public function store (StoreRequest $request) {
         $data = $request->except('_token');
         $data['created_at'] = new \DateTime();
 
@@ -54,6 +54,6 @@ class EventController extends Controller
         $data['image'] = $imageName;
 
         DB::table('events')->insert($data);
-        return redirect()->route('admin.event.index')->with('success', 'Insert Successfully');;
+        return redirect()->route('admin.event.index')->with('success', 'Insert Successfully');
     } 
 }

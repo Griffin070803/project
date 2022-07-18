@@ -24,6 +24,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'level' => 'required',
             'username' => 'required|unique:members',
             'email' => 'required|unique:members|regex:/(.+)@(.+)\.(.+)/i',
             'password' => 'required|min:6'
@@ -31,9 +32,10 @@ class StoreRequest extends FormRequest
     }
     public function messages () {
         return [
+            'level.required' => 'Level không được bỏ trống',
             'username.required' => 'Username không được bỏ trống',
             'username.unique' => 'Username đã tồn tại',
-            'email.required' => 'Enail không được bỏ trống',
+            'email.required' => 'Email không được bỏ trống',
             'email.unique' => 'Email đã tổn tại',
             'email.regex' => 'Khong dung dinh dang email',
             'password.required' => 'Password không được bỏ trống',

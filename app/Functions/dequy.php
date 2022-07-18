@@ -15,7 +15,7 @@ function list_categories ($data,$selected,$parents = 0,$str = "") {
 
 
 function categorySelect($data,$parents = 0,$str="") {
-    foreach ($data as $key => $value) {
+    foreach ($data as $value) {
         if ($value->parent == $parents) {
             $id = $value->id;
         
@@ -32,4 +32,5 @@ function categorySelect($data,$parents = 0,$str="") {
         }
 }
 }
+
 ?>

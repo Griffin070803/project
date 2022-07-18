@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Plunge a Sports Category Bootstrap Responsive Web Template | Contact :: w3layouts</title>
+<title>JENKINSON SEA LIFE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Plunge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -77,17 +77,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
  <!--//banner-below-->
 <!-- contact -->
+@if ($errors->any()) 
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<div>
+    @if (Session::has('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
+            <strong>{{ Session::get('success') }}</strong>
+    </div>
+    @endif
+</div>
 	<div class="welcome contact">
 		<div class="container">  
 				<h3 class="heading-agileinfo">Contact Us <i class="fa fa-anchor" aria-hidden="true"></i></h3>
 			<div class="contact-w3ls-row">
-				<form action="#" method="post">
-					<input type="text" name="First Name" placeholder="First Name" required="">
-					<input class="email" name="Last Name" type="text" placeholder="Last Name" required="">
-					<input type="text" name="Number" placeholder="Mobile Number" required="">
-					<input class="email" name="Email" type="email" placeholder="Email" required="">
-					<textarea name="Message" placeholder="Message" required=""></textarea>
-					<input type="submit" value="SUBMIT">
+				<form action="{{route('store')}}" method="post">
+					@csrf
+					<input type="text" name="fname" placeholder="First Name" >
+					<input class="email" name="lname" type="text" placeholder="Last Name" >
+					<input type="text" name="phone" placeholder="Mobile Number" >
+					<input class="email" name="email" type="email" placeholder="Email" >
+					<textarea name="message" placeholder="Message"></textarea>
+					<input type="submit" value="SUBMIT" id="contact">
 				</form>
 			</div>  
 		</div>
@@ -95,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //contact -->
 	<!-- map -->
 	<div class="map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115186.52143927255!2d34.54155930000002!3d25.55240370000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x837f161b92f17ab5!2sCoraya+Divers!5e0!3m2!1sen!2sin!4v1496309493446"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.061181411346!2d106.71101025364145!3d10.806626197466054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a330e608a5%3A0x4cc00c5927dcb361!2zMzUsIDYgxJDGsOG7nW5nIEQ1LCBQaMaw4budbmcgMjUsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MjMwOCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1658040160072!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
 	<!-- //map --> 
 <!-- footer -->

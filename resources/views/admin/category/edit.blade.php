@@ -9,7 +9,7 @@
         </ul>
     </div>
 @endif
-<form method="POST" action="{{ route('admin.category.update')}}"> 
+<form method="POST" action="{{ route('admin.category.update',['id'=>$edit->id])}}"> 
     {{-- //['id'=> $categories->id] --}}
     @csrf
     <div class="card">
@@ -20,19 +20,13 @@
             <label>Father Genre</label>
             <select class="form-control" name="parent">
                 <option value="0">----- ROOT -----</option>
-                {{-- @foreach($categories as $ct)
-                @if (!empty($ct)) {
-                    <?php 
-                        // $data['parent']=$ct->parent;
-                        // $datas[] = $data;
-                    ?>
-                }
-                
-                @endif
-                @endforeach
-                {{list_categories ($datas,0)}} --}}
+                {{list_categories ($categorys, $edit->parent)}}
                             
             </select>
+            <div class="form-group">
+                <label>Tên thể loại</label>
+                <input type="text" name="name" class="form-control" placeholder="Vui lòng nhập tên thể loại" value="{{$edit->name}}">
+            </div>
         </div>
         <div class="card-footer">
             <button type="submit" class="btn btn-info">Sửa</button>

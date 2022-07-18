@@ -16,6 +16,7 @@
     <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Image</th>
                 <th>Schedule</th>
@@ -30,13 +31,14 @@
         <tbody>
             @foreach($events as $event)
             <tr>
+                <td>{{$loop->iteration}}</td>
                 <td>{{$event->name}}</td>
                 <td>
                     @php
                         $images = $event->image == NULL ? 'no-image.png' : $event->image;
                         $image_url = asset('assets/dist/img/'.$images)
                     @endphp
-                    <img src="{{$image_url}}" width="100">
+                    <img src="{{$image_url}}" width="100px" height="50px">
                 </td>
                 <td>{{$event->schedule}}</td>
                 <td>{{$event->details}}</td>

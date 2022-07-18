@@ -9,8 +9,8 @@
 @endif
 <div class="card">
     <div class="card-header">
-       <h3 class="card-title">Danh sách sản phẩm</h3>
-    </div>
+        <h3 class="card-title">Marine | <a href="{{route('admin.lte.create')}}">Add Marine</a></h3>
+        </div>
 <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
         <thead>
@@ -33,7 +33,7 @@
                         $image = $lte->image == NULL ? 'no-image.jpg' : $lte->image;
                         $image_url = asset('images/'. $image);
                     @endphp
-                    <img src="{{ $image_url }}"widtd="50px" height="80px" alt="">
+                    <img src="{{ $image_url }}"width="50px" height="50px" alt="">
                 </td>
                 <td>{{ $lte->name }}</td>                
                 <td>{{ $lte->intro }}</td>
@@ -42,6 +42,10 @@
                 <td>{{ $lte->created_at }}</td>
                 <td><a onclick="return confirmDelete()" href="{{ route('admin.lte.delete', ['id' => $lte->id]) }}">Xóa</a></td>
                 <td><a href="{{ route('admin.lte.edit', ['id' => $lte->id]) }}">Sửa</a></td>
+            </tr>
+            @empty
+            <tr>
+                <td collspan="9" align="center">No Data</td>
             </tr>
 </div>           
     @endforelse

@@ -23,17 +23,18 @@ class CategoryController extends Controller
         $data['created_at'] = new \DateTime();
         DB::table('categorys')->insert($data); //lay du lieu duoc nhap dua vafo table
         
-        return redirect()->route('admin.category.index'); //sau khi hoan thanh chuyeen den trang index
+        return redirect()->route('admin.category.index')->with('success','Insert successfully'); //sau khi hoan thanh chuyeen den trang index
     }
-    // public function edit($id){
-    //     $category = DB::table('category')->where('id', $id)->first();
-    //     return view('admin.category.edit',['id'=>$id, 'categories'=>$category])->with('Success','Edit successfully');
-    // }
-    // public function update (Request $request, $id){
-    //     $data = $request->except('_token');
-    //     DB::table('category')->where('id','=',$id)->update($data);
-    //     return redirect()->route('admin.category.index');
-    // }
+    public function edit($id){
+        $category = DB::table('categorys')->get();
+        $edit = DB::table('categorys')->where('id', $id)->first();
+        return view('admin.category.edit',['categorys'=>$category, 'edit'=>$edit]);
+    }
+    public function update (Request $request, $id){
+        $data = $request->except('_token');
+        DB::table('categorys')->where('id','=',$id)->update($data);
+        return redirect()->route('admin.category.index')->with('success','Edit successfully');
+    }
     public function delete($id){
         DB::table('categorys')->where('id','=',$id)->delete();
         return redirect()->route('admin.category.index');

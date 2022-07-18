@@ -39,11 +39,11 @@
         </div>
         <div class="form-group card-body">
             <label>Schedule</label>
-            <textarea  class="form-control" name="schedule" >{{$event->schedule}}</textarea>
+            <textarea  class="form-control" name="schedule" id="ckeditor3">{{$event->schedule}}</textarea>
         </div>
         <div class="form-group card-body">
                 <label>Details</label>
-                <textarea  class="form-control" name="details" >{{$event->details}}</textarea>
+                <textarea  class="form-control" name="details" id="ckeditor4" >{{$event->details}}</textarea>
         </div>
         <div class="form-group card-body">
             <label>Time Start</label>

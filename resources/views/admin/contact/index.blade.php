@@ -25,7 +25,7 @@
                         <th>{{ $contact->phone}}</th>
                         <th>{{ $contact->email}}</th>
                         <th>{{ $contact->message}}</th>
-                        <td><a onclick="return confirmDelete()" href="{{route('admin.product.delete', ['id'=> $contact->id])}}">Delete</a></td>
+                        <td><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $contact->id])}}">Delete</a></td>
                     </tr>
                 </tbody>
                 @endforeach

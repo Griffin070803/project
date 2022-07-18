@@ -2964,11 +2964,16 @@ h2.heading-agileinfo:before, h3.heading-agileinfo:before {
 	}
 }
 .marine {
-	width: 300px;
-	height: 168px; 
+	width: 400px;
+	height: 200px; 
 }
 .ab {
 	width: 550px;
-	height: 300px;
+	height: 280px;
+}
+
+.event {
+	width: 500px;
+	height: 400px;
 }
 /*--//responsive--*/

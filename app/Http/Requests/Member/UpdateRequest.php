@@ -35,7 +35,7 @@ class UpdateRequest extends FormRequest
             'username.unique' => 'Username đã tồn tại',
             'email.required' => 'Email không được bỏ trống',
             'email.unique' => 'Email đã tổn tại',
-            'email.regex' => 'Email khong dung dinh dang',
+            'email.regex' => 'Email không đúng định dạng',
             'password.required' => 'Password không được bỏ trống',
             'password.min' => 'Password  it nhat la 6 ki tu'
         ];

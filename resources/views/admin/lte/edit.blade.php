@@ -29,7 +29,7 @@
     </div> 
       <div class="form-group card-body">
         <label for="">Nội dung</label>
-        <input type="text" name="content" value="{{$lte->content}}" class="form-control"/>
+        <textarea  class="form-control" name="content" id="ckeditor5">{{$lte->content}}</textarea>
       </div> 
       <div class="form-group  card-body">
         <label>Old Image</label>

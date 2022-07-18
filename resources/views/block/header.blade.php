@@ -10,29 +10,29 @@
                     <span class="icon-bar"></span>
                     </button>
                     <h1>
-                        <a class="navbar-brand" href="index.html">Plunge</a>
+                        <a class="navbar-brand" href="index.html">Buy</a>
                     </h1>
                 </div>
                 <!-- navbar-header -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="{{ route('master') }}">HOME</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE<b class="caret"></b></a>
                             <ul class="dropdown-menu agile_short_dropdown">
-                                <li><a href="icons.html">Web Icons</a></li>
-                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="">Fish</a></li>
+                                <li><a href="">Coral</a></li>
+                                <li><a href="">Turtle</a></li>
                             </ul>
                         </li>
-                        <li><a href="gallery.html"  class="active">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('event') }}" class="active">EVENT</a></li>
+                        <li><a href="{{ route('contact') }}">CONTACT</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
             </nav>
             <div class="clearfix"> </div>
         </div>
-        <h2 class="inner-title-w3">Gallery</h2>
+        <h2 class="inner-title-w3">BUY</h2>
     </div>
 </div>

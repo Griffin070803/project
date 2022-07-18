@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class MemberController extends Controller
 {
     public function index () {
-        $result = DB::table('members')->orderBy('created_at', 'DESC')->get();
+        $result = DB::table('members')->orderBy('created_at', 'ASC')->get();
         return view('admin.member.index', ['members' => $result]);
     }
 
@@ -45,13 +45,13 @@ class MemberController extends Controller
         }
 
         if (Auth::user()->id != 1 && ($id == 1 || ($member->level == 1 && $edit_myself == false))) {
-            return "You don't have permission to edit";
+            return redirect()->route('admin.member.index')->with('warning', 'You dont have permission to edit');
         }
         
-        return view('admin.member.edit', ['member' => $member]);//'id' => $id, 
+        return view('admin.member.edit', ['id' => $id,'member' => $member]);
     }
 
-    public function update (UpdateRequest $request, $id) {
+    public function update (Request $request, $id) {
         $data = $request->except('password', '_token', 'avatar');
 
         if (!empty($request->password)) {
@@ -69,7 +69,7 @@ class MemberController extends Controller
             $data['avatar'] = $imageName;
         }
 
-        DB::table('members')->where('id', '=', $id)->update($data);
+        DB::table('members')->where('id', $id)->update($data);
 
         return redirect()->route('admin.member.index')->with('success', 'Edit Successfully');
     }
@@ -85,10 +85,10 @@ class MemberController extends Controller
         }
         $member = DB::table('members')->where('id', '=', $id)->first();
         if (($id == 1 || (Auth::user()->id != 1 && $member->level == 1 && $edit_myself == false))) {
-            return "You don't have permission to delete";
+            return redirect()->route('admin.member.index')->with('warning', 'You dont have permission to delete');
         }
             
-       
+        DB::table('members')->where('id', '=', $id)->delete();
        return redirect()->route('admin.member.index');
     }
 }

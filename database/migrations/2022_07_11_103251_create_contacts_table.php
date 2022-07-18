@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('message');
-            $table->unsignedBigInteger('categorys_id');
+            $table->unsignedBigInteger('categorys_id')->default('4');
             $table->foreign('categorys_id')->references('id')->on('categorys');
             $table->timestamps();
         });

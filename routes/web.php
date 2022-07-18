@@ -27,9 +27,17 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'master'])->name('master');
+// Route::prefix('event')->name('event.')->group(function() {
+//     Route::get('/list', [HomeController::class, 'list'])->name('list');
+//     Route::get('/infor/{id}', [HomeController::class, 'infor'])->name('infor');
+// });
+
 Route::get('/event', [HomeController::class, 'event'])->name('event');
+Route::get('/event/list', [HomeController::class, 'list'])->name('list');
+Route::get('/event/infor/{id}', [HomeController::class, 'infor'])->name('infor');
+
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-// Route::get('/information', [HomeController::class, 'information'])->name('information');
+
 
 Route::get('login', [LoginController::class, 'getlogin'])->name('getlogin');
 Route::post('login', [LoginController::class, 'postlogin'])->name('postlogin');
@@ -132,6 +140,8 @@ Route::prefix('user')->name('user.')->group(function () {
 
     });
 });
+
+Route::post('store', [HomeController::class, 'store'])->name('store');
 
 Route::get('/takemail/{id}',[HomeController::class,'sentEmail'])->name('sentEmail');
 
