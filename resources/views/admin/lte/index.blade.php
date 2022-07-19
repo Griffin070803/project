@@ -16,14 +16,14 @@
         <thead>
             <tr>
                 <td>Id</td>
-                <td>Hình ảnh</td>
-                <td>Tên sản phẩm</td>
-                <td>Giới thiệu</td>
-                <td>Nội dung</td>
-                <td>Trạng thái</td>
-                <td>Thời gian</td>
-                <td>Xóa</td>
-                <td>Sửa</td>
+                <td>Image</td>
+                <td>Marine Name</td>
+                <td>Intro</td>
+                <td>Content</td>
+                <td>Status</td>
+                <td>Created_at</td>
+                <td>Delete</td>
+                <td>Edit</td>
             </tr>
         </thead>
         @forelse($blogs as $lte)

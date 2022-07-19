@@ -24,29 +24,64 @@
 //chuyển đổi tiền tệ
     
 $(document).ready(function(){
-            total = 0;
             var gia_ve = parseInt($("#gia-ve").text());
+            var sum = parseInt($('#sum').text());
+            var slot = parseInt($('#slot').text());
+            var slot_du = slot - sum;
             const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'VND',
                 minimumFractionDigits: 0
             });
+            //validate form
             $("#children").keyup(function(){
+                let reset = 0;
                 var children = $(this).val();
-                var gia_tre_em = $("#hien-gia-children").html(children+`*`+formatter.format(gia_ve/2));
-               
+                if (children > slot_du) {
+                    alert(`Slot chỉ còn dư: `+slot_du);
+                    $("#hien-gia-children").text('0');
+                    $("#children").val('0');
+
+                }else{
+                    $("#hien-gia-children").html(children+`*`+formatter.format(gia_ve/2));
+                }
             });
            
             $("#adult").keyup(function(){
                 var adult = $(this).val();
-                var gia_nguoi_lon = $("#hien-gia-adult").html(adult+`*`+formatter.format(gia_ve));
+                if (adult > slot_du) {
+                    alert(`Slot chỉ còn dư: `+slot_du);
+                    $("#hien-gia-adult").text('0');
+                    $("#adult").val('0');
+
+                }else{
+                    $("#hien-gia-adult").html(adult+`*`+formatter.format(gia_ve));
+                }
                 
             });
 
-            $("#tinh-tien").click(function(){
-                total += ($("#adult").val()*gia_ve) + ($("#children").val()*gia_ve/2)
-                $("#result").html(formatter.format(total))
-            })
+            $(".qty1").on("keyup", function(){
+                let total= 0;
+                let so_luong = parseInt($("#adult").val()) + parseInt($("#children").val());
+                    if (so_luong > slot_du) {
+                        alert(`Slot chỉ còn dư: `+slot_du);
+                        $("#hien-gia-adult").text('0');
+                        $("#adult").val('0');
+                        $("#hien-gia-children").text('0');
+                        $("#children").val('0');
+                }
+                total += parseInt(($("#adult").val()*gia_ve)) + parseInt(($("#children").val()*gia_ve/2));
+                if (isNaN(total)==false){
+                    $("#result").html(formatter.format(total));
+                    
+                }else{
+                    $("#result").html('Lỗi')
+                    isNaN($("#adult").val()) ?  $("#adult").css('border','1px solid red'):$("#adult").css('border','1px solid black');
+                    isNaN($("#children").val()) ? $("#children").css('border','1px solid red'):$("#children").css('border','1px solid black');
+                }
+                
+                    
+            });
             $(".qty1").on("keyup", function(){
                 var sum=0;
                 $(".qty1").each(function(){
@@ -56,5 +91,6 @@ $(document).ready(function(){
             
                 $("#hanh-khach").html(sum+` <i class="fa-solid fa-user-group"></i>`);
             });
+            
     })
 </script>

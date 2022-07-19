@@ -27,7 +27,8 @@ class StoreRequest extends FormRequest
             'name' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'details' => 'required',
-            'time' => 'required',
+            'timestart' => 'required',
+            'timeend' => 'required',
             'slot' => 'required',
             'price' => 'required',
         ];
@@ -39,7 +40,8 @@ class StoreRequest extends FormRequest
             'image.required' =>'Vui lòng thêm hình',
             'image.mimes' => 'Không phải file hình',
             'details.required' => 'Vui lòng nhập nội dung sự kiện',
-            'time.required' => 'Vui lòng nhập thời gian tổ chức sự kiện',
+            'timestart.required' => 'Vui lòng nhập thời gian bắt đầu sự kiện',
+            'timeend.required' => 'Vui lòng nhập thời gian kết thúc sự kiện',
             'slot.required' => 'Vui lòng nhập số lượng người tham gia sự kiện',
             'price.required' => 'Vui lòng nhập giá tiền sự kiện',
         ];

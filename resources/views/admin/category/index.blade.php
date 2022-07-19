@@ -10,17 +10,17 @@
     </div>
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Category | <a href="{{route('admin.lte.create')}}">Add Category</a></h3>
+            <h3 class="card-title">Category | <a href="{{route('admin.category.create')}}">Add Category</a></h3>
             </div>
         <div class="card-body p-0">
             <table class="table">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Tên thể loại</th>
-                        <th>Cập nhật</th>
-                        <th style="width: 40px">Xóa</th>
-                        <th style="width: 40px">Sửa</th>
+                        <th>Name</th>
+                        <th>Created_at</th>
+                        <th style="width: 40px">Delete</th>
+                        <th style="width: 40px">Edit</th>
                     </tr>
                 </thead>
                 {{categorySelect($categories)}}

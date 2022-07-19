@@ -3,7 +3,7 @@
       @section('content')
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Danh sách người liên hệ</h3>
+            <h3 class="card-title">Contact List</h3>
         </div>
         <div class="card-body p-0">
             <table class="table">

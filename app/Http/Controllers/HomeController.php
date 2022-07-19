@@ -14,9 +14,8 @@ class HomeController extends Controller
         return view('master');
     }
     public function event () {
-        // $data = DB::table('events')->get();
-        // return view('event', ['events' => $data]);
-        return view('event');
+        $data = DB::table('events')->get();
+        return view('event', ['events' => $data]);
         
     }
     public function information () {
@@ -47,11 +46,8 @@ class HomeController extends Controller
 
     public function infor ($id) {
         $data = DB::table('events')->where('id', $id)->first();
-        return view('infor', ['events' => $data]);
-    }
-
-    public function list () {
-        $data = DB::table('events')->get();
-        return view('list', ['events' => $data]);
+        $sum_adult = DB::table('information_people')->where('events_id',$id)->sum('adult');
+        $sum_children = DB::table('information_people')->where('events_id',$id)->sum('children');
+        return view('infor', ['events' => $data,'sum_children'=>$sum_children,'sum_adult'=>$sum_adult]);
     }
 }

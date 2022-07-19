@@ -27,24 +27,17 @@ Route::get('/', function () {
 });
 
 Route::get('/', [HomeController::class, 'master'])->name('master');
-// Route::prefix('event')->name('event.')->group(function() {
-//     Route::get('/list', [HomeController::class, 'list'])->name('list');
-//     Route::get('/infor/{id}', [HomeController::class, 'infor'])->name('infor');
-// });
 
 Route::get('/event', [HomeController::class, 'event'])->name('event');
-Route::get('/event/list', [HomeController::class, 'list'])->name('list');
 Route::get('/event/infor/{id}', [HomeController::class, 'infor'])->name('infor');
 
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-
 
 Route::get('login', [LoginController::class, 'getlogin'])->name('getlogin');
 Route::post('login', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register',[RegisterController::class,'getRegister'])->name('getRegister');
-Route::post('/store',[CartController::class,'storeCart'])->name('storeCart');
 Route::get('/send-email/{id}',[CartController::class,'sendEmail'])->name('sendEmail');
 Route::get('/take-email/{id}',[CartController::class,'takeEmail'])->name('takeEmail');
 
@@ -54,7 +47,7 @@ Route::get('them-vao-gio-hang/{id}',[CartController::class,'addToCart'])->name('
 Route::get('gio-hang',[CartController::class,'cart'])->name('cart');
 Route::get('xoa-san-pham-gio-hang/{id}',[CartController::class,'deleteCart'])->name('deleteCart')->where('id','[0-9]+');
 
-Route::prefix('admin')->middleware('login')->name('admin.')->group(function() {  //
+Route::prefix('admin')->name('admin.')->group(function() {  //->middleware('login')
 
     Route::prefix('member')->name('member.')->group(function() {
         Route::get('/', [MemberController::class, 'index'])->name('index');
@@ -141,7 +134,9 @@ Route::prefix('user')->name('user.')->group(function () {
     });
 });
 
-Route::post('store', [HomeController::class, 'store'])->name('store');
+
+
+Route::post('/store', [HomeController::class, 'store'])->name('store');
 
 Route::get('/takemail/{id}',[HomeController::class,'sentEmail'])->name('sentEmail');
 
@@ -149,5 +144,7 @@ Route::get('admin/register',[CartController::class,'getRegister'])->name('getReg
 
 Route::get('/edit-information/{id}',[CartController::class,'edit'])->name('edit')->where('id','[0-9]+');
 Route::post('/upload-information/{id}',[CartController::class,'updateEdit'])->name('updateEdit')->where('id','[0-9]+');
+Route::post('/store',[CartController::class,'addStoreCart'])->name('addStoreCart');
+
 //delete
 Route::get('/delete-information/{id}',[CartController::class,'delete'])->name('delete')->where('id','[0-9]+');

@@ -26,6 +26,8 @@
                 <th>Slot</th>
                 <th>Price</th>
                 <th>Created_at</th>
+                <th>Delete</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>

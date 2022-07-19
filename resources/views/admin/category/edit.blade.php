@@ -14,7 +14,7 @@
     @csrf
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Sửa thể loại</h3>
+            <h3 class="card-title">Category -- Edit</h3>
         </div>
         <div class="card-body">
             <label>Father Genre</label>
@@ -24,14 +24,14 @@
                             
             </select>
             <div class="form-group">
-                <label>Tên thể loại</label>
+                <label>Name</label>
                 <input type="text" name="name" class="form-control" placeholder="Vui lòng nhập tên thể loại" value="{{$edit->name}}">
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-info">Sửa</button>
+            <button type="submit" class="btn btn-info">Delete</button>
 
-            <button type="reset" class="btn btn-default float-right">Xóa</button>
+            <button type="reset" class="btn btn-default float-right">Edit</button>
         </div>
     </div>
 </form>

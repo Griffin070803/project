@@ -13,7 +13,7 @@
     @csrf
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Thêm thể loại</h3>
+            <h3 class="card-title">Category -- Add</h3>
         </div>
         
         <div class="card-body">
@@ -24,15 +24,15 @@
                             
             </select>
             <div class="form-group">
-                <label>Tên thể loại</label>
+                <label>Name</label>
                 <input type="text" name="name" class="form-control" placeholder="Vui lòng nhập tên thể loại" value="{{ old('name')}}">
             </div>
             </select>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-info">Thêm</button>
+            <button type="submit" class="btn btn-info">Add</button>
 
-            <button type="reset" class="btn btn-default float-right">Xóa</button>
+            <button type="reset" class="btn btn-default float-right">Delete</button>
         </div>
     </div>
 </form>
