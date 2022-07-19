@@ -22,12 +22,16 @@ class HomeController extends Controller
         return view('information');
     }
      
+    public function index() {
+        $result = DB::table('category')->where('parent', '=', 0)->get();
+        return view('user.product.index', ['categories'=> $result]);
+    }
     public function contact(){       
         $result = DB::table('contacts')->get();
         $category = DB::table('categorys')->where('parent', '=', 0)->get();
         return view('contact', ['categories'=> $category, 'contacts'=> $result]);
     }
-    public function store (ContactRequest $request){
+    public function storeContact (ContactRequest $request){
         $data = $request->except('_token');
         $data['created_at'] = new \DateTime();
         $email = $data['email'];

@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\ProController;
+use App\Http\Controllers\Admin\MarineController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 
@@ -32,6 +32,7 @@ Route::get('/event', [HomeController::class, 'event'])->name('event');
 Route::get('/event/infor/{id}', [HomeController::class, 'infor'])->name('infor');
 
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 
 Route::get('login', [LoginController::class, 'getlogin'])->name('getlogin');
 Route::post('login', [LoginController::class, 'postlogin'])->name('postlogin');
@@ -88,6 +89,19 @@ Route::prefix('admin')->name('admin.')->group(function() {  //->middleware('logi
 
     });
 
+    Route::prefix('marine')->name('marine.')->group(function () {
+        Route::get('index',[MarineController::class,'index'])->name('index');
+
+        Route::get('delete/{id}',[MarineController::class,'delete'])->name('delete')->where('id', '[0-9]+');
+
+        Route::get('create',[MarineController::class,'create'])->name('create');
+        Route::post('store',[MarineController::class,'store'])->name('store');
+
+        Route::get('edit/{id}',[MarineController::class,'edit'])->name('edit')->where('id', '[0-9]+');
+        Route::post('update/{id}',[MarineController::class,'update'])->name('update')->where('id', '[0-9]+');
+
+    });
+
     Route::prefix('event')->name('event.')->group(function() {
         Route::get('/', [EventController::class, 'index'])->name('index');
 
@@ -122,21 +136,21 @@ Route::prefix('admin')->name('admin.')->group(function() {  //->middleware('logi
     
 });
 
-Route::prefix('user')->name('user.')->group(function () {
-    Route::prefix('product')->name('product.')->group(function () {
-        Route::get('/',[HomeController::class,'index'])->name('index');
-        Route::get('index',[HomeController::class, 'index'])->name('index');
+// Route::prefix('user')->name('user.')->group(function () {
+//     Route::prefix('product')->name('product.')->group(function () {
+//         Route::get('/',[HomeController::class,'index'])->name('index');
+//         Route::get('index',[HomeController::class, 'index'])->name('index');
 
-        Route::get('Contact',[HomeController::class, 'Contact'])->name('Contact');
-        Route::post('store',[HomeController::class, 'store'])->name('store');
+//         Route::get('Contact',[HomeController::class, 'Contact'])->name('Contact');
+//         Route::post('store',[HomeController::class, 'store'])->name('store');
         
 
-    });
-});
+//     });
+// });
 
 
 
-Route::post('/store', [HomeController::class, 'store'])->name('store');
+Route::post('storeContact', [HomeController::class, 'storeContact'])->name('storeContact');
 
 Route::get('/takemail/{id}',[HomeController::class,'sentEmail'])->name('sentEmail');
 

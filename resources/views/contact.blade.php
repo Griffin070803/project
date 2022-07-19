@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">  
 				<h3 class="heading-agileinfo">Contact Us <i class="fa fa-anchor" aria-hidden="true"></i></h3>
 			<div class="contact-w3ls-row">
-				<form action="{{route('store')}}" method="post">
+				<form action="{{route('storeContact')}}" method="post">
 					@csrf
 					<input type="text" name="fname" placeholder="First Name" >
 					<input class="email" name="lname" type="text" placeholder="Last Name" >

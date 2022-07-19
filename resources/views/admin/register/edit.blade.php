@@ -38,21 +38,21 @@
 
         <div class="form-group card-body">
             <label>Adult</label>
-            <input type="text" name="adult" class="form-control"  value="{{$product->adult}}">
+            <input type="text" name="adult" id="adult" class="form-control qty1"  value="{{$product->adult}}">
         </div>
 
         <div class="form-group card-body">
             <label>Children</label>
-            <input type="text" name="adult" class="form-control"  value="{{$product->children}}">
+            <input type="text" name="children" id="children" class="form-control qty1"  value="{{$product->children}}">
         </div>
-        <div id = "so-tien-moi">
-        </div>
+        <div style="display:none" id="gia-tien">{{$event->price}}</div>
+        <div style="margin:15px" id ="so-tien-nguoi-lon"></div>
+        <div style="margin:15px" id ="so-tien-tre-em"></div>
+        <div style="margin:15px" id ="so-tien-moi"></div>
         <div class="card-body">
             <button type="submit"class="btn btn-info">Edit</button>
-            <button type="reset" class="btn btn-default float-right">Huy</button>
+            <button type="reset" class="btn btn-default float-right">Reset</button>
         </div>
     </div>
 </form>
-
-
 @endsection

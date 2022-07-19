@@ -21,8 +21,8 @@
                 <th>Address</th>
                 <th>Adult</th>
                 <th>Children</th>
-                <th>Xóa</th>
-                <th>Sửa</th>
+                <th>Delete</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
@@ -35,8 +35,8 @@
                 <td>{{$product->address}}</td>
                 <td>{{$product->adult}}</td>
                 <td>{{$product->children}}</td>
-                <td><a onClick="return confirmDelete()" href="{{route('delete',['id'=>$product->id])}}">Xóa</td>
-                <td><a href="{{route('edit',['id'=>$product->id])}}">Sửa</td>
+                <td><a onClick="return confirmDelete()" href="{{route('delete',['id'=>$product->id])}}">Delete</td>
+                <td><a href="{{route('edit',['id'=>$product->id])}}">Edit</td>
             </tr>   
             @endforeach
     </table>

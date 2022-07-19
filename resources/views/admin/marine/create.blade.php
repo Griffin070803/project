@@ -9,31 +9,31 @@
         </ul>
     </div>
 @endif  
-<form method="post" action="{{ route('admin.lte.store') }}" enctype="multipart/form-data">
+<form method="post" action="{{ route('admin.marine.store') }}" enctype="multipart/form-data">
   @csrf    
   <div class="card">             
     <div class="form-group card-body">
-      <label for="">Tên sản phẩm</label>
+      <label for="">Marine Name</label>
       <input type="text" name="name" value="{{old ('name')}}" class="form-control"  placeholder="Vui lòng nhập tên sản phẩm"/>
     </div>
     <div class="form-group card-body">
-      <label for="">Giới thiệu</label>
+      <label for="">Intro</label>
       <input type="text" name="intro" value="{{old ('intro')}}" class="form-control"  placeholder="Vui lòng nhập giới thiệu"/>
     </div> 
   <div class="form-group card-body">
-    <label for="">Hình ảnh</label>
+    <label for="">Image</label>
     <div class="custom-file">
       <input type="file" name="image"  class="custom-file-input" id="customFile"/>
       <label class="custom-file-label" for="customFile">Choose File</label>
     </div>
   </div> 
     <div class="form-group card-body">
-      <label for="">Nội dung</label>
+      <label for="">Content</label>
       {{-- <input type="text" name="content" value="{{old ('content')}}" class="form-control"  placeholder="Vui lòng nhập nội dung"/> --}}
       <textarea  class="form-control" name="content" id="ckeditor2" placeholder="Vui lòng nhập nội dung">{{old('content')}}</textarea>
     </div> 
   <div class="form-group card-body">
-    <label>Trạng thái </label>
+    <label>Status</label>
     <select class="custom-select" name = "status">
         <option value="0">Ẩn</option>
         <option value="1">Hiển thị</option>
