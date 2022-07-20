@@ -45,12 +45,9 @@
             @endphp
             <img src="{{$image_url}}" width="50px" height="50px">
         </div>
-        <div class="form-group  card-body">
-            <label >Avatar</label>
-            <div class="custom-file">
-                <input type="file" name="avatar" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose File</label>
-            </div>
+        <div class="form-group card-body">
+            <label>Avatar</label>
+            <input type="file" name="avatar" class="form-control" id="customFile" style="height:100%"> 
         </div>
         <div class="card-body">
             <button type="submit" class="btn btn-info">Add</button>

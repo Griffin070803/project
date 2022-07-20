@@ -13,7 +13,7 @@
                 <img src="{{ asset('assets/dist/img/9.jpg') }}" class="img-circle elevation-2" alt="User Image" />
             </div>
             <div class="info">
-                {{-- <a href="#" class="d-block">{{ auth()->user()->username }}</a> --}}
+                <a href="#" class="d-block">{{ auth()->user()->username }}</a>
             </div>
             <div class="info">
                 <a href="#" class="d-block"></a> 

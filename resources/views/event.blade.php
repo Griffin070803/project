@@ -49,9 +49,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE<b class="caret"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="">Fish</a></li>
-									<li><a href="">Coral</a></li>
-									<li><a href="">Turtle</a></li>
+									<li><a href="{{route('user.marine.fish')}}">Fish</a></li>
+									<li><a href="{{route('user.marine.coral')}}">Coral</a></li>
+									<li><a href="{{route('user.marine.other')}}">Other</a></li>
 								</ul>
 							</li>
 							<li><a href="{{ route('event') }}" class="active">EVENT</a></li>
@@ -128,7 +128,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     @foreach($events as $event)   
         <div class="col-md-4 about-w3-grids" style="margin-left: 10px; margin-right: 10px; background: #F5F5F5;">
             <h3>{{$event->name}}</h3>
-            <p style="padding-bottom: 20px;">{{$event->schedule}}</p>
+            <p style="padding-bottom: 20px;">{!!$event->schedule!!}</p>
             @php
                 $images = $event->image == NULL ? 'no-image.png' : $event->image;
                 $image_url = asset('assets/dist/img/'.$images)

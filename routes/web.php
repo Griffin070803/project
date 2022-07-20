@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MarineController;
+use App\Http\Controllers\User\MariController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 
@@ -48,7 +49,7 @@ Route::get('them-vao-gio-hang/{id}',[CartController::class,'addToCart'])->name('
 Route::get('gio-hang',[CartController::class,'cart'])->name('cart');
 Route::get('xoa-san-pham-gio-hang/{id}',[CartController::class,'deleteCart'])->name('deleteCart')->where('id','[0-9]+');
 
-Route::prefix('admin')->name('admin.')->group(function() {  //->middleware('login')
+Route::prefix('admin')->middleware('login')->name('admin.')->group(function() {  //
 
     Route::prefix('member')->name('member.')->group(function() {
         Route::get('/', [MemberController::class, 'index'])->name('index');
@@ -134,6 +135,15 @@ Route::prefix('admin')->name('admin.')->group(function() {  //->middleware('logi
         Route::get('delete/{id}',[CategoryController::class, 'delete'])->name('delete')->where('id', '[0-9]+');
     });
     
+});
+
+Route::prefix('user')->name('user.')->group(function () {
+    Route::prefix('marine')->name('marine.')->group(function(){
+        Route::get('fish',[MariController::class, 'fish'])->name('fish');
+        Route::get('coral',[MariController::class, 'coral'])->name('coral');
+        Route::get('other',[MariController::class, 'other'])->name('other');
+        Route::get('Information',[MariController::class, 'Information'])->name('Information')->where('id','[0-9]+');
+    });
 });
 
 // Route::prefix('user')->name('user.')->group(function () {

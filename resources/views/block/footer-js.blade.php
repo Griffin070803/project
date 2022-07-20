@@ -50,7 +50,7 @@ $(document).ready(function(){
             $("#adult").keyup(function(){
                 var adult = $(this).val();
                 if (adult > slot_du) {
-                    alert(`Slot chỉ còn dư: `+slot_du);
+                    alert(`The remaining amount: `+slot_du);
                     $("#hien-gia-adult").text('0');
                     $("#adult").val('0');
 

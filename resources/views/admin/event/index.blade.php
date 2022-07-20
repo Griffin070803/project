@@ -42,8 +42,8 @@
                     @endphp
                     <img src="{{$image_url}}" width="100px" height="50px">
                 </td>
-                <td>{{$event->schedule}}</td>
-                <td>{{$event->details}}</td>
+                <td>{!!$event->schedule!!}</td>
+                <td>{!!$event->details!!}</td>
                 <td>{{$event->timestart}}</td>
                 <td>{{$event->timeend}}</td>
                 <td>{{$event->slot}}</td>

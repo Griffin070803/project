@@ -37,7 +37,7 @@
                 </td>
                 <td>{{ $marine->name }}</td>                
                 <td>{{ $marine->intro }}</td>
-                <td>{{ $marine->content }}</td>
+                <td>{!! $marine->content !!}</td>
                 <td>{{ $marine->status }}</td>
                 <td>{{ $marine->created_at }}</td>
                 <td><a onclick="return confirmDelete()" href="{{ route('admin.marine.delete', ['id' => $marine->id]) }}">Xóa</a></td>

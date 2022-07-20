@@ -25,12 +25,9 @@
         <img src="{{ asset('images/'.$marine->image)}}" width="50px" height="50px">
     </div>
     <div class="form-group card-body">
-      <label for="">Image</label>
-      <div class="custom-file">
-        <input type="file" name="image"  class="custom-file-input" id="customFile"/>
-        <label class="custom-file-label" for="customFile">Choose File</label>
-      </div>
-    </div> 
+      <label>Image</label>
+      <input type="file" name="image" class="form-control" id="customFile" style="height:100%"> 
+  </div>
       <div class="form-group card-body">
         <label for="">Content</label>
         <textarea  class="form-control" name="content" id="ckeditor5">{{$marine->content}}</textarea>

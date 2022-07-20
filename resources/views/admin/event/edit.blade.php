@@ -30,12 +30,9 @@
             <img src="{{$image_url}}" width="50px" height="50px">
         </div>
 
-        <div class="form-group  card-body">
-                <label >Image</label>
-                <div class="form-group card-body">
-                    <label>Image</label>
-                    <input type="file" name="image" class="form-control" id="customFile" style="height:100%"> 
-                </div>
+        <div class="form-group card-body">
+            <label>Image</label>
+            <input type="file" name="image" class="form-control" id="customFile" style="height:100%"> 
         </div>
         <div class="form-group card-body">
             <label>Schedule</label>
