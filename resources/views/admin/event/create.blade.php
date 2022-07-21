@@ -52,9 +52,7 @@
         <label>Categorys_id</label>
         <select name="categorys_id" class="form-control">
             <option value="">--ROOT--</option>
-            @foreach ($categories as $category)
-            <option value="{{$category->id}}">{{$category->name}}</option>
-            @endforeach;
+            {{list_categories (($categories),0)}}
         </select>
     </div>
     <div class="card-body">

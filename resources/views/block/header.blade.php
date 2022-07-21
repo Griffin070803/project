@@ -20,9 +20,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE<b class="caret"></b></a>
                             <ul class="dropdown-menu agile_short_dropdown">
-                                <li><a href="">Fish</a></li>
-                                <li><a href="">Coral</a></li>
-                                <li><a href="">Turtle</a></li>
+                                <li><a href="{{route('user.marine.fish')}}">Fish</a></li>
+                                <li><a href="{{route('user.marine.coral')}}">Coral</a></li>
+                                <li><a href="{{route('user.marine.other')}}">Other</a></li>
                             </ul>
                         </li>
                         <li><a href="{{ route('event') }}" class="active">EVENT</a></li>

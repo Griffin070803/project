@@ -26,20 +26,23 @@ use App\Http\Controllers\LoginController;
 Route::get('/', function () {
     return view('');
 });
-
+//trang chủ
 Route::get('/', [HomeController::class, 'master'])->name('master');
 
+//user sự kiện
 Route::get('/event', [HomeController::class, 'event'])->name('event');
 Route::get('/event/infor/{id}', [HomeController::class, 'infor'])->name('infor');
 
+//user contact
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-
+//login - logout
 Route::get('login', [LoginController::class, 'getlogin'])->name('getlogin');
 Route::post('login', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/register',[RegisterController::class,'getRegister'])->name('getRegister');
+//gửi mail
+// Route::get('/register',[RegisterController::class,'getRegister'])->name('getRegister');
 Route::get('/send-email/{id}',[CartController::class,'sendEmail'])->name('sendEmail');
 Route::get('/take-email/{id}',[CartController::class,'takeEmail'])->name('takeEmail');
 
@@ -49,6 +52,7 @@ Route::get('them-vao-gio-hang/{id}',[CartController::class,'addToCart'])->name('
 Route::get('gio-hang',[CartController::class,'cart'])->name('cart');
 Route::get('xoa-san-pham-gio-hang/{id}',[CartController::class,'deleteCart'])->name('deleteCart')->where('id','[0-9]+');
 
+//admin
 Route::prefix('admin')->middleware('login')->name('admin.')->group(function() {  //
 
     Route::prefix('member')->name('member.')->group(function() {
@@ -137,6 +141,7 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
     
 });
 
+//user marine
 Route::prefix('user')->name('user.')->group(function () {
     Route::prefix('marine')->name('marine.')->group(function(){
         Route::get('fish',[MariController::class, 'fish'])->name('fish');
@@ -145,19 +150,6 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::get('Information',[MariController::class, 'Information'])->name('Information')->where('id','[0-9]+');
     });
 });
-
-// Route::prefix('user')->name('user.')->group(function () {
-//     Route::prefix('product')->name('product.')->group(function () {
-//         Route::get('/',[HomeController::class,'index'])->name('index');
-//         Route::get('index',[HomeController::class, 'index'])->name('index');
-
-//         Route::get('Contact',[HomeController::class, 'Contact'])->name('Contact');
-//         Route::post('store',[HomeController::class, 'store'])->name('store');
-        
-
-//     });
-// });
-
 
 
 Route::post('storeContact', [HomeController::class, 'storeContact'])->name('storeContact');

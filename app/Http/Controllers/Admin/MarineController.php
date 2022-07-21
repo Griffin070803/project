@@ -17,7 +17,7 @@ class MarineController extends Controller
         $category = DB::table('blogs')->get();
         return view('admin.marine.create', ['categories'=> $category]);
     }
-    public function store(Request $request) {
+    public function store(StoreRequest $request) {
 
         $data = $request->except('_token');
        

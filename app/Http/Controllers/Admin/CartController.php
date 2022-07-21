@@ -48,8 +48,8 @@ class CartController extends Controller
     }
     public function edit($id){
         $product = DB::table('information_people')->where('id',$id)->first();
-        $event = DB::table('events')->where('id',$id)->first();
-        return view('admin.register.edit',['product'=>$product,'event'=>$event]);
+        $event = DB::table('events')->where('id',$product->events_id)->first();
+        return view('admin.register.edit',['product'=>$product],['event'=>$event]);
     }
     public function updateEdit(CartRequest $request,$id){
         $data = $request->except('_token');

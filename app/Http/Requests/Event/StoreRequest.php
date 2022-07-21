@@ -29,8 +29,8 @@ class StoreRequest extends FormRequest
             'details' => 'required',
             'timestart' => 'required',
             'timeend' => 'required',
-            'slot' => 'required',
-            'price' => 'required',
+            'slot' => 'required|numeric',
+            'price' => 'required|numeric',
         ];
     }
     public function messages()
@@ -43,7 +43,9 @@ class StoreRequest extends FormRequest
             'timestart.required' => 'Vui lòng nhập thời gian bắt đầu sự kiện',
             'timeend.required' => 'Vui lòng nhập thời gian kết thúc sự kiện',
             'slot.required' => 'Vui lòng nhập số lượng người tham gia sự kiện',
+            'slot.numeric' => 'Số lượng người tham gia phải là số',
             'price.required' => 'Vui lòng nhập giá tiền sự kiện',
+            'price.numeric' => 'Tiền phải là số',
         ];
     }
 }

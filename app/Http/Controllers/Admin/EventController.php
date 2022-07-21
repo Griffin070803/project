@@ -17,6 +17,7 @@ class EventController extends Controller
 
     public function create () {
         $category = DB::table('categorys')->get();
+        
         return view('admin.event.create', ['categories'=> $category]);
     } 
     public function delete ($id) {

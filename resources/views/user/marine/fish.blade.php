@@ -38,17 +38,17 @@ https://templatemo.com/tm-556-catalog-z
                         $avatar = $lte->image == NULL ? 'no-image.jpg' : $lte->image;
                         $image_url = asset('images/'. $avatar);
                     @endphp
-                    <img src="{{ $image_url }}" alt="Image" class="img-fluid" style="width: 500px; height: 300px">
+                    <img src="{{ $image_url }}" alt="Image" class="img-fluid" style="width: 100%; height: 300px">
 
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>{{$lte->name}}</h2>
                         <a href="{{ route('user.marine.Information')}}">View more</a>
                     </figcaption>                    
                 </figure>               
-                <div class="d-flex justify-content-between tm-text-gray">
+                {{-- <div class="d-flex justify-content-between tm-text-gray">
                     <span class="tm-text-gray-light">18 Oct 2020</span>
                     <span>9,906 views</span>
-                </div>
+                </div> --}}
             </div>
             @endforeach
     

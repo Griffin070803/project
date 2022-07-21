@@ -51,7 +51,7 @@ class MemberController extends Controller
         return view('admin.member.edit', ['id' => $id,'member' => $member]);
     }
 
-    public function update (Request $request, $id) {
+    public function update (UpdateRequest $request, $id) {
         $data = $request->except('password', '_token', 'avatar');
 
         if (!empty($request->password)) {

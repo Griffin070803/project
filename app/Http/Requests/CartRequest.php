@@ -25,7 +25,7 @@ class CartRequest extends FormRequest
     {
         return [
             'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
-            'fullname' => 'required|string|max:40|min:10',
+            'fullname' => 'required|string|max:40|min:5',
             'phone' => 'required|numeric|digits:10',
             'address'=>'required',
             'adult' => 'required|numeric',

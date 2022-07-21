@@ -30,7 +30,7 @@ $(document).ready(function(){
             var slot_du = slot - sum;
             const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
-                currency: 'VND',
+                currency: 'USD',
                 minimumFractionDigits: 0
             });
             //validate form
