@@ -24,20 +24,20 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|unique:members,username'.$this->id,
-            'email' => 'required|unique:members|regex:/(.+)@(.+)\.(.+)/i',
+            'username' => 'required|unique:members,username,'.$this->id,
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
             'password' => 'required|min:6'
         ];
     }
     public function messages () {
         return [
-            'username.required' => 'Username không được bỏ trống',
-            'username.unique' => 'Username đã tồn tại',
-            'email.required' => 'Email không được bỏ trống',
-            'email.unique' => 'Email đã tổn tại',
-            'email.regex' => 'Email không đúng định dạng',
-            'password.required' => 'Password không được bỏ trống',
-            'password.min' => 'Password  it nhat la 6 ki tu'
+            'username.required' => 'Please enter your username',
+            'username.unique' => 'Username already exists',
+            'email.required' => 'Please enter your Email',
+            'email.unique' => 'Email already exists',
+            'email.regex' => 'Incorrect email format',
+            'password.required' => 'Please enter your password',
+            'password.min' => 'Please enter your password of a least 6 digits'
         ];
     }
 }

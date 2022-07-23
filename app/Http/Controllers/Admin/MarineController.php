@@ -39,7 +39,7 @@ class MarineController extends Controller
         return view('admin.marine.edit', ['id' => $id, 'marine' => $marine]);
     
     }
-    public function update(Request $request, $id) {
+    public function update(UpdateRequest $request, $id) {
         $data = $request->except('_token', 'images');
 
         if (!empty($request->image)) {

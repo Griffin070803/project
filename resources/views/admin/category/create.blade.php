@@ -14,9 +14,6 @@
 <form method="POST" action="{{ route('admin.category.store') }}"> <!--Lay du lieu post tu store -->
     @csrf
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Category -- Add</h3>
-        </div>
         
         <div class="card-body">
             <label>Father Genre</label>

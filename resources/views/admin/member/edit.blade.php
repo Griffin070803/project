@@ -15,9 +15,7 @@
 @csrf
     <!-- Default box -->
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Member -- Edit</h3>
-        </div>
+    
         <div class="form-group card-body">
             <label>Level</label>
             <select class="form-control">

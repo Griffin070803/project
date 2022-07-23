@@ -15,9 +15,6 @@
 @csrf
     <!-- Default box -->
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Edit</h3>
-        </div>
         <div class="card-body">
             <label>FullName</label>
             <input type="text" name="fullname" class="form-control" value="{{$product->fullname}}">

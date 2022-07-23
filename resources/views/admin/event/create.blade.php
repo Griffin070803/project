@@ -15,9 +15,6 @@
 @csrf
 <!-- Default box -->
 <div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Event -- Create</h3>
-    </div>
     <div class="form-group card-body">
             <label>Name</label>
             <input type="text" name="name" class="form-control" id="" value="{{old('name')}}">

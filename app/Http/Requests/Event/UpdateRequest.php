@@ -36,15 +36,15 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Vui lòng nhập tên sự kiện',
-            'image.mimes' => 'Không phải file hình',
-            'details.required' => 'Vui lòng nhập nội dung sự kiện',
-            'timestart.required' => 'Vui lòng nhập thời gian bắt đầu sự kiện',
-            'timeend.required' => 'Vui lòng nhập thời gian kết thúc sự kiện',
-            'slot.required' => 'Vui lòng nhập số lượng người tham gia sự kiện',
-            'slot.numeric' => 'Số lượng người tham gia phải là số',
-            'price.required' => 'Vui lòng nhập giá tiền sự kiện',
-            'price.numeric' => 'Tiền phải là số',
+            'name.required' => 'Please enter event',
+            'image.mimes' => 'Incorrest image format',
+            'details.required' => 'Please enter event details',
+            'timestart.required' => 'Please enter event time start',
+            'timeend.required' => 'Please enter event time end',
+            'slot.required' => 'Please enter event slot',
+            'slot.numeric' => 'Slot must be a number',
+            'price.required' => 'Please enter event price',
+            'price.numeric' => 'Price must be a number',
         ];
     }
 }

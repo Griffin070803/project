@@ -15,9 +15,6 @@
     {{-- //['id'=> $categories->id] --}}
     @csrf
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Category -- Edit</h3>
-        </div>
         <div class="card-body">
             <label>Father Genre</label>
             <select class="form-control" name="parent">

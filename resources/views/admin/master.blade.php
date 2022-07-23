@@ -2,6 +2,7 @@
 <html>
     <head>
         @include ('admin.blocks.head')
+        @stack('css')
     </head>
     <body class="hold-transition sidebar-mini">
         <!-- Site wrapper -->
@@ -59,6 +60,6 @@
 
         <!-- jQuery -->
         @include ('admin.blocks.foot')
-        
+        @stack('js')
     </body>
 </html>

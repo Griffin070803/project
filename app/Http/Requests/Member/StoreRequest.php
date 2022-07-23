@@ -32,14 +32,14 @@ class StoreRequest extends FormRequest
     }
     public function messages () {
         return [
-            'level.required' => 'Level không được bỏ trống',
-            'username.required' => 'Username không được bỏ trống',
-            'username.unique' => 'Username đã tồn tại',
-            'email.required' => 'Email không được bỏ trống',
-            'email.unique' => 'Email đã tổn tại',
-            'email.regex' => 'Khong dung dinh dang email',
-            'password.required' => 'Password không được bỏ trống',
-            'password.min' => 'Password  it nhat la 6 ki tu'
+            'level.required' => 'Please chose a level',
+            'username.required' => 'Please enter your username',
+            'username.unique' => 'Username already exists',
+            'email.required' => 'Please enter your Email',
+            'email.unique' => 'Email already exists',
+            'email.regex' => 'Incorrect email format',
+            'password.required' => 'Please enter your password',
+            'password.min' => 'Please enter your password of a least 6 digits'
         ];
     }
 }
