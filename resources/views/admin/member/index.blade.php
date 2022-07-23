@@ -47,8 +47,8 @@
                 <td>{{$member->username}}</td>
                 <td>{{$member->email}}</td>
                 <td>{{ date('d/m/Y : H:i:s', strtotime($member->created_at))}}</td>
-                <td><a onClick="return confirmDelete()" href="{{route('admin.member.delete',['id'=>$member->id])}}">Xóa</td>
-                <td><a href="{{route('admin.member.edit',['id'=>$member->id])}}">Sửa</td>
+                <td><a onClick="return confirmDelete()" href="{{route('admin.member.delete',['id'=>$member->id])}}">Delete</td>
+                <td><a href="{{route('admin.member.edit',['id'=>$member->id])}}">Edit</td>
             </tr> 
             @endforeach
     </table>

@@ -32,6 +32,7 @@ $(document).ready(function(){
                 style: 'currency',
                 currency: 'USD',
                 minimumFractionDigits: 0
+                
             });
             //validate form
             $("#children").keyup(function(){

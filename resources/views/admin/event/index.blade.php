@@ -50,8 +50,8 @@
                 <td>@php echo number_format($event->price,0,"",".")@endphp</td> 
                 {{-- <td>{{$event->categorys_id}}</td> --}}
                 <td>{{ date('d/m/Y : H:i:s', strtotime($event->created_at)) }}</td>
-                <td><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}">Xóa</td>
-                <td><a href="{{route('admin.event.edit',['id'=>$event->id])}}">Sửa</td>
+                <td><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}">Delete</td>
+                <td><a href="{{route('admin.event.edit',['id'=>$event->id])}}">Edit</td>
             </tr> 
             @endforeach
     </table>

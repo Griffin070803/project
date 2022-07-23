@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\DB;
 class MariController extends Controller
 {
     public function fish (){
-        $result = DB::table('blogs')->get(); //hien du lieu trong bang
-        return view('user.marine.fish' ,['blogs' => $result]);
+        $data = DB::table('blogs')->get(); //hien du lieu trong bang
+        return view('user.marine.fish' ,['blogs' => $data]);
     }
 
     public function coral (){
@@ -23,9 +23,12 @@ class MariController extends Controller
         $result = DB::table('blogs')->get(); //hien du lieu trong bang
         return view('user.marine.other' ,['blogs' => $result]);
     }
-    public function Information (){
-        $blogs=DB::table('blogs')->orderBy('created_at', 'DESC')->get();
-        return view('user.marine.Information', ['blogs'=> $blogs]);
+
+    public function Information ($id){ 
+        // $result = DB::table('blogs')->get();      
+        $data=DB::table('blogs')->where('id', $id)->first();
+        return view('user.marine.Information', ['blogs'=> $data, 'id'=> $id]);
     }
+    
 
 }

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalog-Z Bootstrap 5.0 HTML Template</title>
     <link rel="stylesheet" href="{{ asset('temple556/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/templatemo-style.css')}}">
 <!--
     
@@ -35,14 +35,13 @@ https://templatemo.com/tm-556-catalog-z
         	<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">                
                 <figure class="effect-ming tm-video-item">
                     @php
-                        $avatar = $lte->image == NULL ? 'no-image.jpg' : $lte->image;
-                        $image_url = asset('images/'. $avatar);
+                        $images = $lte->image == NULL ? 'no-image.png' : $lte->image;
+                        $image_url = asset('images/'. $images);
                     @endphp
-                    <img src="{{ $image_url }}" alt="Image" class="img-fluid" style="width: 100%; height: 300px">
-
+                    <img src="{{ $image_url }}" alt="Image" class="lte" style="width: 100%; height: 200px">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>{{$lte->name}}</h2>
-                        <a href="{{ route('user.marine.Information')}}">View more</a>
+                        <a href="{{ route('user.marine.Information',['id'=>$lte->id])}}">View more</a>
                     </figcaption>                    
                 </figure>               
                 {{-- <div class="d-flex justify-content-between tm-text-gray">

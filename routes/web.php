@@ -147,7 +147,7 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::get('fish',[MariController::class, 'fish'])->name('fish');
         Route::get('coral',[MariController::class, 'coral'])->name('coral');
         Route::get('other',[MariController::class, 'other'])->name('other');
-        Route::get('Information',[MariController::class, 'Information'])->name('Information')->where('id','[0-9]+');
+        Route::get('Information,{id}',[MariController::class, 'Information'])->name('Information')->where('id','[0-9]+');
     });
 });
 

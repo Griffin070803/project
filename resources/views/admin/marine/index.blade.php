@@ -40,8 +40,8 @@
                 <td>{!! $marine->content !!}</td>
                 <td>{{ $marine->status }}</td>
                 <td>{{ $marine->created_at }}</td>
-                <td><a onclick="return confirmDelete()" href="{{ route('admin.marine.delete', ['id' => $marine->id]) }}">Xóa</a></td>
-                <td><a href="{{ route('admin.marine.edit', ['id' => $marine->id]) }}">Sửa</a></td>
+                <td><a onclick="return confirmDelete()" href="{{ route('admin.marine.delete', ['id' => $marine->id]) }}">Delete</a></td>
+                <td><a href="{{ route('admin.marine.edit', ['id' => $marine->id]) }}">Edit</a></td>
             </tr>
             @empty
             <tr>
