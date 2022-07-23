@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
-
+@section('module', 'Event')
+@section('action', 'Edit')
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>

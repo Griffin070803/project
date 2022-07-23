@@ -1,5 +1,7 @@
 @extends('admin.master')
 @section('content')
+@section('module', 'Event')
+@section('action', 'List')
 <div>
     @if (Session::has('success'))
     <div class="alert alert-success alert-block">

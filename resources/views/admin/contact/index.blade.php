@@ -1,6 +1,8 @@
 @extends('admin.master')
 
       @section('content')
+      @section('module', 'Contact')
+        @section('action', 'List')
       <div class="card">
         <div class="card-header">
             <h3 class="card-title">Contact List</h3>

@@ -1,6 +1,7 @@
 @extends('admin.master')
 @section('content')
-
+@section('module', 'Marine')
+@section('action', 'List')
 @if (Session::has('success'))
 <div class="alert alert-success alert-block">
     <button type="button" class="close" data-dismiss="alert">x</button>
