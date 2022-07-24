@@ -79,22 +79,68 @@
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="fas fa-fish"></i>
-                        <p style="margin-left: 7px">
-                            Marine
+                        <p style="margin-left: 8px">
+                            Cate - Marine
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('admin.marine.index')}}" class="nav-link">
+                            <a href="{{route('admin.cate_mari.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Marine</p>
+                                <p>List Cate - Marine</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.marine.create')}}" class="nav-link">
+                            <a href="{{route('admin.cate_mari.create')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Marine</p>
+                                <p>Add Cate - Marine</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-fish"></i>
+                        <p style="margin-left: 8px">
+                            Blogs
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('admin.lte.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List Blogs</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('admin.lte.create')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Blogs</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-comment"></i>
+                        <p style="margin-left: 9px">
+                            Comment
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('admin.comment.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List Comment</p>
                             </a>
                         </li>
                     </ul>

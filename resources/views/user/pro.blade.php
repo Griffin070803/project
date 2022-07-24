@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
            <ul class="w3_short">
 				<li><a href="{{ route('master') }}">Home</a><i>|</i></li>
-				<li>EVENT</li>
+				<li>MARINE</li>
 			</ul>
 		 </div>
 </div>
@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- footer -->
 @include('blocks.footer')
 <!-- Modal1 -->
-{
+
 <!-- //Modal1 -->
 <!--//footer -->
 <!-- js -->

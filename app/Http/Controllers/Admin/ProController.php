@@ -7,33 +7,49 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 class ProController extends Controller
 {
-    public function index() {   
-        $result = DB::table('blogs')->orderBy('created_at', 'DESC')->get();
+    public function index() {       
+        $result = DB::table('blogs')->orderBy('created_at', 'DESC')->get();      
         return view('admin.lte.index', ['blogs' => $result]);
     }
+
+
     public function create() {
-        $category = DB::table('blogs')->get();
-        return view('admin.lte.create', ['categories'=> $category]);
+        $cate_mari = DB::table('marine_creatures')->get();       
+        return view('admin.lte.create', ['marine_creatures' => $cate_mari]);
     }
     public function store(Request $request) {
 
-        $data = $request->except('_token');
-       
-        $data['created_at'] = new \DateTime();
-
-        $imageName = time().'.'.$request->image->extension();  
+        $data_product = $request -> except('_token', 'avatar');
+        $data_product['created_at'] = new \DateTime();
+        $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('images'), $imageName);
-        $data['image'] = $imageName;
+        $data_product['image'] = $imageName;
 
-        DB::table('blogs') ->insert($data);
+        $product_id = DB::table('blogs')->insertGetId($data_product);
+
+        //upload image
+        $data_images = $request->only('blogs_id','avatar');
+        if ($request->has('avatar')){
+            foreach($request->file('avatar') as $image){
+                $imageName = time().rand(1,1000).'.'.$image->extension();
+                $image->move(public_path('images'), $imageName);
+                $data_images['avatar'] = $imageName;
+                $data_images['blogs_id'] = $product_id;
+            DB::table('blogs_images')->insert($data_images);
+            }
+        }      
+        //=====================================
+
+        // $data = $request->except('_token');      
         
-        return redirect()->route('admin.lte.index')->with('success', 'insert successfuly');
+        // DB::table('blogs') ->insert($data);      
+        return redirect()->route('admin.lte.index')->with('success', 'insert successfuly');  
     }
+
     
 
     public function edit($id) {
         $lte = DB::table('blogs')->where('id',$id)->first();
-
         return view('admin.lte.edit', ['id' => $id, 'lte' => $lte]);
     
     }
@@ -41,6 +57,7 @@ class ProController extends Controller
         $data = $request->except('_token', 'images');
 
         if (!empty($request->images)) {
+
             $data_old = DB::table('blogs')->where('id',$id)->first();
             $url_image_old_path = public_path('images/'.$data_old->images);
             if (file_exists($url_image_old_path)) {
@@ -53,10 +70,13 @@ class ProController extends Controller
         DB::table('blogs')->where('id', '=', $id)->update($data);
     
         return redirect()->route('admin.lte.index')->with('success', 'Edit successfuly');
+    
+       
     }
 
     public function delete($id) {
         DB::table('blogs')->where('id', '=', $id)->delete();
         return redirect()->route('admin.lte.index');
     }
+
 }

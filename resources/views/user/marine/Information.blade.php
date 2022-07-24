@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('temple556/css/bootstrap.min.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/templatemo-style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/comment.css')}}">
 <!--
     
 TemplateMo 556 Catalog-Z
@@ -38,7 +39,7 @@ https://templatemo.com/tm-556-catalog-z
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
                     @php
                        $image = $blogs->image == NULL ? 'no-image.png' : $blogs->image;
-					    $image_url = asset('images/'.$image)
+					    $image_url = asset('assets/images//'.$image)
                     @endphp
                    <img src="{{$image_url}}" class="fish" style="width: 100%; height: 500px">                  
             </div>     
@@ -55,16 +56,16 @@ https://templatemo.com/tm-556-catalog-z
                     <div class="mb-4">
                         <h3> <span style="font-size: 16pt;">{!!$blogs->content!!}</span></h3>
                         </div>
-                    {{-- <div>
+                    <div>
                         <h3 class="tm-text-gray-dark mb-3"></h3>
                         <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block"><img src="{{ asset ('images/bachtuoc-trang.jpg')}}" widtd="50px" height="80px" alt=""></a>
                         <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block"><img src="{{ asset ('images/haiquy.jpg')}}" widtd="50px" height="80px" alt=""></a>
                         <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Nature</a>
                         <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Background</a>
-<a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Timelapse</a>
+                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Timelapse</a>
                         <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Night</a>
                         {{-- <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Real Estate</a> --}}
-                    {{-- </div>  --}}
+                    </div> 
                     {{-- @endforeach --}}
                 </div>              
             </div>        
@@ -92,17 +93,102 @@ https://templatemo.com/tm-556-catalog-z
                     <span class="tm-text-gray-light">12 Oct 2020</span>
                     <span>12,460 views</span>
                 </div>               
-    </div> <!-- container-fluid, tm-container-content --> --}}
+    </div>
     {{-- @endforeach --}}
         </div>
+
+
+
+
+
+    
+            <div class="be-comment-block">
+                <h1 class="comments-title">Comments</h1>
+                @foreach($comments as $comment)
+            @if($comment->status == 1)
+                <div class="be-comment">
+                    
+                    
+                    <div class="be-img-comment">	
+                        <a href="blog-detail-2.html">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="be-ava-comment">
+                        </a>
+                    </div>
+                    
+                    <div class="be-comment-content">
+                        
+                            <span class="be-comment-name">
+                                <a href="blog-detail-2.html">{{$comment->name_user}}</a>
+                                </span>
+                            <span class="be-comment-time">
+                                <i class="fa fa-clock-o"></i>
+                                {{ date('d/m/Y : H:i:s', strtotime($comment->created_at)) }}
+                            </span>
+                            <span style="color: red; font-size:18px">
+                                {{$comment->rating}}☆
+                            </span>
+                        <p class="be-comment-text">
+                            {{$comment->comment_body}}
+                        </p>
+                    </div>
+            
+            @endif
+                @endforeach
+            
+                
+            
+            <form class="form-block" action="{{route('user.marine.post')}}" method="post">
+                    @csrf
+                    <input class="form-input" style="display: none" type="text" placeholder="Your name" name="blogs_id" value="{{$blogs->id}}" />
+        
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group fl_icon">
+                                <div class="icon"><i class="fa fa-user"></i></div>
+                                <input class="form-input" type="text" placeholder="Your name" name="name_user">
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12">			
+                            <div><label class="icon">Rating</label>	</div>				
+                            <div class="rating"> 
+                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                            </div>
+                        </div>
+            
+                        <div class="col-xs-12">									
+                            <div class="form-group">
+                                <textarea class="form-input" required="" placeholder="Your text" name="comment_body"></textarea>
+                            </div>
+                        </div>
+            
+                        <div class="col-xs-12">									
+                            <div class="form-group">
+                                <input type="submit" value="SUBMIT" id="comment">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </form>
+        </div>
+
+
+        
+            
+
+
     
     
-    <script src="{{ asset('temple556/js/plugins.js')}}"></script>
-    <script>
+<script src="{{ asset('temple556/js/plugins.js')}}"></script>
+<script>
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
-    </script>
+</script>
 </body>
 </html>
 @endsection

@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MarineController;
+use App\Http\Controllers\Admin\Cate_mariController;
+use App\Http\Controllers\Admin\ProController;
 use App\Http\Controllers\User\MariController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -138,6 +140,29 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
         Route::get('index',[ContactController::class, 'index'])->name('index');
         Route::get('delete/{id}',[CategoryController::class, 'delete'])->name('delete')->where('id', '[0-9]+');
     });
+
+    Route::prefix('cate_mari')->name('cate_mari.')->group(function(){
+        Route::get('/',[Cate_mariController::class, 'index'])->name('index');
+        Route::get('index',[Cate_mariController::class, 'index'])->name('index');
+
+        Route::get('delete/{id}',[Cate_mariController::class, 'delete'])->name('delete')->where('id', '[0-9]+');
+
+        Route::get('create',[Cate_mariController::class, 'create'])->name('create');
+        Route::post('store',[Cate_mariController::class, 'store'])->name('store');
+
+        Route::get('edit/{id}',[Cate_mariController::class, 'edit'])->name('edit')->where('id', '[0-9]+');
+        Route::post('update/{id}',[Cate_mariController::class, 'update'])->name('update')->where('id', '[0-9]+');
+    });
+
+    Route::prefix('comment')->name('comment.')->group(function(){
+        Route::get('/',[CommentController::class, 'index'])->name('index');
+        Route::get('index',[CommentController::class, 'index'])->name('index');
+        Route::get('active/{id}',[CommentController::class, 'active'])->name('active')->where('id', '[0-9]+');
+        Route::get('unactive/{id}',[CommentController::class, 'unactive'])->name('unactive')->where('id', '[0-9]+');
+        Route::get('delete/{id}',[CommentController::class, 'delete'])->name('delete')->where('id', '[0-9]+');
+        
+    });
+
     
 });
 

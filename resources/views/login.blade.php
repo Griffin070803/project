@@ -27,14 +27,14 @@
     </div>
     @endif
 </div>
-<div class="login-box">
+<div class="login-box" >
   <div class="login-logo">
-    <a href=""><b>LOGIN</b></a>
+    <a href=""><b>JENKINSON SEA LIFE</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      {{-- <p class="login-box-msg">Sign in to start your session</p> --}}
+      <p class="login-box-msg">Login to your account</p>
 
       <form action="{{ route('postlogin') }}" method="post">
         @csrf
@@ -62,15 +62,6 @@
         </div>
       </form>
 
-      {{-- <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div> --}}
       <!-- /.social-auth-links -->
 
       {{-- <p class="mb-1">

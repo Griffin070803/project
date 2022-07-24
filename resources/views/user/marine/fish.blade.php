@@ -31,12 +31,12 @@ https://templatemo.com/tm-556-catalog-z
     </div>
    
         <div class="row tm-mb-90 tm-gallery">
-            @foreach ($blogs as $lte)
+            @foreach ($blogs1 as $lte)
         	<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">                
                 <figure class="effect-ming tm-video-item">
                     @php
                         $images = $lte->image == NULL ? 'no-image.png' : $lte->image;
-                        $image_url = asset('images/'. $images);
+                        $image_url = asset('assets/images/'. $images);
                     @endphp
                     <img src="{{ $image_url }}" alt="Image" class="lte" style="width: 100%; height: 200px">
                     <figcaption class="d-flex align-items-center justify-content-center">
