@@ -42,7 +42,7 @@
                 $images = $member->avatar == NULL ? 'no-image.png' : $member->avatar;
                 $image_url = asset('assets/dist/img/'.$images)
             @endphp
-            <img src="{{$image_url}}" width="50px" height="50px">
+            <img src="{{$image_url}}" width="400px" height="200px">
         </div>
         <div class="form-group card-body">
             <label>Avatar</label>

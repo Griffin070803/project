@@ -53,15 +53,15 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Image</th>
-                <th>Schedule</th>
-                <th>Details</th>
+                {{-- <th>Schedule</th>
+                <th>Details</th> --}}
                 <th>Time Start</th>
                 <th>Time End</th>
                 <th>Slot</th>
                 <th>Price</th>
                 <th>Created_at</th>
-                <th>Delete</th>
                 <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -76,16 +76,16 @@
                     @endphp
                     <img src="{{$image_url}}" width="100px" height="50px">
                 </td>
-                <td>{!!$event->schedule!!}</td>
-                <td>{!!$event->details!!}</td>
+                {{-- <td>{!!$event->schedule!!}</td>
+                <td>{!!$event->details!!}</td> --}}
                 <td>{{$event->timestart}}</td>
                 <td>{{$event->timeend}}</td>
                 <td>{{$event->slot}}</td>
                 <td>@php echo number_format($event->price,0,"",".")@endphp</td> 
                 {{-- <td>{{$event->categorys_id}}</td> --}}
                 <td>{{ date('d/m/Y : H:i:s', strtotime($event->created_at)) }}</td>
-                <td><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}">Delete</td>
-                <td><a href="{{route('admin.event.edit',['id'=>$event->id])}}">Edit</td>
+                <td class="project-actions text-right"><a href="{{route('admin.event.edit',['id'=>$event->id])}}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                <td class="project-actions text-right"><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr> 
             @endforeach
         </tbody>    

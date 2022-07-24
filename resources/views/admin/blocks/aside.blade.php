@@ -53,8 +53,8 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-ballot"></i>
-                        <p>
+                        <i class="fas fa-briefcase"></i>
+                        <p style="margin-left: 9px">
                             Category
                             <i class="right fas fa-angle-left"></i>
                         </p>
@@ -147,8 +147,8 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-info"></i>
-                        <p style="margin-left: 20px">
+                        <i class="fas fa-address-book"></i>
+                        <p style="margin-left: 11px">
                             Information people
                             <i class="right fas fa-angle-left"></i>
                         </p>

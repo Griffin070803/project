@@ -51,12 +51,12 @@
                 <td>Id</td>
                 <td>Image</td>
                 <td>Marine Name</td>
-                <td>Intro</td>
-                <td>Content</td>
+                {{-- <td>Intro</td>
+                <td>Content</td> --}}
                 <td>Status</td>
                 <td>Created_at</td>
-                <td>Delete</td>
                 <td>Edit</td>
+                <td>Delete</td>
             </tr>
         </thead>
         @forelse($blogs as $marine)
@@ -69,12 +69,12 @@
                     <img src="{{ $image_url }}"width="50px" height="50px" alt="">
                 </td>
                 <td>{{ $marine->name }}</td>                
-                <td>{{ $marine->intro }}</td>
-                <td>{!! $marine->content !!}</td>
+                {{-- <td>{{ $marine->intro }}</td>
+                <td>{!! $marine->content !!}</td> --}}
                 <td>{{ $marine->status }}</td>
                 <td>{{ $marine->created_at }}</td>
-                <td><a onclick="return confirmDelete()" href="{{ route('admin.marine.delete', ['id' => $marine->id]) }}">Delete</a></td>
-                <td><a href="{{ route('admin.marine.edit', ['id' => $marine->id]) }}">Edit</a></td>
+                <td class="project-actions text-right"><a href="{{ route('admin.marine.edit', ['id' => $marine->id]) }}"  class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{ route('admin.marine.delete', ['id' => $marine->id]) }}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr>
             @empty
             <tr>

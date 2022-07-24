@@ -37,7 +37,7 @@ class HomeController extends Controller
         $email = $data['email'];
         DB::table('contacts')->insert($data);      
         $email_id = DB::table('contacts')->where('email','LIKE','%'.$email.'%')->first();
-        return redirect()->route('sentEmail',['id'=>$email_id->id])->with('success', 'Insert Successfully');
+        return redirect()->route('sentEmail',['id'=>$email_id->id]);
         
     }
 
@@ -45,7 +45,7 @@ class HomeController extends Controller
     {
         $email = DB::table('contacts')->where('id',$id)->first();
         Mail::to($email->email)->send(new SentMail());
-        return redirect()->route('contact', ['contacts'=> $email]);
+        return redirect()->route('contact', ['contacts'=> $email])->with('success', 'You have successfully submitted your feedback, please check your email to confirm !');
     }
 
     public function infor ($id) {

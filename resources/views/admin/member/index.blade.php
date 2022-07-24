@@ -62,9 +62,10 @@
                 <th>Avatar</th>
                 <th>Username</th>
                 <th>Email</th>
+                <th>level</th>
                 <th>Created_at</th>
-                <th>Delete</th>
                 <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -80,9 +81,10 @@
                 </td>
                 <td>{{$member->username}}</td>
                 <td>{{$member->email}}</td>
+                <td>{{$member->level}}</td>
                 <td>{{ date('d/m/Y : H:i:s', strtotime($member->created_at))}}</td>
-                <td><a onClick="return confirmDelete()" href="{{route('admin.member.delete',['id'=>$member->id])}}">Delete</td>
-                <td><a href="{{route('admin.member.edit',['id'=>$member->id])}}">Edit</td>
+                <td class="project-actions text-right"><a href="{{route('admin.member.edit',['id'=>$member->id])}}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                <td class="project-actions text-right"><a onClick="return confirmDelete()" href="{{route('admin.member.delete',['id'=>$member->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr> 
             @endforeach
         </tbody>    

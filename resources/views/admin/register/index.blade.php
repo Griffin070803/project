@@ -55,8 +55,8 @@
                 <th>Address</th>
                 <th>Adult</th>
                 <th>Children</th>
-                <th>Delete</th>
                 <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -69,8 +69,8 @@
                 <td>{{$product->address}}</td>
                 <td>{{$product->adult}}</td>
                 <td>{{$product->children}}</td>
-                <td><a onClick="return confirmDelete()" href="{{route('delete',['id'=>$product->id])}}">Delete</td>
-                <td><a href="{{route('edit',['id'=>$product->id])}}">Edit</td>
+                <td class="project-actions text-right"><a href="{{route('edit',['id'=>$product->id])}}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                <td class="project-actions text-right"><a onClick="return confirmDelete()" href="{{route('delete',['id'=>$product->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr>   
             @endforeach
     </table>

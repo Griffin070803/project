@@ -34,6 +34,14 @@
 
 
 @section('content')
+<div>
+  @if (Session::has('success'))
+  <div class="alert alert-success alert-block">
+      <button type="button" class="close" style="text-align: center" data-dismiss="alert">×</button>	
+          <strong>{{ Session::get('success') }}</strong>
+  </div>
+  @endif
+</div>
       <div class="card">
         <div class="card-body p-0">
             <table id="example1" class="table">
@@ -56,7 +64,7 @@
                         <th>{{ $contact->phone}}</th>
                         <th>{{ $contact->email}}</th>
                         <th>{{ $contact->message}}</th>
-                        <td><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $contact->id])}}">Delete</a></td>
+                        <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $contact->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                     </tr>
                     @endforeach
                 </tbody>

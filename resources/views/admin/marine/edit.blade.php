@@ -24,7 +24,7 @@
       </div> 
       <div class="form-group  card-body">
         <label>Old Image</label>
-        <img src="{{ asset('images/'.$marine->image)}}" width="50px" height="50px">
+        <img src="{{ asset('images/'.$marine->image)}}" width="400px" height="200px">
     </div>
     <div class="form-group card-body">
       <label>Image</label>

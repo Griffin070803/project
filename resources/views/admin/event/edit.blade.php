@@ -25,7 +25,7 @@
                 $images = $event->image == NULL ? 'no-image.png' : $event->image;
                 $image_url = asset('assets/dist/img/'.$images)
             @endphp
-            <img src="{{$image_url}}" width="50px" height="50px">
+            <img src="{{$image_url}}" width="400px" height="200px">
         </div>
 
         <div class="form-group card-body">
