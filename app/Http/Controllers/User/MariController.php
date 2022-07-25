@@ -11,17 +11,17 @@ class MariController extends Controller
 {
     public function fish (){
         
-        $data = DB::table('blogs')->where('marine_creatures_id','=',1)->get(); //hien du lieu trong bang
+        $data = DB::table('blogs')->where('marine_creatures_id','=',1)->paginate(8); //hien du lieu trong bang
         return view('user.marine.fish' ,['blogs1' => $data]);
     }
 
     public function coral (){
-        $result = DB::table('blogs')->where('marine_creatures_id','=',2)->get(); //hien du lieu trong bang
+        $result = DB::table('blogs')->where('marine_creatures_id','=',2)->paginate(8); //hien du lieu trong bang
         return view('user.marine.coral' ,['blogs2' => $result]);
     }
 
     public function other (){
-        $result = DB::table('blogs')->where('marine_creatures_id','=',3)->get(); //hien du lieu trong bang
+        $result = DB::table('blogs')->where('marine_creatures_id','=',3)->paginate(8); //hien du lieu trong bang
         return view('user.marine.other' ,['blogs3' => $result]);
     }
 

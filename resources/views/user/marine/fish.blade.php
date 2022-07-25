@@ -1,5 +1,6 @@
 @extends('user.pro')
 @section('content')
+@section('action', 'FISH')
 <div><h3 class="heading-agileinfo">Fish <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 
 
@@ -8,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog-Z Bootstrap 5.0 HTML Template</title>
+    <title>JENKINSON SEA LIFE | FISH</title>
     <link rel="stylesheet" href="{{ asset('temple556/css/bootstrap.min.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/templatemo-style.css')}}">
@@ -52,7 +53,9 @@ https://templatemo.com/tm-556-catalog-z
             @endforeach
     
     </div> <!-- container-fluid, tm-container-content -->
-
+    <div style="width: 100%; display: flex; align-items: center;justify-content: center; margin-bottom: 70px;">
+        {{ $blogs1->links() }}
+    </div>
     
     <script src="{{ asset('temple556/js/plugins.js')}}"></script>
     <script>

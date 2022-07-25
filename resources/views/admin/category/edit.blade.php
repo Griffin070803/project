@@ -28,9 +28,9 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-info">Delete</button>
+            <button type="submit" class="btn btn-info">Edit</button>
 
-            <button type="reset" class="btn btn-default float-right">Edit</button>
+            <button type="reset" class="btn btn-default float-right">Cancel</button>
         </div>
     </div>
 </form>

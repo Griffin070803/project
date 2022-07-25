@@ -66,8 +66,7 @@
                      
                     @endif
                     </td>
-
-                        <td><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $comment->id])}}">Delete</a></td>
+                        <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $comment->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                         
                     </tr>
                 </tbody>

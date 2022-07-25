@@ -49,8 +49,8 @@
             <input type="file" name="avatar" class="form-control" id="customFile" style="height:100%"> 
         </div>
         <div class="card-body">
-            <button type="submit" class="btn btn-info">Add</button>
-            <button type="reset" class="btn btn-default float-right">Delete</button>
+            <button type="submit" class="btn btn-info">Edit</button>
+            <button type="reset" class="btn btn-default float-right">Cancel</button>
         </div>
     </div>
 </form>

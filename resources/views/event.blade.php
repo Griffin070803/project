@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>JENKINSON SEA LIFE</title>
+<title>JENKINSON SEA LIFE | EVENT</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Plunge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -95,6 +95,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     @endforeach
         <div class="clearfix"></div>
 </div>
+<div style="width: 100%; display: flex; align-items: center;justify-content: center; margin-bottom: 70px;">
+	{{ $events->links() }}
+</div>
+
 <!-- //Gallery -->
 
 <!-- footer -->

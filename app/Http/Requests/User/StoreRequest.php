@@ -33,10 +33,10 @@ class StoreRequest extends FormRequest
 
     public function messages() {
         return [
-            'name.required' => 'Vui lòng nhập tên sinh vật ',
-            'name.unique' => 'sản phẩm đã tồn tại rồi ',
-            'intro.required' => 'Vui lòng nhập giới thiệu ',
-            'content.required' => 'Vui lòng nhập nội dung ',
+            'name.required' => 'Please enter marine_creatures name',
+            'name.unique' => 'Marine_creatures name already exists',
+            'intro.required' => 'Please enter intro',
+            'content.required' => 'Please enter content',
         ];
     }
 }

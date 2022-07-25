@@ -54,8 +54,8 @@
                         <th>Id</th>
                         <th>Name</th>
                         <th>Created_at</th>
-                        <th style="width: 40px">Delete</th>
                         <th style="width: 40px">Edit</th>
+                        <th style="width: 40px">Delete</th>
                     </tr>
                 </thead>
                 {{categorySelect($categories)}}

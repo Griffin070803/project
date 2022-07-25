@@ -9,7 +9,7 @@
                 <h3 class="white-w3ls">Navigation</h3>
                 <ul class="agileits_w3layouts_footer_grid_list">
                     <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('master') }}">Home</a></li>
-                    <li><i class="fa fa-tint" aria-hidden="true"></i><a href="">Marine</a></li>
+                    <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('user.marine.other') }}">Marine</a></li>
                     <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('event') }}">Event</a></li>
                     <li><i class="fa fa-tint" aria-hidden="true"></i><a href="{{ route('contact') }}">Contact</a></li>
                 </ul>
@@ -73,7 +73,7 @@
             <div class="clearfix"> </div>
         </div>
         <div class="agileinfo_copyright">
-            <p>© 2017 Plunge. All Rights Reserved | Design by <a href="">RangersTeam</a></p>
+            <p>© 2022 Plunge. All Rights Reserved | Design by <a href="">RangersTeam</a></p>
         </div>
     </div>
 </div>

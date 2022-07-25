@@ -23,8 +23,8 @@ function categorySelect($data,$parents = 0,$str="") {
                     <td>' .$id. '</td>
                     <td>'.$str.$value->name.'</td>
                     <td>'.date('Y-m-d : H:i:s', strtotime($value->created_at)).'</td>
-                    <td><a onClick="return confirmDelete()" href="http://localhost:8000/admin/category/delete/'.$value->id.'">Delete</a></td>
-                    <td><a href="http://localhost:8000/admin/category/edit/'.$value->id.'">Edit</a></td>
+                    <td class="project-actions text-right"><ahref="http://localhost:8000/admin/category/edit/'.$value->id.'" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                    <td class="project-actions text-right"><a onClick="return confirmDelete()" href="http://localhost:8000/admin/category/delete/'.$value->id.'" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                 </tr>';
                 unset($value->id);
 

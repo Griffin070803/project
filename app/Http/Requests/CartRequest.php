@@ -35,20 +35,20 @@ class CartRequest extends FormRequest
     }
     public function messages () {
         return [
-            'email.required' =>'Email không được bỏ trống',
-            'email.regex' => 'Khong dung dinh dang email',
-            'phone.required' =>'Phone khong duoc bo trong',
-            'phone.digits' => 'Phone phải 10 chu so',
-            'phone.numeric' => 'Phone phai la 1 day so',            
-            'fullname.required' => 'Họ và tên không được bỏ trống',
-            'fullname.string' => 'Họ và tên phải là chuỗi kí tự',
-            'fullname.max' => 'Họ và tên nhiều nhất 40 kí tự',
-            'fullname.min' => 'Họ và tên ít nhất 10 kí tự',
-            'address.required' => 'Địa chỉ không được bỏ trống',
-            'adult.required' => 'Số người lớn không được bỏ trống',
-            'adult.numeric' => 'Số người lớn phải là số',
-            'children.required' => 'Số người lớn không được bỏ trống',
-            'children.numeric' => 'Số người lớn phải là số'
+            'email.required' =>'Please enter your Email',
+            'email.regex' => 'Incorrect email format',
+            'phone.required' =>'Please enter your phone number',
+            'phone.digits' => 'Please enter your phone of a least 10 digits',
+            'phone.numeric' => 'Phone must be a number',            
+            'fullname.required' => 'Please enter your fullname',
+            'fullname.string' => 'Fullname must be a string',
+            'fullname.max' => 'Fullname up to 40 characters',
+            'fullname.min' => 'Fullname at least 10 characters',
+            'address.required' => 'Please enter your address',
+            'adult.required' => 'Please enter adult',
+            'adult.numeric' => 'Adult must be a number',
+            'children.required' => 'Please enter chilren',
+            'children.numeric' => 'Children must be a number'
         ];
     }
 }

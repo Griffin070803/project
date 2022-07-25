@@ -14,8 +14,9 @@ class HomeController extends Controller
         return view('master');
     }
     public function event () {
-        $data = DB::table('events')->get();
-        return view('event', ['events' => $data]);
+        $event = DB::table('events')->paginate(6);
+        // $data = DB::table('events')->get();
+        return view('event', ['events' => $event]);
         
     }
     public function information () {

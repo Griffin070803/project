@@ -49,7 +49,7 @@
         <div style="margin:15px" id ="so-tien-moi"></div>
         <div class="card-body">
             <button type="submit"class="btn btn-info">Edit</button>
-            <button type="reset" class="btn btn-default float-right">Reset</button>
+            <button type="reset" class="btn btn-default float-right">Cancel</button>
         </div>
     </div>
 </form>
