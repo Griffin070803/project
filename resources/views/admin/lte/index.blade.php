@@ -1,5 +1,4 @@
 @extends('admin.master')
-@section('content')
 @section('module', 'Blog')
 @section('action', 'List')
 
@@ -32,9 +31,7 @@
   });
 </script>
 @endpush
-{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> --}}
-
+@section('content')
 @if (Session::has('success'))
 <div class="alert alert-success alert-block">
     <button type="button" class="close" data-dismiss="alert">x</button>
@@ -53,36 +50,34 @@
                 <td>Image</td>
                 <td>Name</td>
                 <td>Intro</td>
-                <td>Content</td>
+                {{-- <td>Content</td> --}}
                 <td>Status</td>
                 <td>Created_at</td>
-                <td>Delete</td>
                 <td>Edit</td>
+                <td>Delete</td>
             </tr>
         </thead>
-        @forelse($blogs as $lte)
+        @foreach($blogs as $lte)
+            <tbody>
                 <td>{{ $loop->iteration }}</td>
                 <td>
                     @php
                         $image = $lte->image == NULL ? 'no-image.jpg' : $lte->image;
-                        $image_url = asset('assets/images/'.$image);
+                        $image_url = asset('images/'.$image);
                     @endphp
                     <img src="{{ $image_url }}"width="100px" height="100px" alt="">
                 </td>
                 {{-- <td><img src="cover/{{ $lte->image }}" class="img-responsive" style="max-height:100px; max-width:100px" alt="" srcset=""></td> --}}
                 <td>{{ $lte->name }}</td>                
                 <td>{{ $lte->intro }}</td>
-                <td>{!! $lte->content !!}</td>
+                {{-- <td>{!! $lte->content !!}</td> --}}
                 <td>{{ $lte->status }}</td>
                 <td>{{ $lte->created_at }}</td>
-                <td><a onclick="return confirmDelete()" href="{{ route('admin.lte.delete', ['id' => $lte->id]) }}">Xóa</a></td>
-                <td><a href="{{ route('admin.lte.edit', ['id' => $lte->id]) }}">Sửa</a></td>
+                <td class="project-actions text-right"><a href="{{ route('admin.lte.edit', ['id' => $lte->id]) }}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                <td class="project-actions text-right"><a onClick="return confirmDelete()" onclick="return confirmDelete()" href="{{ route('admin.lte.delete', ['id' => $lte->id]) }}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr>
-            @empty
-            <tr>
-                <td collspan="9" align="center">No Data</td>
-            </tr>
+        </tbody>
 </div>           
-    @endforelse
+    @endforeach
     </table>
 @endsection

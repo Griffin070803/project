@@ -39,7 +39,7 @@ https://templatemo.com/tm-556-catalog-z
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
                     @php
                        $image = $blogs->image == NULL ? 'no-image.png' : $blogs->image;
-					    $image_url = asset('assets/images//'.$image)
+					    $image_url = asset('images/'.$image)
                     @endphp
                    <img src="{{$image_url}}" class="fish" style="width: 100%; height: 500px">                  
             </div>     

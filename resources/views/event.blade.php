@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--fonts-->
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700') }}" rel="stylesheet">
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}" rel="stylesheet">
+
 <!--//fonts-->
 </head>
 <body>
@@ -78,51 +79,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
  <!--//banner-below-->
 <!-- Gallery -->
-
-{{-- <div class="about">
-    <div class="container">
-		<h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
-    	<div id="horizontalTab">
-			@foreach ($events as $event)		
-				<div class="col-md-6 services-right-agileits">
-					<h4>{{ $event->name }}</h4>
-					<p class="para-agileits-w3layouts">{{ $event->details }}</p>
-					<p class="para-agileits-w3layouts">Time Start: {{ $event->timestart }}</p>
-					<p class="para-agileits-w3layouts">Time End: {{ $event->timeend }}</p>
-					<p class="para-agileits-w3layouts">Slot: {{ $event->slot }}</p>
-					<p class="para-agileits-w3layouts">Price: {{ $event->price }}</p>
-					<a class="read-agileits"  href="{{ route('event',['id'=>$event->id]) }}">Details</a>
-					<a class="read-agileits"  href="{{ route('index',['id'=>$event->id]) }}">Buy</a>	
-				</div>
-				<div class="col-md-6 services-right-agileits">	
-					@php
-						$images = $event->image == NULL ? 'no-image.png' : $event->image;
-						$image_url = asset('assets/dist/img/'.$images)
-					@endphp
-					<img src="{{$image_url}}" class="ab">
-
-				</div>
-			@endforeach
-        </div>
-    </div>
-</div> --}}
-{{-- <div class="reasons-agileits-w3layouts">
-	<div class="container"> --}}
-		{{-- <h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
-		@foreach($events as $event)    
-			<div class="col-md-4 about-w3-grids" style="margin-left: 10px; margin-right: 10px">
-				<h3>{{$event->name}}</h3>
-				@php
-					$images = $event->image == NULL ? 'no-image.png' : $event->image;
-					$image_url = asset('assets/dist/img/'.$images)
-				@endphp
-				<img src="{{$image_url}}" class="marine">
-				<a class="read-agileits" href="{{ route('infor',['id'=>$event->id]) }}">Read More</a>
-			</div>
-		@endforeach
-			<div class="clearfix"></div>	
-	{{-- </div>
-</div> --}}
 <div class="about">
     <h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
     @foreach($events as $event)   
@@ -144,19 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- footer -->
 @include('blocks.footer')
 <!-- Modal1 -->
-{{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" >
-	<div class="modal-dialog">
-		<!-- Modal content-->
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4>Plunge</h4>
-					<img src="{{ asset('assets/images/bann3.jpg') }}" alt="blog-image" />
-					<p class="para-agileits-w3layouts">Lorem ipsum dolor sit amet, Sed ut perspiciatis unde omnis iste natus error sit voluptatem , eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.accusantium doloremque laudantium, totam rem aperiamconsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</div>
-		</div>
-	</div>
-</div> --}}
 <!-- //Modal1 -->
 <!--//footer -->
 <!-- js -->

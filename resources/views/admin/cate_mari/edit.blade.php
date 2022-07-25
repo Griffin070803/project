@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-@section('module', 'Marine')
+@section('module', 'Cate - Marine')
 @section('action', 'Create')
 @if ($errors->any()) 
     <div class="alert alert-danger">

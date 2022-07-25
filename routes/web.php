@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\MarineController;
 use App\Http\Controllers\Admin\Cate_mariController;
 use App\Http\Controllers\Admin\ProController;
+use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\User\MariController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -96,19 +97,6 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
 
     });
 
-    Route::prefix('marine')->name('marine.')->group(function () {
-        Route::get('index',[MarineController::class,'index'])->name('index');
-
-        Route::get('delete/{id}',[MarineController::class,'delete'])->name('delete')->where('id', '[0-9]+');
-
-        Route::get('create',[MarineController::class,'create'])->name('create');
-        Route::post('store',[MarineController::class,'store'])->name('store');
-
-        Route::get('edit/{id}',[MarineController::class,'edit'])->name('edit')->where('id', '[0-9]+');
-        Route::post('update/{id}',[MarineController::class,'update'])->name('update')->where('id', '[0-9]+');
-
-    });
-
     Route::prefix('event')->name('event.')->group(function() {
         Route::get('/', [EventController::class, 'index'])->name('index');
 
@@ -173,6 +161,7 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::get('coral',[MariController::class, 'coral'])->name('coral');
         Route::get('other',[MariController::class, 'other'])->name('other');
         Route::get('Information,{id}',[MariController::class, 'Information'])->name('Information')->where('id','[0-9]+');
+        Route::post('post',[MariController::class, 'post'])->name('post');
     });
 });
 

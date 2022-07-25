@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-4 about-w3-grids">
                 <div class="trust-icon-w3ls">
-                    <i class="fa fa-" aria-hidden="true">Turtle</i>
+                    <i class="fa fa-" aria-hidden="true">Others</i>
                 </div>
                   <img src="{{ asset('assets/images/turtle.jpg') }}" class="mari">
                 <a class="read-agileits" href="{{route('user.marine.other')}}">Read More</a>

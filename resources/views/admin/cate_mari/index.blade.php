@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('content')
-@section('module', 'Marine')
+@section('module', 'Cate - Marine')
 @section('action', 'List')
 @push('css')
 <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -51,8 +51,8 @@
                         <td>Id</td>
                         <td>Name</td>
                         <td>Created_at</td>
-                        <td style="width: 40px">Delete</td>
                         <td style="width: 40px">Edit</td>
+                        <td style="width: 40px">Delete</td>
                     </tr>
                 </thead>
                 @foreach($marine_creatures as $cate_mari)
@@ -60,8 +60,8 @@
                         <td>{{ $loop->iteration }}</td>                  
                         <td>{{ $cate_mari->name }}</td>
                         <td>{{ $cate_mari->created_at }}</td>
-                        <td><a onclick="return confirmDelete()" href="{{ route('admin.cate_mari.delete', ['id' => $cate_mari->id]) }}">Delete</a></td>
-                        <td><a href="{{ route('admin.cate_mari.edit', ['id' => $cate_mari->id]) }}">Edit</a></td>
+                        <td class="project-actions text-right"><a href="{{ route('admin.cate_mari.edit', ['id' => $cate_mari->id]) }}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
+                        <td class="project-actions text-right"><a  onclick="return confirmDelete()" href="{{ route('admin.cate_mari.delete', ['id' => $cate_mari->id]) }}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                     </tr>
                 @endforeach    
             </table>

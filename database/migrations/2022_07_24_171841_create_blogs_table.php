@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('intro')->nullable();
             $table->string('image');
-            $table->string('content')->nullable();
+            $table->longText('content')->nullable();
             $table->string('status');
             $table->unsignedBigInteger('marine_creatures_id')->nullable();
             $table->foreign('marine_creatures_id')->references('id')->on('marine_creatures');

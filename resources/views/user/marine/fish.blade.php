@@ -36,7 +36,7 @@ https://templatemo.com/tm-556-catalog-z
                 <figure class="effect-ming tm-video-item">
                     @php
                         $images = $lte->image == NULL ? 'no-image.png' : $lte->image;
-                        $image_url = asset('assets/images/'. $images);
+                        $image_url = asset('images/'. $images);
                     @endphp
                     <img src="{{ $image_url }}" alt="Image" class="lte" style="width: 100%; height: 200px">
                     <figcaption class="d-flex align-items-center justify-content-center">
