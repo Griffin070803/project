@@ -58,7 +58,7 @@ Route::get('gio-hang',[CartController::class,'cart'])->name('cart');
 Route::get('xoa-san-pham-gio-hang/{id}',[CartController::class,'deleteCart'])->name('deleteCart')->where('id','[0-9]+');
 
 //admin
-Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
+Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { //
 
     Route::post('ckeditor/image_upload', [CkeditorController::class, 'upload'])->name('upload');
 

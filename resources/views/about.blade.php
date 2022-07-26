@@ -121,7 +121,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="team-row w3ls-team-row">  
             <div class="col-md-3 col-sm-3 col-xs-6 team-wthree-grids">   
                 <div class="w3ls-effect">
-                    <img src="images/img1.jpg" alt="img">
+                    <img src="images/v.jpg" alt="img">
                     <div class="w3layouts-caption">
                         <h4>Nguyen Quang Vinh</h4> 
                         <p>Team Leader</p>
@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6 team-wthree-grids">   
                 <div class="w3ls-effect">
-                    <img src="images/img2.jpg" alt="img">
+                    <img src="images/m1.jpg" alt="img">
                     <div class="w3layouts-caption">
                         <h4>Tran Cong Minh</h4> 
                         <p>Team Member</p>
@@ -153,7 +153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6 team-wthree-grids">   
                 <div class="w3ls-effect">
-                    <img src="images/img3.jpg" alt="img">
+                    <img src="images/me.jpg" alt="img">
                     <div class="w3layouts-caption">
                         <h4>Nguyen Huu Huan</h4> 
                         <p>Team Member</p>
@@ -169,7 +169,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6 team-wthree-grids">   
                 <div class="w3ls-effect">
-                    <img src="images/img4.jpg" alt="img">
+                    <img src="images/l.jpg" alt="img">
                     <div class="w3layouts-caption">
                         <h4>Bui Quang Lam</h4> 
                         <p>Team Member</p>
