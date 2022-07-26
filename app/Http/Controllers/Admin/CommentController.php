@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\DB;
 class CommentController extends Controller
 {
     public function index(){
-        $result = DB::table('comments')->get();
+        $result = DB::table('comments')
+        ->join('blogs','comments.blogs_id','=','blogs.id')
+        ->select('comments.*','blogs.name as CName')
+        ->get();;
         return view('admin.comment.index', ['comments'=> $result]);
     }
     public function delete($id){

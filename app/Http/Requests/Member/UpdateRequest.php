@@ -25,7 +25,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'username' => 'required|unique:members,username,'.$this->id,
-            'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'mimes:jpeg,png,jpg,gif,svg',
             'password' => 'required|min:6'
         ];
     }

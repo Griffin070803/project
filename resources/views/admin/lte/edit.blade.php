@@ -43,13 +43,6 @@
       
     <td>Hình cũ</td>
     <td><img src="{{ asset('images/'.$lte->image)}}" width="300px"/>  
-    <div class="form-group card-body">
-      <label>Status</label>
-      <select class="custom-select" name = "status">
-          <option value="0">Ẩn</option>
-          <option value="1">Hiển thị</option>
-      </select>
-    </div>
     <div class="card-body">
       <button type="submit"class="btn btn-info">Edit</button>
       <button type="reset" class="btn btn-default float-right">Cancel</button>

@@ -6,7 +6,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
 <script type="text/javascript" src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
     var value_children = parseInt($("#children_value").val());
@@ -77,12 +77,36 @@ $("#children").val(value_children);
     });
 })
 </script>
-
+<script src="{{asset('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script>
+    $(function () {
+      bsCustomFileInput.init();
+    });
+</script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript">
-    CKEDITOR.replace('ckeditor');
-    CKEDITOR.replace('ckeditor1');
-    CKEDITOR.replace('ckeditor2');
-    CKEDITOR.replace('ckeditor3');
-    CKEDITOR.replace('ckeditor4');
-    CKEDITOR.replace('ckeditor5');
+    CKEDITOR.replace('ckeditor',{
+        filebrowserUploadUrl: "{{ route('admin.upload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
+    CKEDITOR.replace('ckeditor1',{  
+        filebrowserUploadUrl: "{{ route('admin.upload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
+    CKEDITOR.replace('ckeditor2',{
+        filebrowserUploadUrl: "{{ route('admin.upload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
+    CKEDITOR.replace('ckeditor3',{
+        filebrowserUploadUrl: "{{ route('admin.upload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
+    CKEDITOR.replace('ckeditor4',{
+        filebrowserUploadUrl: "{{ route('admin.upload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
+    CKEDITOR.replace('ckeditor5',{
+        filebrowserUploadUrl: "{{ route('admin.upload', ['_token' => csrf_token()]) }}",
+        filebrowserUploadMethod: 'form'
+    });
 </script>

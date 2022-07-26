@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_user');
             $table->string('rating');
-            $table->string('comment_body');
+            $table->string('comment_body')->nullable();
             $table->tinyInteger('status')->default('1');
             $table->unsignedBigInteger('blogs_id');
             $table->foreign('blogs_id')->references('id')->on('blogs');

@@ -38,6 +38,7 @@
                 <thead>
                     <tr>
                         <td>Id</td>
+                        <td>Marine  Name</td>
                         <td>Name</td>
                         <td>Rating</td>
                         <td>Comment_body</td>
@@ -50,6 +51,7 @@
                     <tr>
                         
                         <th>{{ $comment->id}}</th>
+                        <th>{{ $comment->CName}}</th>
                         <th>{{ $comment->name_user}}</th>
                         <th>{{ $comment->rating}}</th>
                         <th>{{ $comment->comment_body}}</th>

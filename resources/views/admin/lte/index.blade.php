@@ -74,15 +74,11 @@
                 <td>{{ $lte->name }}</td>                
                 <td>{{ $lte->intro }}</td>
                 {{-- <td>{!! $lte->content !!}</td> --}}
-                <td>@if($lte->status == 1)
-                    
-                    <a href="{{route('admin.lte.active', ['id'=> $lte->id])}}"><span
-                        style="color:rgb(28, 212, 44);font-size:2.0em;"
-                        class="fa-thumbs-styling fa fa-thumbs-up"></span></a>
-                @else 
-                   <a href="{{route('admin.lte.unactive', ['id'=> $lte->id])}}"><span
-                    style="color:red;font-size:2.0em;"class="fa-thumbs-styling fa fa-thumbs-down"></span></a>
-                 
+                <td>@if ($lte->status == 1) 
+                
+                    <span class="badge bg-success">Show</span>
+                @else
+                    <span class="badge bg-danger">Hide</span>
                 @endif
                 </td>
                 <td>{{ $lte->created_at }}</td>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->longText('details');
-            $table->string('schedule');
+            $table->longText('schedule');
             $table->dateTime('timestart');
             $table->dateTime('timeend');
             $table->string('slot');

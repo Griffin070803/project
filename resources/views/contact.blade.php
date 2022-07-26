@@ -114,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //contact -->
 	<!-- map -->
 	<div class="map">
-		<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6104.189837287142!2d-74.04214032359903!3d40.09559661761485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sthe%20boardwalk%20in%20Point%20Pleasant%20Beach%2C%20Singapore!5e0!3m2!1svi!2s!4v1658828177920!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7921554405825!2d103.85708781467014!3d1.299507999052204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19b1d754cd1b%3A0xd2c77bcbfbbbab7!2sBeach%20Rd%2C%20Singapore!5e0!3m2!1svi!2s!4v1658855803100!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 	</div>
 	<!-- //map --> 
 <!-- footer -->

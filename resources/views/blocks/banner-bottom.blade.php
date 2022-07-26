@@ -25,7 +25,7 @@
 		</div>
 		<div class="bnr-btm-info">
 			<h3>Visit our location</h3>
-			<p>300 Ocean Ave N, Point Pleasant Beach, NJ 08742, <br>The USA</p>
+			<p>300 Ocean Ave N, Point Pleasant Beach, <br>Singapore</p>
 		</div>
 		<div class="clearfix"> </div>
 	</div>

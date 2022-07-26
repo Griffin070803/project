@@ -7,10 +7,10 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RegisterController;
 use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\MarineController;
 use App\Http\Controllers\Admin\Cate_mariController;
 use App\Http\Controllers\Admin\ProController;
 use App\Http\Controllers\Admin\CommentController;
+use App\Http\Controllers\Admin\CkeditorController;
 use App\Http\Controllers\User\MariController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -58,7 +58,9 @@ Route::get('gio-hang',[CartController::class,'cart'])->name('cart');
 Route::get('xoa-san-pham-gio-hang/{id}',[CartController::class,'deleteCart'])->name('deleteCart')->where('id','[0-9]+');
 
 //admin
-Route::prefix('admin')->middleware('login')->name('admin.')->group(function() {  //
+Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
+
+    Route::post('ckeditor/image_upload', [CkeditorController::class, 'upload'])->name('upload');
 
     Route::prefix('member')->name('member.')->group(function() {
         Route::get('/', [MemberController::class, 'index'])->name('index');
@@ -71,6 +73,9 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
        
         Route::get('edit/{id}', [MemberController::class, 'edit'])->name('edit')->where('id', '[0-9]+'); 
         Route::post('update/{id}', [MemberController::class, 'update'])->name('update')->where('id', '[0-9]+');
+
+        Route::get('active/{id}',[MemberController::class, 'active'])->name('active')->where('id', '[0-9]+');
+        Route::get('unactive/{id}',[MemberController::class, 'unactive'])->name('unactive')->where('id', '[0-9]+');
     });
 
     Route::prefix('category')->name('category.')->group(function(){
@@ -113,6 +118,7 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
 
         Route::get('edit/{id}', [EventController::class, 'edit'])->name('edit')->where('id', '[0-9]+'); 
         Route::post('update/{id}', [EventController::class, 'update'])->name('update')->where('id', '[0-9]+'); 
+
     });
 
     Route::prefix('category')->name('category.')->group(function(){

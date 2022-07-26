@@ -40,7 +40,7 @@
 					<li>
 						<div class="banner-text">
 							<h6>Ready for adventure</h6>
-							<h3>Diverse marine lif</h3>
+							<h3>Diverse marine life</h3>
 							<p>Discover diverse and abundant marine life</p>
 						</div>
 					</li>

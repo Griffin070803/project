@@ -39,13 +39,12 @@
       {{-- <input type="text" name="content" value="{{old ('content')}}" class="form-control"  placeholder="Vui lòng nhập nội dung"/-> --}}
       <textarea  class="form-control" name="content" id="ckeditor2" >{{old('content')}}</textarea>
     </div> 
-  <div class="form-group card-body">
-    <label>Status</label>
-    <select class="custom-select" name = "status">
-        <option value="0">Ẩn</option>
-        <option value="1">Hiển thị</option>
-    </select>
-  </div>
+    <div class="form-group card-body">
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1" name="status" value="off">
+        <label class="custom-control-label" for="customSwitch1">Status</label>
+      </div>
+    </div>
   <div class="form-group card-body">
     <label>marine_creatures</label>
     <select name="marine_creatures_id" class="form-control">

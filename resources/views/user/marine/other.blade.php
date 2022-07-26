@@ -57,7 +57,10 @@ https://templatemo.com/tm-556-catalog-z
             </div>
             @endif
             @endforeach
-            {{$blogs3->appends(request()->all())->links()}}
+            <div style="width: 100%; display: flex; align-items: center;justify-content: center; margin-bottom: 70px;">
+                {{$blogs3->appends(request()->all())->links()}}
+            </div>
+            
     </div> <!-- container-fluid, tm-container-content -->
     {{-- <div style="width: 100%; display: flex; align-items: center;justify-content: center; margin-bottom: 70px;">
         {{ $blogs1->links() }}

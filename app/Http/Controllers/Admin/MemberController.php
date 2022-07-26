@@ -91,4 +91,14 @@ class MemberController extends Controller
         DB::table('members')->where('id', '=', $id)->delete();
        return redirect()->route('admin.member.index');
     }
+
+    public function unactive($id){
+        DB::table('events')->where('id','=',$id)->update(['level' => 1]);
+        return redirect()->route('admin.event.index');
+    }
+    public function active($id)
+    {
+        DB::table('events')->where('id','=',$id)->update(['level' => 2]);
+        return redirect()->route('admin.event.index');
+    }
 }
