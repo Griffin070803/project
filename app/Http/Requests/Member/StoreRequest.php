@@ -27,7 +27,7 @@ class StoreRequest extends FormRequest
             'level' => 'required',
             'username' => 'required|unique:members',
             'email' => 'required|unique:members|regex:/(.+)@(.+)\.(.+)/i',
-            'avatar' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'avatar' => 'required|mimes:jpeg,png,jpg,gif,svg',
             'password' => 'required|min:6'
         ];
     }

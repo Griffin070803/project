@@ -42,11 +42,11 @@
         </div>
         <div class="form-group card-body">
             <label>Time Start</label>
-            <input type="datetime-local" name="timestart">
+            <input type="datetime-local" class="form-control"  name="timestart">
         </div>
         <div class="form-group card-body">
             <label>Time End</label>
-            <input type="datetime-local" name="timeend">
+            <input type="datetime-local" class="form-control"  name="timeend">
         </div>
         <div class="form-group card-body">
             <label>Slot</label>

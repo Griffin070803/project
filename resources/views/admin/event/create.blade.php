@@ -33,11 +33,11 @@
     </div>
     <div class="form-group card-body">
         <label>Time Start</label>
-        <input type="datetime-local" name="timestart" class="form-control" value="{{old('timestart')}}">
+        <input type="datetime-local" name="timestart"  class="form-control" value="{{old('timestart')}}">
     </div>
     <div class="form-group card-body">
         <label>Time End</label>
-        <input type="datetime-local" name="timeend" class="form-control" value="{{old('timeend')}}">
+        <input type="datetime-local" name="timeend"  class="form-control" value="{{old('timeend')}}">
     </div>
     <div class="form-group card-body">
         <label>Slot</label>
