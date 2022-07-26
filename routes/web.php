@@ -31,6 +31,8 @@ Route::get('/', function () {
 });
 //trang chủ
 Route::get('/', [HomeController::class, 'master'])->name('master');
+//about
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 //user sự kiện
 Route::get('/event', [HomeController::class, 'event'])->name('event');
@@ -94,6 +96,9 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
 
         Route::get('edit/{id}',[ProController::class,'edit'])->name('edit')->where('id', '[0-9]+');
         Route::post('update/{id}',[ProController::class,'update'])->name('update')->where('id', '[0-9]+');
+
+        Route::get('active/{id}',[ProController::class, 'active'])->name('active')->where('id', '[0-9]+');
+        Route::get('unactive/{id}',[ProController::class, 'unactive'])->name('unactive')->where('id', '[0-9]+');
 
     });
 

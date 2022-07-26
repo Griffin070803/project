@@ -24,9 +24,10 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:name',
+            'name' => 'required|unique:blogs,name,'.$this->id,
             'intro' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'image' => 'mimes:jpeg,png,jpg,gif,svg',
 
         ];
     }

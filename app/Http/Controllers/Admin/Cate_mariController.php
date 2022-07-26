@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\CategoryMarineRequest;
+use App\Http\Requests\Admin\CategoryMarineUpdateRequest;
 use Illuminate\Support\Facades\DB;
 
 class Cate_mariController extends Controller
@@ -18,7 +20,7 @@ class Cate_mariController extends Controller
         return view('admin.cate_mari.create', ['marine_creatures'=>$cate_mari]);
     }
     
-    public function store (Request $request){
+    public function store (CategoryMarineRequest $request){
         $data = $request->except('_token'); // lay du lieu duoc nhap
         $data['created_at'] = new \DateTime();
         DB::table('marine_creatures')->insert($data); //lay du lieu duoc nhap dua vafo table
@@ -30,7 +32,7 @@ class Cate_mariController extends Controller
         $edit = DB::table('marine_creatures')->where('id', $id)->first();
         return view('admin.cate_mari.edit',['marine_creatures'=>$cate_mari, 'edit'=>$edit]);
     }
-    public function update (Request $request, $id){
+    public function update (CategoryMarineUpdateRequest $request, $id){
         $data = $request->except('_token');
         DB::table('marine_creatures')->where('id','=',$id)->update($data);
         return redirect()->route('admin.cate_mari.index')->with('success','Edit successfully');

@@ -25,6 +25,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}" rel="stylesheet">
 <!--//fonts-->
 </head>
+<style>
+    .sbox {
+    position: absolute;
+    top: 260px;
+    left: 1200px;
+    }
+    .stext {
+    width: 300px;
+    height: 50px;
+    background: #e4e6eb;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #0e0606;
+    padding-left: 45px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    }
+    .fa-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 16px;
+    margin-top: 16px;
+    z-index: 1;
+    color: rgb(16, 2, 2);
+    }
+	body{
+		margin:0 !important;
+	}
+    </style>
+
 <body>
 <!-- Header -->
 <div id="home" class="banner inner-bnr-w3l">
@@ -46,8 +79,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="{{ route('master') }}">HOME</a></li>
+							<li><a href="{{ route('about') }}" class="active">ABOUT</a></li>
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle, active" data-toggle="dropdown">MARINE<b class="caret"></b></a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE<b class="caret"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
 									<li><a href="{{route('user.marine.fish')}}">Fish</a></li>
 									<li><a href="{{route('user.marine.coral')}}">Coral</a></li>

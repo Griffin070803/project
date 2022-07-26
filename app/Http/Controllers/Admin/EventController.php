@@ -21,6 +21,7 @@ class EventController extends Controller
         return view('admin.event.create', ['categories'=> $category]);
     } 
     public function delete ($id) {
+        DB::table('information_people')->where('events_id',$id)->delete();
         DB::table('events')->where('id', $id)->delete();
         return redirect()->route('admin.event.index');
     } 

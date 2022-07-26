@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\LoginRequest;
 
 class LoginController extends Controller
 {
@@ -14,7 +15,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    public function postlogin (Request $request) {
+    public function postlogin (LoginRequest $request) {
         $credentials = $request->validate([
             'email' => ['required'],
             'password' => ['required'],

@@ -25,7 +25,7 @@
 		</div>
 		<div class="bnr-btm-info">
 			<h3>Visit our location</h3>
-			<p>35/6 D5 street, Ward 25, Binh Thanh District,<br>Ho Chi Minh City</p>
+			<p>300 Ocean Ave N, Point Pleasant Beach, NJ 08742, <br>The USA</p>
 		</div>
 		<div class="clearfix"> </div>
 	</div>

@@ -25,7 +25,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'username' => 'required|unique:members,username,'.$this->id,
-            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
+            'image' => 'mimes:jpeg,png,jpg,gif,svg|max:2048',
             'password' => 'required|min:6'
         ];
     }

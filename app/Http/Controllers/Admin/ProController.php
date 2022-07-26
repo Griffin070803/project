@@ -76,6 +76,18 @@ class ProController extends Controller
 
     public function delete($id) {
         DB::table('blogs')->where('id', '=', $id)->delete();
+        DB::table('blogs_images')->where('blogs_id', '=', $id)->delete();
+        DB::table('comments')->where('blogs_id', '=', $id)->delete();
+        return redirect()->route('admin.lte.index');
+    }
+
+    public function unactive($id){
+        DB::table('blogs')->where('id','=',$id)->update(['status' => 1]);
+        return redirect()->route('admin.lte.index');
+    }
+    public function active($id)
+    {
+        DB::table('blogs')->where('id','=',$id)->update(['status' => 0]);
         return redirect()->route('admin.lte.index');
     }
 

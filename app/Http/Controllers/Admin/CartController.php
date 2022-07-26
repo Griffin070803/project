@@ -39,7 +39,7 @@ class CartController extends Controller
     {
         $email = DB::table('information_people')->where('id',$id)->first();
         Mail::to($email->email)->send(new NotifyMail());
-        return redirect()->route('index',['id' =>$email->events_id]);
+        return redirect()->route('infor',['id' =>$email->events_id])->with('success','Book Successfully');
     }
     public function getRegister() {
         $data = DB::table('information_people')->get();

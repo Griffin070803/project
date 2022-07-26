@@ -14,7 +14,7 @@ class ContactController extends Controller
     }
     public function delete($id){
         DB::table('category')->where('id','=',$id)->delete();
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.contact.index');
     }
 }
 

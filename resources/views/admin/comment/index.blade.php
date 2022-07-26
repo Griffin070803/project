@@ -37,7 +37,6 @@
             <table id="datatable" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th><input type="checkbox" name="all" id="checkall" />Check All</th>
                         <td>Id</td>
                         <td>Name</td>
                         <td>Rating</td>
@@ -49,7 +48,7 @@
         <tbody>
             @foreach($comments as $key => $comment)
                     <tr>
-                        <th><input type="checkbox" class="cb-element" /></th>
+                        
                         <th>{{ $comment->id}}</th>
                         <th>{{ $comment->name_user}}</th>
                         <th>{{ $comment->rating}}</th>
@@ -59,14 +58,15 @@
                     <td>
 
                     @if($comment->status == 1)
-                    
-                        <a href="{{route('admin.comment.active', ['id'=> $comment->id])}}">{{$comment->status}}</a>
+                        <a href="{{route('admin.comment.active', ['id'=> $comment->id])}}"><span
+                            style="color:rgb(28, 212, 44);font-size:2.0em;"
+                            class="fa-thumbs-styling fa fa-thumbs-up"></span></a>
                     @else 
-                       <a href="{{route('admin.comment.unactive', ['id'=> $comment->id])}}">{{$comment->status}}</a>
-                     
+                       <a href="{{route('admin.comment.unactive', ['id'=> $comment->id])}}"><span
+                        style="color:red;font-size:2.0em;"class="fa-thumbs-styling fa fa-thumbs-down"></span></a>
                     @endif
                     </td>
-                        <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $comment->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
+                        <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.comment.delete', ['id'=> $comment->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                         
                     </tr>
                 </tbody>
@@ -76,20 +76,5 @@
 
         <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript">
-    $('#checkall').change(function () {
-    $('.cb-element').prop('checked',this.checked);
-    });
-
-    $('.cb-element').change(function () {
-        if ($('.cb-element:checked').length == $('.cb-element').length){
-    $('#checkall').prop('checked',true);
-        }
-        else {
-    $('#checkall').prop('checked',false);
-    }
-    });
-    </script>
 </div>
       @endsection

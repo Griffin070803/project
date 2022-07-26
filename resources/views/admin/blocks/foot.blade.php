@@ -1,21 +1,3 @@
-{{-- <div class="wrapper">
-<footer class="main-footer">
-    <strong>Copyright &copy; {{ date('Y') }} <a href="">RangersTeam</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b>{{ app()->version() }}
-    </div>
-  </footer>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper --> --}}
-
-
 <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -27,70 +9,71 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+    var value_children = parseInt($("#children_value").val());
+    var value_adult = parseInt($("#adult_value").val());
     var gia_ve = parseInt($("#gia-tien").text());
-    
+    var sum = parseInt($('#sum').val());
+    var slot = parseInt($('#slot').val());
+    var slot_du = slot - sum;
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
         minimumFractionDigits: 0
     });
-    //validate form
+    //children
     $("#children").keyup(function(){
         var children = $(this).val();
-        $("#so-tien-tre-em").html(`Trẻ em: `+children+`*`+formatter.format(gia_ve/2))
+        if (isNaN(children)|| children < 0) {
+            $("#so-tien-tre-em").text(`Children: `+value_children+`*`+formatter.format(gia_ve/2));
+            $("#children").val(value_children);
+                }else{
+                    if (children > slot_du) {
+                    alert(`The remaining amount: `+slot_du);
+                    $("#so-tien-tre-em").text(`Children: `+value_children+`*`+formatter.format(gia_ve/2));
+                    $("#children").val(value_children);
+
+                }else{
+                    $("#so-tien-tre-em").html(`Children: `+children+`*`+formatter.format(gia_ve/2));
+                }
+                }
     });
-   
+   //adult
     $("#adult").keyup(function(){
         var adult = $(this).val();
-        $("#so-tien-nguoi-lon").html(`Người Lớn: `+adult+`*`+formatter.format(gia_ve));
         
-        
+        if (isNaN(adult) || adult <= 0) {
+            $("#so-tien-nguoi-lon").text(`Adult :`+value_adult+`*`+formatter.format(gia_ve));
+            $("#adult").val(value_adult);
+                }else {
+                    if (adult > slot_du) {
+                    alert(`The remaining amount: `+slot_du);
+                    $("#so-tien-nguoi-lon").text(`Adult :`+value_adult+`*`+formatter.format(gia_ve));
+                    $("#adult").val(value_adult);
+                }else{
+                    $("#so-tien-nguoi-lon").html(`Adult :`+adult+`*`+formatter.format(gia_ve));
+                }
+                }
     });
-
-    // $("#tinh-tien").click(function(){
-    //     let total= 0;
-    //     total += ($("#adult").val()*gia_ve) + ($("#children").val()*gia_ve/2)
-
-    //     if (isNaN(total)==false){
-    //         $("#so-tien-moi").html(formatter.format(total))
-    //     }else{
-    //         $("#so-tien-moi").html('Lỗi')
-    //         isNaN($("#so-tien-nguoi-lon").val())?  $("#so-tien-nguoi-lon").css('border','1px solid red'):$("#so-tien-nguoi-lon").css('border','1px solid black')
-    //         isNaN($("#so-tien-tre-em").val()) ? $("#so-tien-tre-em").css('border','1px solid red'):$("#so-tien-tre-em").css('border','1px solid black')
-    //         // if (isNaN($("#so-tien-nguoi-lon").val())) {
-    //         //     $("#so-tien-nguoi-lon").css('border','1px solid red')
-    //         // }else {
-    //         //     $("#so-tien-nguoi-lon").css('border','1px solid black')
-    //         // }
-    //         // if (isNaN($("#so-tien-tre-em").val())) {
-    //         //     $("#so-tien-tre-em").css('border','1px solid red')
-    //         // }else { 
-    //         //     $("#so-tien-tre-em").css('border','1px solid black')
-    //         // }
-    //     }
-    //     // }
-    // })
     $(".qty1").on("keyup", function(){
         let total= 0;
-        total += ($("#adult").val()*gia_ve) + ($("#children").val()*gia_ve/2)
-
-        if (isNaN(total)==false){
-            $("#so-tien-moi").html(formatter.format(total))
-        }else{
-            $("#so-tien-moi").html('Lỗi')
-            // isNaN($("#adult").val()) ?  $("#adult").css('border','1px solid red'):$("#adult").css('border','1px solid black');
-            // isNaN($("#children").val()) ? $("#children").css('border','1px solid red'):$("#children").css('border','1px solid black');
-            if (isNaN($("#adult").val())) {
-                $("#adult").css('border','1px solid red');
-            }else {
-$("#adult").css('border','1px solid black');
-            };
-            if (isNaN($("#children").val())) {
-                $("#children").css('border','1px solid red');
-            }else { 
-                $("#children").css('border','1px solid black');
-            };
-        }
+                let so_luong = parseInt($("#adult").val()) + parseInt($("#children").val());
+                    if (so_luong > slot_du) {
+                        alert(`Slot chỉ còn dư: `+slot_du);
+                        $("#so-tien-nguoi-lon").text(value_adult+`*`+formatter.format(gia_ve));
+                        $("#adult").val(value_adult);
+                        $("#so-tien-tre-em").text(value_children+`*`+formatter.format(gia_ve/2));
+$("#children").val(value_children);
+                }
+                total += parseInt(($("#adult").val()*gia_ve)) + parseInt(($("#children").val()*gia_ve/2));
+                if (isNaN(total)==false){
+                    $("#so-tien-moi").html(formatter.format(total));
+                    
+                }else{
+                    $("#so-tien-moi").html('0');
+                    alert('Children or Adult error');
+                    isNaN($("#adult").val()) ?  $("#adult").css('border','1px solid red'):$("#adult").css('border','1px solid black');
+                    isNaN($("#children").val()) ? $("#children").css('border','1px solid red'):$("#children").css('border','1px solid black');
+                }
     });
 })
 </script>

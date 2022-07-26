@@ -1,13 +1,13 @@
 @extends('user.pro')
-@section('content')
 @section('action', 'OTHER')
+@section('content')
 <div><h3 class="heading-agileinfo">Other<i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JENKINSON SEA LIFE | OTHER</title>
+    <title>Catalog-Z Bootstrap 5.0 HTML Template</title>
     <link rel="stylesheet" href="{{ asset('temple556/css/bootstrap.min.css')}}">
     {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/templatemo-style.css')}}">
@@ -20,6 +20,12 @@ https://templatemo.com/tm-556-catalog-z
 -->
 </head>
 <body>
+    <div class="box">
+        <form class="sbox" action="" method="get">
+            <input class="stext" type="text" id="search" name="search" placeholder="search...">             
+                    <i class="fa fa-search"></i>
+        </form>
+    </div>
     <!-- Page Loader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
@@ -31,6 +37,7 @@ https://templatemo.com/tm-556-catalog-z
    
         <div class="row tm-mb-90 tm-gallery">
             @foreach ($blogs3 as $lte)
+            @if ($lte->status == 1)
         	<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5">                
                 <figure class="effect-ming tm-video-item">
                     @php
@@ -48,12 +55,13 @@ https://templatemo.com/tm-556-catalog-z
                     <span>9,906 views</span>
                 </div> --}}
             </div>
+            @endif
             @endforeach
-    
+            {{$blogs3->appends(request()->all())->links()}}
     </div> <!-- container-fluid, tm-container-content -->
-    <div style="width: 100%; display: flex; align-items: center;justify-content: center; margin-bottom: 70px;">
-        {{ $blogs3->links() }}
-    </div>
+    {{-- <div style="width: 100%; display: flex; align-items: center;justify-content: center; margin-bottom: 70px;">
+        {{ $blogs1->links() }}
+    </div> --}}
     
     <script src="{{ asset('temple556/js/plugins.js')}}"></script>
     <script>

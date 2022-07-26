@@ -3,7 +3,7 @@
         <div class="w3_agile_footer_grids">
             <div class="col-md-4 w3_agile_footer_grid">
                 <h3 class="white-w3ls">Visit our location</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.06118147879!2d106.7100772147187!3d10.806626192301103!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a330e608a5%3A0x4cc00c5927dcb361!2zMzUsIDYgxJDGsOG7nW5nIEQ1LCBQaMaw4budbmcgMjUsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MjMwOCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1657198176586!5m2!1svi!2s" width="360" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6104.189837287142!2d-74.04214032359903!3d40.09559661761485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sthe%20boardwalk%20in%20Point%20Pleasant%20Beach%2C%20Singapore!5e0!3m2!1svi!2s!4v1658828177920!5m2!1svi!2s" width="360" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-md-4 w3_agile_footer_grid">
                 <h3 class="white-w3ls">Navigation</h3>
@@ -55,7 +55,7 @@
                 <div class="wthree_footer_grid_left">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                 </div>
-                <p>35/6 D5 street, Ward 25, Binh Thanh District, <span>Ho Chi Minh City.</span></p>
+                <p>300 Ocean Ave N, Point Pleasant Beach, NJ 08742, <span>The USA</span></p>
             </div>
             <div class="col-md-4 w3ls_footer_grid_left">
                 <div class="wthree_footer_grid_left">

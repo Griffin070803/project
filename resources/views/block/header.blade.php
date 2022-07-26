@@ -17,6 +17,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="{{ route('master') }}">HOME</a></li>
+                        <li><a href="{{ route('about') }}">ABOUT</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE<b class="caret"></b></a>
                             <ul class="dropdown-menu agile_short_dropdown">

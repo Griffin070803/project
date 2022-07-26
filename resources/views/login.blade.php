@@ -27,11 +27,20 @@
     </div>
     @endif
 </div>
-<div class="login-box" >
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+<div class="login-box">
   <div class="login-logo">
-    <a href=""><b>JENKINSON SEA LIFE</b></a>
+    <a href=""><b  style="color: darkblue;">JENKINSON SEA LIFE</b></a>
   </div>
-  <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Login to your account</p>
@@ -39,7 +48,7 @@
       <form action="{{ route('postlogin') }}" method="post">
         @csrf
         <div class="input-group mb-3">
-          <input type="text" name="email" class="form-control" placeholder="Email">
+          <input type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -61,19 +70,12 @@
           <!-- /.col -->
         </div>
       </form>
-
-      <!-- /.social-auth-links -->
-
-      {{-- <p class="mb-1">
-        <a href="">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="" class="text-center">Register a new membership</a>
-      </p> --}}
     </div>
-    <!-- /.login-card-body -->
   </div>
 </div>
+
+
+
 <!-- /.login-box -->
 
 <!-- jQuery -->

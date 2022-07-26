@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('module', 'Blog')
+@section('module', 'Blogs')
 @section('action', 'List')
 
 @push('css')
@@ -31,7 +31,11 @@
   });
 </script>
 @endpush
+
 @section('content')
+{{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> --}}
+
 @if (Session::has('success'))
 <div class="alert alert-success alert-block">
     <button type="button" class="close" data-dismiss="alert">x</button>
@@ -57,13 +61,12 @@
                 <td>Delete</td>
             </tr>
         </thead>
-        @foreach($blogs as $lte)
-            <tbody>
+        @forelse($blogs as $lte)
                 <td>{{ $loop->iteration }}</td>
                 <td>
                     @php
                         $image = $lte->image == NULL ? 'no-image.jpg' : $lte->image;
-                        $image_url = asset('images/'.$image);
+                        $image_url = asset('assets/images/'.$image);
                     @endphp
                     <img src="{{ $image_url }}"width="100px" height="100px" alt="">
                 </td>
@@ -71,13 +74,26 @@
                 <td>{{ $lte->name }}</td>                
                 <td>{{ $lte->intro }}</td>
                 {{-- <td>{!! $lte->content !!}</td> --}}
-                <td>{{ $lte->status }}</td>
+                <td>@if($lte->status == 1)
+                    
+                    <a href="{{route('admin.lte.active', ['id'=> $lte->id])}}"><span
+                        style="color:rgb(28, 212, 44);font-size:2.0em;"
+                        class="fa-thumbs-styling fa fa-thumbs-up"></span></a>
+                @else 
+                   <a href="{{route('admin.lte.unactive', ['id'=> $lte->id])}}"><span
+                    style="color:red;font-size:2.0em;"class="fa-thumbs-styling fa fa-thumbs-down"></span></a>
+                 
+                @endif
+                </td>
                 <td>{{ $lte->created_at }}</td>
                 <td class="project-actions text-right"><a href="{{ route('admin.lte.edit', ['id' => $lte->id]) }}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
-                <td class="project-actions text-right"><a onClick="return confirmDelete()" onclick="return confirmDelete()" href="{{ route('admin.lte.delete', ['id' => $lte->id]) }}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
+                <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{ route('admin.lte.delete', ['id' => $lte->id]) }}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr>
-        </tbody>
+            @empty
+            <tr>
+                <td collspan="9" align="center">No Data</td>
+            </tr>
 </div>           
-    @endforeach
+    @endforelse
     </table>
 @endsection

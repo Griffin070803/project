@@ -1,4 +1,5 @@
 @extends('user.pro')
+@section('action', 'INFORMATION')
 @section('content')
 <div><h3 class="heading-agileinfo">Details <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 <!DOCTYPE html>
@@ -11,6 +12,15 @@
     {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/templatemo-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/comment.css')}}">
+    <style type="text/css">
+        #comments_abc{
+            border:3px solid #00ff00;
+            width:100%;
+            height:500px;
+            overflow-x:hidden;
+            overflow-y:auto;
+        }
+    </style>
 <!--
     
 TemplateMo 556 Catalog-Z
@@ -39,7 +49,7 @@ https://templatemo.com/tm-556-catalog-z
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
                     @php
                        $image = $blogs->image == NULL ? 'no-image.png' : $blogs->image;
-					    $image_url = asset('images/'.$image)
+					    $image_url = asset('assets/images//'.$image)
                     @endphp
                    <img src="{{$image_url}}" class="fish" style="width: 100%; height: 500px">                  
             </div>     
@@ -58,12 +68,17 @@ https://templatemo.com/tm-556-catalog-z
                         </div>
                     <div>
                         <h3 class="tm-text-gray-dark mb-3"></h3>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block"><img src="{{ asset ('images/bachtuoc-trang.jpg')}}" widtd="50px" height="80px" alt=""></a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block"><img src="{{ asset ('images/haiquy.jpg')}}" widtd="50px" height="80px" alt=""></a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Nature</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Background</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Timelapse</a>
-                        <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Night</a>
+                        @php
+                                foreach ($blogs_img as $blog_img){
+                                    // if ($blog_img->blogs_id == $blogs->id){
+                                        // $image = $blogs->image == NULL ? 'no-image.jpg' : $blogs->image;
+                                        $image_url = asset('images/'. $blog_img->avatar);
+                                        $html = '<a class="tm-text-primary mr-4 mb-2 d-inline-block"><img src="';
+                                        $html2='" widtd="50px" height="80px" alt=""></a>';
+                                        echo $html.$image_url.$html2;
+                                    }
+                                
+                        @endphp
                         {{-- <a href="#" class="tm-text-primary mr-4 mb-2 d-inline-block">Real Estate</a> --}}
                     </div> 
                     {{-- @endforeach --}}
@@ -103,7 +118,13 @@ https://templatemo.com/tm-556-catalog-z
 
     
             <div class="be-comment-block">
-                <h1 class="comments-title">Comments</h1>
+                <h1 class="comments-title">Comments ( {{$sum}})</h1>
+                <h1 class="comments-title">Rating  <span style="color: red; font-size:18px">
+                    @php
+                    echo round($avg/$sum, 1).'☆';
+                    @endphp
+                </span></h1>
+                <div id="comments_abc">
                 @foreach($comments as $comment)
             @if($comment->status == 1)
                 <div class="be-comment">
@@ -131,9 +152,10 @@ https://templatemo.com/tm-556-catalog-z
                             {{$comment->comment_body}}
                         </p>
                     </div>
-            
+                </div>
             @endif
                 @endforeach
+                </div>
             
                 
             
@@ -175,7 +197,9 @@ https://templatemo.com/tm-556-catalog-z
                     </div>
                 </form>
         </div>
-
+    </div>
+</div>
+</div>
 
         
             
@@ -188,6 +212,29 @@ https://templatemo.com/tm-556-catalog-z
         $(window).on("load", function() {
             $('body').addClass('loaded');
         });
+</script>
+<script type="text/javascript" src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
+<script type="text/javascript" >
+   
+    $(document).ready(function(){
+        $("#comment").css("display","none");
+        $("#name_user").keyup(function(){
+            if($(this).val()!="" && isNaN($(this).val())){
+                $("#comment").css("display","inline");
+            }
+            else{
+                $("#comment").css("display","none");
+            }
+        })
+        $("#comment").click(function(){
+            alert('Rating not null');
+        })
+        $(".danh_gia").change(function () {
+            if($(this).val!=0){
+                $("#comment").replaceWith(`<input type="submit"  value="SUBMIT" id="comment">`);
+            }
+        })
+    })
 </script>
 </body>
 </html>

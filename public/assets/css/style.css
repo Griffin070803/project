@@ -46,7 +46,7 @@ label{
 }
 /*--banner-slider--*/
 .banner {
-    background: url(../images/e.jpg) no-repeat 0px 0px;
+    background: url(../images/mas.jpg) no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
     -webkit-background-size: cover;
@@ -664,7 +664,7 @@ ul.social-agileinfo li a:hover i.fa-google-plus {
 /*-- //about --*/
 /*-- Reasons to trust us --*/
 .reasons-agileits-w3layouts{
-	background: url(../images/e.jpg) no-repeat 0px 0px;
+	background: url(../images/mas.jpg) no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
     -webkit-background-size: cover;
@@ -741,7 +741,7 @@ a.read-agileits:hover {
 /*-- //Reasons to trust us --*/
 /*-- testimonials --*/
 .testimonials{
-	background: url(../images/e.jpg) no-repeat 0px 0px;
+	background: url(../images/mas.jpg) no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
     -webkit-background-size: cover;
@@ -816,7 +816,7 @@ a.read-agileits:hover {
 /*-- //Stats --*/
 /*--Inner pages--*/
 .inner-bnr-w3l{
-    background: url(../images/aq.jpg) no-repeat 0px 0px;
+    background: url(../images/mas.jpg) no-repeat 0px 0px;
     background-attachment: fixed;
     min-height: 250px!important;
 }
@@ -2968,8 +2968,8 @@ h2.heading-agileinfo:before, h3.heading-agileinfo:before {
 	height: 200px; 
 }
 .ab {
-	width: 550px;
-	height: 280px;
+	width: 400px;
+	height: 300px;
 }
 
 .event {

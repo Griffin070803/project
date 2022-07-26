@@ -1,7 +1,8 @@
 @extends('admin.master')
-@section('content')
-@section('module', 'Blog')
+@section('module', 'Blogs')
 @section('action', 'Create')
+
+@section('content')
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
  
 @if ($errors->any())

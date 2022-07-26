@@ -1,7 +1,8 @@
 @extends('admin-master')
-@section('content')
 @section('module', 'Information')
 @section('action', 'Edit')
+@section('content')
+
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -15,6 +16,9 @@
 @csrf
     <!-- Default box -->
     <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Edit</h3>
+        </div>
         <div class="card-body">
             <label>FullName</label>
             <input type="text" name="fullname" class="form-control" value="{{$product->fullname}}">
@@ -37,11 +41,21 @@
         <div class="form-group card-body">
             <label>Adult</label>
             <input type="text" name="adult" id="adult" class="form-control qty1"  value="{{$product->adult}}">
+            <input type="text"  id="adult_value"  style="display:none"  class="form-control qty1"  value="{{$product->adult}}" disabled>
         </div>
 
         <div class="form-group card-body">
             <label>Children</label>
             <input type="text" name="children" id="children" class="form-control qty1"  value="{{$product->children}}">
+            <input type="text"  id="children_value" style="display:none"  class="form-control qty1"  value="{{$product->children}}" disabled>
+        </div>
+        <div class="form-group card-body">
+            <label>Slot</label>
+            <input type="text" id="slot" class="form-control qty1"  value="{{$event->slot}}" disabled>
+        </div>
+        <div class="form-group card-body">
+            <label>Booked</label>
+            <input type="text" id="sum" class="form-control qty1"  value="{{$sum_adult + $sum_children}}" disabled>
         </div>
         <div style="display:none" id="gia-tien">{{$event->price}}</div>
         <div style="margin:15px" id ="so-tien-nguoi-lon"></div>
@@ -49,7 +63,7 @@
         <div style="margin:15px" id ="so-tien-moi"></div>
         <div class="card-body">
             <button type="submit"class="btn btn-info">Edit</button>
-            <button type="reset" class="btn btn-default float-right">Cancel</button>
+            <button type="reset" class="btn btn-default float-right">Reset</button>
         </div>
     </div>
 </form>
