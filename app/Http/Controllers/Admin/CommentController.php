@@ -12,7 +12,7 @@ class CommentController extends Controller
         $result = DB::table('comments')
         ->join('blogs','comments.blogs_id','=','blogs.id')
         ->select('comments.*','blogs.name as CName')
-        ->get();;
+        ->get();
         return view('admin.comment.index', ['comments'=> $result]);
     }
     public function delete($id){

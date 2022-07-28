@@ -119,6 +119,8 @@ Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { 
         Route::get('edit/{id}', [EventController::class, 'edit'])->name('edit')->where('id', '[0-9]+'); 
         Route::post('update/{id}', [EventController::class, 'update'])->name('update')->where('id', '[0-9]+'); 
 
+        Route::get('/details/{id}', [EventController::class, 'details'])->name('details')->where('id', '[0-9]+');
+
     });
 
     Route::prefix('category')->name('category.')->group(function(){

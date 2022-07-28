@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('module', 'Event')
-@section('action', 'List')
+@section('action', 'Details')
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -42,50 +42,32 @@
     </div>
     @endif
 </div>
-    <div class="card-header">
-    <h3 class="card-title">Event | <a href="{{route('admin.event.create')}}">Add event</a></h3>
-    </div>
     <!-- /.card-header -->
     <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Time Start</th>
-                <th>Time End</th>
-                <th>Slot</th>
-                <th>Price</th>
+                <th>Fullname</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Adult</th>
+                <th>Children</th>
                 <th>Created_at</th>
-                <th>Edit</th>
-                <th>Delete</th>
-                <th>Detail</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($events as $event)
+            @foreach($details as $detail)
             <tr>
                 <td>{{$loop->iteration}}</td>
-                <td>{{$event->name}}</td>
-                <td>
-                    @php
-                        $images = $event->image == NULL ? 'no-image.png' : $event->image;
-                        $image_url = asset('assets/dist/img/'.$images)
-                    @endphp
-                    <img src="{{$image_url}}" width="100px" height="50px">
-                </td>
-                {{-- <td>{!!$event->schedule!!}</td>
-                <td>{!!$event->details!!}</td> --}}
-                <td>{{$event->timestart}}</td>
-                <td>{{$event->timeend}}</td>
-                <td>{{$event->slot}}</td>
-                <td>@php echo number_format($event->price,0,"",".")@endphp</td> 
-                {{-- <td>{{$event->categorys_id}}</td> --}}
-                <td>{{ date('d/m/Y : H:i:s', strtotime($event->created_at)) }}</td>
-                <td class="project-actions text-right"><a href="{{route('admin.event.edit',['id'=>$event->id])}}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
-                <td class="project-actions text-right"><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
-                <td class="project-actions text-right"><a href="{{route('admin.event.details',['id'=>$event->id])}}" class="btn btn-info btn-sm" style="background: darkcyan;" href="#"><i class="fas fa-asterisk"></i></a></td>
+                <td>{{$detail->fullname}}</td>
+                <td>{{$detail->phone}}</td>
+                <td>{{$detail->email}}</td>
+                <td>{{$detail->address}}</td>
+                <td>{{$detail->adult}}</td>
+                <td>{{$detail->children}}</td>
+                <td>{{ date('d/m/Y : H:i:s', strtotime($detail->created_at)) }}</td>
             </tr> 
             @endforeach
         </tbody>    

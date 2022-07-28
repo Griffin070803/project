@@ -15,6 +15,20 @@ class EventController extends Controller
         return view('admin.event.index',['events'=>$events]);
     } 
 
+    public function details ($id) {
+        $events = DB::table('events')->where('id', $id)->get();
+
+        $details=DB::table('information_people')
+        ->join('events','information_people.events_id','=','events.id')
+        ->select('events.*','information_people.*')
+        ->where('events_id',$id)
+        ->get();
+        // return view('admin.event.details',['details'=>$details]);
+        // $details = DB::table('information_people')->where('id', $id)->get();
+        return view('admin.event.datails',['id' => $id],['details'=>$details,'events'=>$events]);
+    } 
+
+
     public function create () {
         $category = DB::table('categorys')->get();
         
