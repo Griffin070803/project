@@ -42,6 +42,9 @@
     </div>
     @endif
 </div>
+    <div class="card-header">
+    <h3 class="card-title">Event | Details: <span style="color:darkblue; font-size: 22px;">@foreach($events as $event){{$event->name}}@endforeach</span></h3>
+    </div>
     <!-- /.card-header -->
     <div class="card-body">
     <table id="example1" class="table table-bordered table-striped">
@@ -54,6 +57,7 @@
                 <th>Address</th>
                 <th>Adult</th>
                 <th>Children</th>
+                <th>Code</th>
                 <th>Created_at</th>
             </tr>
         </thead>
@@ -67,6 +71,7 @@
                 <td>{{$detail->address}}</td>
                 <td>{{$detail->adult}}</td>
                 <td>{{$detail->children}}</td>
+                <td>{{$detail->code}}</td>
                 <td>{{ date('d/m/Y : H:i:s', strtotime($detail->created_at)) }}</td>
             </tr> 
             @endforeach

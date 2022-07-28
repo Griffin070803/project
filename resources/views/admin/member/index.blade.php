@@ -82,8 +82,9 @@
                 <td>{{$member->username}}</td>
                 <td>{{$member->email}}</td>
                 <td>
-                    @if($member->level == 1)<span style="color: mediumblue">Admin</span>
-                    @else <span style="color: cornflowerblue">Member</span>
+                    @if($member->id == 1)<span style="background: darkblue;color: white; padding: 5px;"> SuperAdmin </span>
+                    @elseif($member->level == 1)<span style="background: cornflowerblue;color: white; padding: 5px;"> Admin </span>
+                    @else <span style="background: deepskyblue;color: white; padding: 5px;"> Member </span>
                     @endif</td>
                 <td>{{ date('d/m/Y : H:i:s', strtotime($member->created_at))}}</td>
                 <td class="project-actions text-right"><a href="{{route('admin.member.edit',['id'=>$member->id])}}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>

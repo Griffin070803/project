@@ -60,7 +60,7 @@ $(document).ready(function(){
             //adult
             $("#adult").keyup(function(){
                 var adult = $(this).val();
-                if (isNaN(adult) || adult <= 0) {
+                if (isNaN(adult) || adult < 0) {
                     $("#adult").val('1');
                     $("#hien-gia-adult").text('1*'+gia_ve);
                 }else {
@@ -73,7 +73,7 @@ $(document).ready(function(){
                     }
                 }
 });
-            // $("#adult").change(function() {
+// $("#adult").change(function() {
             //     var adult = parseInt($(this).val());
             //     if (adult <= 0 ) {
             //         $("#adult").val('1');
@@ -86,9 +86,9 @@ $(document).ready(function(){
                 let so_luong = parseInt($("#adult").val()) + parseInt($("#children").val());
                     if (so_luong > slot_du) {
                         alert(`Slot chỉ còn dư: `+slot_du);
-                        $("#hien-gia-adult").text('0');
-                        $("#adult").val('0');
-                        $("#hien-gia-children").text('0');
+                        $("#hien-gia-adult").text('1 *'+ gia_ve);
+                        $("#adult").val('1');
+                        $("#hien-gia-children").text('0 *'+ gia_ve/2);
                         $("#children").val('0');
                 }
                 total += parseInt(($("#adult").val()*gia_ve)) + parseInt(($("#children").val()*gia_ve/2));

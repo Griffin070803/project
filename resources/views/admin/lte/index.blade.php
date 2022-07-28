@@ -61,7 +61,7 @@
                 <td>Delete</td>
             </tr>
         </thead>
-        @forelse($blogs as $lte)
+        @foreach($blogs as $lte)
                 <td>{{ $loop->iteration }}</td>
                 <td>
                     @php
@@ -76,20 +76,16 @@
                 {{-- <td>{!! $lte->content !!}</td> --}}
                 <td>@if($lte->status == 1)
                     
-                    <a href="{{route('admin.lte.active', ['id'=> $lte->id])}}">Show</a>
+                    <a href="{{route('admin.lte.active', ['id'=> $lte->id])}}" class="badge bg-success">Show</a>
                 @else 
-                   <a href="{{route('admin.lte.unactive', ['id'=> $lte->id])}}">Hide</a>
+                   <a href="{{route('admin.lte.unactive', ['id'=> $lte->id])}}" class="badge bg-danger">Hide</a>
                 @endif
                 </td>
-                <td>{{ $lte->created_at }}</td>
+                <td>{{ $lte->created_at }}</td> 
                 <td class="project-actions text-right"><a href="{{ route('admin.lte.edit', ['id' => $lte->id]) }}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
                 <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{ route('admin.lte.delete', ['id' => $lte->id]) }}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
             </tr>
-            @empty
-            <tr>
-                <td collspan="9" align="center">No Data</td>
-            </tr>
 </div>           
-    @endforelse
+    @endforeach
     </table>
 @endsection

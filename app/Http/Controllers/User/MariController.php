@@ -34,22 +34,22 @@ class MariController extends Controller
         return view('user.marine.other' ,['blogs3' => $data]);
     }
 
-    public function Information ($id){ 
+    public function information ($id){ 
         $blogs = DB::table('blogs')->get();      
         $data=DB::table('blogs')->where('id', $id)->first();
-        $comments = DB::table('comments')->where('blogs_id',$id)->orderBy('created_at', 'DESC')->get();
+        $comments = DB::table('comments')->where('blogs_id',$id)->orderBy('created_at', 'DESC')->paginate(3);
         $sum_comment = DB::table('comments')->where('blogs_id',$id)->sum('status');
         $avg_rating = DB::table('comments')->where('blogs_id',$id)
         ->where('status' , '=', 1)
         ->sum('rating');
         $blogs_img = DB::table('blogs_images')->where('blogs_id', $id)->get();
-        return view('user.marine.Information', ['blogs'=> $data, 'id'=> $id, 'comments'=> $comments, 'blog'=>$blogs, 'blogs_img'=>$blogs_img, 'sum'=> $sum_comment, 'avg'=>$avg_rating]);
+        return view('user.marine.information', ['blogs'=> $data, 'id'=> $id, 'comments'=> $comments, 'blog'=>$blogs, 'blogs_img'=>$blogs_img, 'sum'=> $sum_comment, 'avg'=>$avg_rating]);
     }
     public function post (Request $request){
         $data = $request->except('_token');
         $data['created_at'] = new \DateTime();
         $blogs_id = $data['blogs_id'];
         DB::table('comments')->insert($data);
-        return redirect()->route('user.marine.Information',['id'=>$blogs_id]);        
+        return redirect()->route('user.marine.information',['id'=>$blogs_id]);        
     }
 }

@@ -58,7 +58,7 @@ Route::get('gio-hang',[CartController::class,'cart'])->name('cart');
 Route::get('xoa-san-pham-gio-hang/{id}',[CartController::class,'deleteCart'])->name('deleteCart')->where('id','[0-9]+');
 
 //admin
-Route::prefix('admin')->middleware('login')->name('admin.')->group(function() { //
+Route::prefix('admin')->name('admin.')->group(function() { //->middleware('login')
 
     Route::post('ckeditor/image_upload', [CkeditorController::class, 'upload'])->name('upload');
 
@@ -173,7 +173,7 @@ Route::prefix('user')->name('user.')->group(function () {
         Route::get('fish',[MariController::class, 'fish'])->name('fish');
         Route::get('coral',[MariController::class, 'coral'])->name('coral');
         Route::get('other',[MariController::class, 'other'])->name('other');
-        Route::get('Information,{id}',[MariController::class, 'Information'])->name('Information')->where('id','[0-9]+');
+        Route::get('information/{id}',[MariController::class, 'information'])->name('information')->where('id','[0-9]+');
         Route::post('post',[MariController::class, 'post'])->name('post');
     });
 });

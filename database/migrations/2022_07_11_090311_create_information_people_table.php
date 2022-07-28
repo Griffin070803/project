@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->integer('adult');
             $table->integer('children');
+            $table->string('code');
             $table->unsignedBigInteger('events_id')->nullable();
             $table->foreign('events_id')->references('id')->on('events');
             $table->timestamps();

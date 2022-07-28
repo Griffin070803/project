@@ -28,21 +28,32 @@ class CartController extends Controller
         $data['created_at'] = new \DateTime();
         $email = $data['email'];
         $id_event = $data['events_id'];
-        DB::table('information_people')->insert($data);
+        // dd($data);
+        Mail::send('emails.demoMail', $data, function($email) use($request){
+            $email->subject('Jenkinson Sea Life | Feedback');
+            $email->to($request->email);
+        });
+        $data_infor= $request->except('_token','name_events','timeend','timestart');
+        DB::table('information_people')->insert($data_infor);
         $email_id = DB::table('information_people')
         ->where('email','LIKE','%'.$email.'%')
         ->where('events_id',$id_event)
         ->first();
-        return redirect()->route('sendEmail',['id'=>$email_id->id]);
+        
+        return redirect()->route('infor',['id'=>$id_event])->with('success','Please Check Your Mail');
     }
-    public function sendEmail($id)
-    {
-        $email = DB::table('information_people')->where('id',$id)->first();
-        Mail::to($email->email)->send(new NotifyMail());
-        return redirect()->route('infor',['id' =>$email->events_id])->with('success','Book Successfully');
-    }
+
+    // public function sendEmail($id)
+    // {
+    //     $event = DB::table('events')->where('id',$id)->first();
+    //     return redirect()->route('infor',['id' =>$email->events_id]);
+    // }
     public function getRegister() {
-        $data = DB::table('information_people')->get();
+        $data = DB::table('information_people')
+        ->join('events','information_people.events_id','=','events.id')
+        ->select('information_people.*','events.name as CName')
+        ->get();
+
         return view('admin.register.index',['data'=>$data]);
 
     }
@@ -57,9 +68,11 @@ class CartController extends Controller
         $data = $request->except('_token');
         DB::table('information_people')->where('id','=',$id)->update($data);
         return redirect()->route('getRegister')->with('success','Edit Successfully');
-    }
+}
     public function delete($id){
         DB::table('information_people')->where('id',$id)->delete();
         return redirect()->route('getRegister')->with('success','Delete Successfully');
+        
     }
+   
 }

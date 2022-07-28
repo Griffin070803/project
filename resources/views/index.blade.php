@@ -9,14 +9,20 @@
         </ul>
     </div>
 @endif
-<form action="{{route('addStoreCart')}}" id="demoForm" style="height:660px;padding:20px;display:block" method="post">
+<form action="{{route('addStoreCart')}}" id="demoForm" style="height:680px;padding:20px;display:block" method="post">
     @csrf
    
     <div  class="" style="width:60%;display:inline-block;">
         <h2 style="margin:10px " class="">Communications</h2>
         <hr>
         <input type="text" style="display:none" name="events_id" value="{{$datas->id}}">
+        {{--  --}}
+        <input type="text" style="display:none" name="code" value="<?php 
+            $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            echo substr(str_shuffle($permitted_chars), 0, 10)
+        ?>">
 
+        
         <div style="background-color:#eef0f5;border-radius:10px">
             <div  class="group">
                 <label style="margin:10px ;font-size:18px">Fullname</label>
@@ -50,7 +56,7 @@
                 </tr>
             </table>
         </div>
-    </div>
+</div>
     <div style="float:right;width:35%" id="tom-tat-chuyen-di">
         <div style="border:1px solid rgb(207, 208, 211);padding:15px">
             <h2>Receipt</h2>
@@ -63,6 +69,10 @@
                     @endphp
                     <img src="{{ $image_url }}" width="100px" > 
                     <label style="margin:10px 0;font-size:18px">{{$datas->name}}</label>
+                    <input type="text" name="name_events" style="display:none" value="{{$datas->name}}">
+                    <input type="text" name="timestart" style="display:none" value="{{$datas->timestart}}">
+                    <input type="text" name="timeend" style="display:none" value="{{$datas->timeend}}">
+
                 </div>
                 <h4 style="display:inline-block;margin-bottom:15px;font-size:18px">Slot:</h4>
                 <p class="para-agileits-w3layouts" id="sum" style="display:inline-block;font-size:18px">{{$sum_adult + $sum_children}}</p>/
@@ -95,8 +105,7 @@
                         <td  style="width:70%;padding:10px 0;font-size:18px">Total amount</td>
                         <td style="width:60%;padding:40px 0;text-align:right;font-size:18px" id = "result" >${{$datas->price}}</td>
                     </tr>
-
-                </table>
+</table>
                 <button type="submit" style="width:100%;height: 50px;background:red;color:white" id="submit" >Book now</button>
 
             </div>

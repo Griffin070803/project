@@ -41,7 +41,7 @@ $(document).ready(function(){
     $("#adult").keyup(function(){
         var adult = $(this).val();
         
-        if (isNaN(adult) || adult <= 0) {
+        if (isNaN(adult) || adult < 0) {
             $("#so-tien-nguoi-lon").text(`Adult :`+value_adult+`*`+formatter.format(gia_ve));
             $("#adult").val(value_adult);
                 }else {
@@ -64,7 +64,7 @@ $(document).ready(function(){
                         $("#so-tien-tre-em").text(value_children+`*`+formatter.format(gia_ve/2));
 $("#children").val(value_children);
                 }
-                total += parseInt(($("#adult").val()*gia_ve)) + parseInt(($("#children").val()*gia_ve/2));
+total += parseInt(($("#adult").val()*gia_ve)) + parseInt(($("#children").val()*gia_ve/2));
                 if (isNaN(total)==false){
                     $("#so-tien-moi").html(formatter.format(total));
                     

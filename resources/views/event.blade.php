@@ -86,8 +86,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="col-md-4 about-w3-grids" style="margin-left: 10px; margin-right: 10px; background: #f5f5f5;">
             <h3 style="padding-bottom: 20px; color:midnightblue;">{{$event->name}}</h3>
             {{-- <p style="padding-bottom: 20px;">{!!$event->schedule!!}</p> --}}
-			<p style="padding-bottom: 20px;">Time Start: {{$event->timestart}}</p>
-			<p style="padding-bottom: 20px;">Time End: {{$event->timeend}}</p>
+			<p style="padding-bottom: 20px;">Time Start: {{ date('d/m/Y : H:i:s', strtotime($event->timestart)) }}</p>
+			<p style="padding-bottom: 20px;">Time End: {{ date('d/m/Y : H:i:s', strtotime($event->timeend)) }}</p>
             @php
                 $images = $event->image == NULL ? 'no-image.png' : $event->image;
                 $image_url = asset('assets/dist/img/'.$images)

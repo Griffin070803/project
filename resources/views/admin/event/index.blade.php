@@ -60,7 +60,7 @@
                 <th>Created_at</th>
                 <th>Edit</th>
                 <th>Delete</th>
-                <th>Detail</th>
+                <th>Buyer Detail</th>
             </tr>
         </thead>
         <tbody>
@@ -81,11 +81,10 @@
                 <td>{{$event->timeend}}</td>
                 <td>{{$event->slot}}</td>
                 <td>@php echo number_format($event->price,0,"",".")@endphp</td> 
-                {{-- <td>{{$event->categorys_id}}</td> --}}
                 <td>{{ date('d/m/Y : H:i:s', strtotime($event->created_at)) }}</td>
                 <td class="project-actions text-right"><a href="{{route('admin.event.edit',['id'=>$event->id])}}" class="btn btn-info btn-sm" href="#"><i class="fas fa-pencil-alt"></i></a></td>
                 <td class="project-actions text-right"><a onClick="return confirmDelete()" href="{{route('admin.event.delete',['id'=>$event->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
-                <td class="project-actions text-right"><a href="{{route('admin.event.details',['id'=>$event->id])}}" class="btn btn-info btn-sm" style="background: darkcyan;" href="#"><i class="fas fa-asterisk"></i></a></td>
+                <td class="project-actions text-right"><a href="{{route('admin.event.details',['id'=>$event->id])}}" class="btn btn-info btn-sm" style="background: darkblue;" href="#"><i class="fas fa-asterisk"></i></a></td>
             </tr> 
             @endforeach
         </tbody>    

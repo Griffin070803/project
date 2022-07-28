@@ -48,7 +48,7 @@ https://templatemo.com/tm-556-catalog-z
                     <img src="{{ $image_url }}" alt="Image" class="lte" style="width: 100%; height: 200px">
                     <figcaption class="d-flex align-items-center justify-content-center">
                         <h2>{{$lte->name}}</h2>
-                        <a href="{{ route('user.marine.Information',['id'=>$lte->id])}}">View more</a>
+                        <a href="{{ route('user.marine.information',['id'=>$lte->id])}}">View more</a>
                     </figcaption>                    
                 </figure>               
                 {{-- <div class="d-flex justify-content-between tm-text-gray">
