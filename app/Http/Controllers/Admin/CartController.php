@@ -49,7 +49,9 @@ class CartController extends Controller
     public function edit($id){
         $product = DB::table('information_people')->where('id',$id)->first();
         $event = DB::table('events')->where('id',$product->events_id)->first();
-        return view('admin.register.edit',['product'=>$product],['event'=>$event]);
+        $sum_adult = DB::table('information_people')->where('events_id',$event->id)->sum('adult');
+        $sum_children = DB::table('information_people')->where('events_id',$event->id)->sum('children');
+        return view('admin.register.edit',['product'=>$product,'sum_children'=>$sum_children,'sum_adult'=>$sum_adult],['event'=>$event]);
     }
     public function updateEdit(CartRequest $request,$id){
         $data = $request->except('_token');

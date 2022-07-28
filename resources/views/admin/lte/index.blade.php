@@ -66,7 +66,7 @@
                 <td>
                     @php
                         $image = $lte->image == NULL ? 'no-image.jpg' : $lte->image;
-                        $image_url = asset('assets/images/'.$image);
+                        $image_url = asset('images/'.$image);
                     @endphp
                     <img src="{{ $image_url }}"width="100px" height="100px" alt="">
                 </td>
@@ -74,11 +74,11 @@
                 <td>{{ $lte->name }}</td>                
                 <td>{{ $lte->intro }}</td>
                 {{-- <td>{!! $lte->content !!}</td> --}}
-                <td>@if ($lte->status == 1) 
-                
-                    <span class="badge bg-success">Show</span>
-                @else
-                    <span class="badge bg-danger">Hide</span>
+                <td>@if($lte->status == 1)
+                    
+                    <a href="{{route('admin.lte.active', ['id'=> $lte->id])}}">Show</a>
+                @else 
+                   <a href="{{route('admin.lte.unactive', ['id'=> $lte->id])}}">Hide</a>
                 @endif
                 </td>
                 <td>{{ $lte->created_at }}</td>

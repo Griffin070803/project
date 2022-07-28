@@ -84,8 +84,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
     @foreach($events as $event)   
         <div class="col-md-4 about-w3-grids" style="margin-left: 10px; margin-right: 10px; background: #f5f5f5;">
-            <h3>{{$event->name}}</h3>
-            <p style="padding-bottom: 20px;">{!!$event->schedule!!}</p>
+            <h3 style="padding-bottom: 20px; color:midnightblue;">{{$event->name}}</h3>
+            {{-- <p style="padding-bottom: 20px;">{!!$event->schedule!!}</p> --}}
 			<p style="padding-bottom: 20px;">Time Start: {{$event->timestart}}</p>
 			<p style="padding-bottom: 20px;">Time End: {{$event->timeend}}</p>
             @php

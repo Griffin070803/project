@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>JENKINSON SEA LIFE | EVENT</title>
+<title>JENKINSON SEA LIFE | ABOUT</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Plunge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -107,6 +107,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-6 services-right-agileits">
                 <h4>Rangers Team</h4>
                 <p class="para-agileits-w3layouts">Hello, we are rangers team.</p>
+                <p>- Team Leader: Nguyen Quang Vinh</p>
+                <p>- Member: Tran Cong Vinh</p>
+                <p>- Member: Nguyen Huu Huan</p>
+                <p>- Member: Bui Quang Lam</p>
+                
             </div>
             </div>    
         </div>

@@ -67,13 +67,13 @@
                 <div class="wthree_footer_grid_left">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 </div>
-                <p><a href="mailto:info@example.com">quangvinhnguyen4523@gmail.com</a> 
-                    <span><a href="mailto:info@example.com">avatar23599@gmail.com</a></span></p>
+                <p><a href="mailto:quangvinhnguyen4523@gmail.com">quangvinhnguyen4523@gmail.com</a> 
+                    <span><a href="avatar23599@gmail.com">avatar23599@gmail.com</a></span></p>
             </div>
             <div class="clearfix"> </div>
         </div>
         <div class="agileinfo_copyright">
-            <p>© 2022 Plunge. All Rights Reserved | Design by <a href="">RangersTeam</a></p>
+            <p>© 2022 Plunge. All Rights Reserved | Design by <a href="{{route('about')}}">RangersTeam</a></p>
         </div>
     </div>
 </div>

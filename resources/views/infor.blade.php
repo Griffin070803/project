@@ -50,9 +50,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">MARINE CREATURES<b class="caret"></b></a>
 								<ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="">Fish</a></li>
-									<li><a href="">Coral</a></li>
-									<li><a href="">Turtle</a></li>
+									<li><a href="{{route('user.marine.fish')}}">Fish</a></li>
+									<li><a href="{{route('user.marine.coral')}}">Coral</a></li>
+									<li><a href="{{route('user.marine.other')}}">Other</a></li>
 								</ul>
 							</li>
 							<li><a href="{{ route('event') }}" class="active">EVENT</a></li>
@@ -103,11 +103,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p class="para-agileits-w3layouts">- Slot: {{$events->slot}}</p>
 				<p class="para-agileits-w3layouts" style="display:none" id="slot">{{$events->slot}}</p>
 				<p class="para-agileits-w3layouts">- Buyer: {{$sum_adult + $sum_children}}</p>
-				<p class="para-agileits-w3layouts">- Price: @php echo number_format($events->price,0,"",".")@endphp $</p>
+				<p class="para-agileits-w3layouts">- Price Adult: @php echo number_format($events->price,0,"",".")@endphp $</p>
+				<p class="para-agileits-w3layouts">- Price Children: @php echo number_format($events->price/2,0,"",".")@endphp $</p>
 				<p class="para-agileits-w3layouts" id="sum" style="display:none">{{$sum_adult + $sum_children}}</p>
 			</div>
 			<div class="col-md-6 services-right-agileits">
 				<h4>{{$events->name}}</h4>
+				<p class="para-agileits-w3layouts">{!!$events->schedule!!}</p>
 				<p class="para-agileits-w3layouts">{!!$events->details!!}</p>	
 			</div>
     	</div>

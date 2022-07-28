@@ -26,6 +26,7 @@ class StoreRequest extends FormRequest
         return [
             'name' => 'required',
             'image' => 'required|mimes:jpeg,png,jpg,gif,svg',
+            'schedule' => 'required',
             'details' => 'required',
             'timestart' => 'required',
             'timeend' => 'required',
@@ -39,6 +40,7 @@ class StoreRequest extends FormRequest
             'name.required' => 'Please enter event',
             'image.required' =>'Please add image',
             'image.mimes' => 'Incorrest image format',
+            'schedule.required' => 'Please enter event schedule',
             'details.required' => 'Please enter event details',
             'timestart.required' => 'Please enter event time start',
             'timeend.required' => 'Please enter event time end',

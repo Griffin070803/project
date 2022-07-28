@@ -11,7 +11,7 @@ class MariController extends Controller
 {
     public function fish (){
         
-        $data = DB::table('blogs')->where('marine_creatures_id','=',1)->paginate(9); //hien du lieu trong bang     
+        $data = DB::table('blogs')->where('marine_creatures_id','=',1)->paginate(4); //hien du lieu trong bang     
         if($search=request()->search) {
             $data = DB::table('blogs')->where('name', 'LIKE', '%' .$search. '%')->paginate(3);
         }
@@ -19,7 +19,7 @@ class MariController extends Controller
     }
 
     public function coral (){
-        $data = DB::table('blogs')->where('marine_creatures_id','=',2)->paginate(9); //hien du lieu trong bang->paginate(8)
+        $data = DB::table('blogs')->where('marine_creatures_id','=',2)->paginate(4); //hien du lieu trong bang->paginate(8)
         if($search=request()->search) {
             $data = DB::table('blogs')->where('name', 'LIKE', '%' .$search. '%')->paginate(3);
         }
@@ -27,7 +27,7 @@ class MariController extends Controller
     }
 
     public function other (){
-        $data = DB::table('blogs')->where('marine_creatures_id','=',3)->paginate(9); //hien du lieu trong bang->paginate(8)
+        $data = DB::table('blogs')->where('marine_creatures_id','=',3)->paginate(4); //hien du lieu trong bang->paginate(8)
         if($search=request()->search) {
             $data = DB::table('blogs')->where('name', 'LIKE', '%' .$search. '%')->paginate(3);
         }

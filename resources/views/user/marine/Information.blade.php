@@ -49,7 +49,7 @@ https://templatemo.com/tm-556-catalog-z
             <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
                     @php
                        $image = $blogs->image == NULL ? 'no-image.png' : $blogs->image;
-					    $image_url = asset('assets/images//'.$image)
+					    $image_url = asset('images/'.$image)
                     @endphp
                    <img src="{{$image_url}}" class="fish" style="width: 100%; height: 500px">                  
             </div>     
@@ -72,7 +72,7 @@ https://templatemo.com/tm-556-catalog-z
                                 foreach ($blogs_img as $blog_img){
                                     // if ($blog_img->blogs_id == $blogs->id){
                                         // $image = $blogs->image == NULL ? 'no-image.jpg' : $blogs->image;
-                                        $image_url = asset('images/'. $blog_img->avatar);
+$image_url = asset('images/'. $blog_img->avatar);
                                         $html = '<a class="tm-text-primary mr-4 mb-2 d-inline-block"><img src="';
                                         $html2='" widtd="50px" height="80px" alt=""></a>';
                                         echo $html.$image_url.$html2;
@@ -120,8 +120,14 @@ https://templatemo.com/tm-556-catalog-z
             <div class="be-comment-block">
                 <h1 class="comments-title">Comments ( {{$sum}})</h1>
                 <h1 class="comments-title">Rating  <span style="color: red; font-size:18px">
-                    @php
-                    echo round($avg/$sum, 1).'☆';
+                    @php if (empty($sum)){
+                        $sum = 1;
+                        echo round($avg/$sum, 1).'☆';
+                    }
+                    else {
+                        echo round($avg/$sum, 1).'☆';
+                    }
+                    
                     @endphp
                 </span></h1>
                 <div id="comments_abc">
@@ -139,7 +145,7 @@ https://templatemo.com/tm-556-catalog-z
                     <div class="be-comment-content">
                         
                             <span class="be-comment-name">
-                                <a href="blog-detail-2.html">{{$comment->name_user}}</a>
+<a href="blog-detail-2.html">{{$comment->name_user}}</a>
                                 </span>
                             <span class="be-comment-time">
                                 <i class="fa fa-clock-o"></i>
@@ -167,18 +173,18 @@ https://templatemo.com/tm-556-catalog-z
                         <div class="col-xs-12 col-sm-6">
                             <div class="form-group fl_icon">
                                 <div class="icon"><i class="fa fa-user"></i></div>
-                                <input class="form-input" type="text" placeholder="Your name" name="name_user">
+                                <input class="form-input" type="text" id="name_user" placeholder="Your name" name="name_user">
                             </div>
                         </div>
                         
                         <div class="col-xs-12">			
                             <div><label class="icon">Rating</label>	</div>				
                             <div class="rating"> 
-                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
-                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
-                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
-                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
-                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                                <input type="radio" class="danh_gia" name="rating" value="5" id="5"><label for="5">☆</label>
+                                <input type="radio" class="danh_gia" name="rating" value="4" id="4"><label for="4">☆</label> 
+                                <input type="radio" class="danh_gia" name="rating" value="3" id="3"><label for="3">☆</label>
+                                <input type="radio" class="danh_gia" name="rating" value="2" id="2"><label for="2">☆</label>
+                                <input type="radio" class="danh_gia" name="rating" value="1" id="1"><label for="1">☆</label>
                             </div>
                         </div>
             
@@ -192,7 +198,7 @@ https://templatemo.com/tm-556-catalog-z
                             <div class="form-group">
                                 <input type="submit" value="SUBMIT" id="comment">
                             </div>
-                        </div>
+</div>
                         
                     </div>
                 </form>
