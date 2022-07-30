@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span class="icon-bar"></span>
 								</button>
 								<h1>
-									<a class="navbar-brand" href="index.html">MARINE</a>
+									<a class="navbar-brand" href="">MARINE</a>
 								</h1>
 					</div>
 					<!-- navbar-header -->

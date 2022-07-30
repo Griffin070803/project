@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     </button>
                     <h1>
-                        <a class="navbar-brand" href="index.html">Buy</a>
+                        <a class="navbar-brand" href="">Buy</a>
                     </h1>
                 </div>
                 <!-- navbar-header -->
