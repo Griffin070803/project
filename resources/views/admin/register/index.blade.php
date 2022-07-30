@@ -48,7 +48,8 @@
     <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Stt</th>
+                <th>NO</th>
+                <th>Event Name</th>
                 <th>FullName</th>
                 <th>Phone</th>
                 <th>Email</th>
@@ -63,6 +64,8 @@
             @foreach($data as $product)
             <tr>
                 <td>{{$loop->iteration}}</td>
+                <td>{{$product->CName}}</td>
+
                 <td>{{$product->fullname}}</td>
                 <td>{{$product->phone}}</td>
                 <td>{{$product->email}}</td>

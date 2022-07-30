@@ -45,13 +45,13 @@
                 <tr>
                     <td><label style="padding:10px;font-size:18px">Adult</label></td>
                     <td>
-                        <input class="qty1 " type="text" name="adult" style="width:50px;text-align: center" id="adult" value="1" value="{{old('adult')}}">
+                        <input class="qty1 " type="text" name="adult" style="width:50px;text-align: center" id="adult" value="1" >
                     </td>
                 </tr>
                 <tr>
                     <td><label style="padding:10px;font-size:18px">Children</label></td>
                     <td>
-                        <input class="qty1 " type="text" name="children" style="width:50px;text-align: center" id="children" value="0" value="{{old('children')}}">
+                        <input class="qty1 " type="text" name="children" style="width:50px;text-align: center" id="children" value="0" >
                     </td>   
                 </tr>
             </table>

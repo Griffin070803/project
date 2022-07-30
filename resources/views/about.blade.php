@@ -86,19 +86,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <h2 class="heading-agileinfo">About us <i class="fa fa-anchor" aria-hidden="true"></i></h2>
         <div id="horizontalTab">
             <div class="col-md-6 services-right-agileits">
-                <h4>Jenkinson Sea Life</h4>
-                <p class="para-agileits-w3layouts">It has been dedicated to educating the public on all aspects of marine life and conservation. Each exhibit is designed to promote awareness of the animals, their habitats and conservation. We strive to provide our guests with a unique and memorable experience through creative exhibits as well as innovative educational and outreach programs.</p>
+                <img src="{{ asset('assets/images/ab.jpg')}}" class="abc">	
             </div>
-            <div class="col-md-6 services-right-agileits">
-                <img src="{{ asset('assets/images/i.jpg')}}" class="ab">	
-            </div>
-        </div>    
-            </div>
+			<div class="col-md-6 services-right-agileits">
+				<h4>Jenkinson Sea Life</h4>
+				<p class="para-agileits-w3layouts">It has been dedicated to educating the public on all aspects of marine life and conservation. Each exhibit is designed to promote awareness of the animals, their habitats and conservation. We strive to provide our guests with a unique and memorable experience through creative exhibits as well as innovative educational and outreach programs. This place is very huge and comprises of marine life animals and they are fed and breeding. It is the big centre for organizing the school events for the purpose of study and so on. For the children to visit a marine life place is big thing as they love to sea creatures</p>
+			</div>
+			<div class="col-md-6 services-right-agileits">
+				<h4>Rangers Team</h4>
+				<p class="para-agileits-w3layouts">Hello, we are rangers team, we are very glad that you have trusted and used our website. We are always innovating to satisfy everyone. We always welcome comments, reviews about our website and services. We will actively innovate and fix any problems people have. Thank you for using the site</p>
+			</div>
         </div>
     </div>
 </div>
 
-<div class="about">
+<div class="reasons-agileits-w3layouts">
+    <div class="container">
+        <h3 class="heading-agileinfo white-w3ls">Learn About Marine Creatures <i class="fa fa-anchor" aria-hidden="true"></i></h3>
+            <div class="col-md-4 about-w3-grids">
+                <div class="trust-icon-w3ls">
+                    <i class="fa fa-" aria-hidden="true">Fish</i>
+                </div>
+                  <img src="{{ asset('assets/images/fi.jpg') }}" class="mari">
+                <a class="read-agileits" href="{{route('user.marine.fish')}}">Read More</a>
+            </div>
+            <div class="col-md-4 about-w3-grids">
+                <div class="trust-icon-w3ls">
+                    <i class="fa fa" aria-hidden="true">Coral</i>
+                </div>
+                  <img src="{{ asset('assets/images/co.jpg') }}" class="mari">
+                <a class="read-agileits" href="{{route('user.marine.coral')}}">Read More</a>
+            </div>
+            <div class="col-md-4 about-w3-grids">
+                <div class="trust-icon-w3ls">
+                    <i class="fa fa-" aria-hidden="true">Others</i>
+                </div>
+                  <img src="{{ asset('assets/images/r.jpg') }}" class="mari">
+                <a class="read-agileits" href="{{route('user.marine.other')}}">Read More</a>
+            </div>
+            <div class="clearfix"></div>			
+        </div>
+</div>
+
+{{-- <div class="about">
     <div class="container">
     <div id="horizontalTab">
         <div class="col-md-6 services-right-agileits">
@@ -106,8 +136,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
             <div class="col-md-6 services-right-agileits">
                 <h4>Rangers Team</h4>
-                <p class="para-agileits-w3layouts">Hello, we are rangers team.</p>
+                <p class="para-agileits-w3layouts" style="font-size: 16px;">Hello, we are rangers team.</p>
                 <p>- Team Leader: Nguyen Quang Vinh</p>
+				<p>+ Contact, Evaluate, database</p>
                 <p>- Member: Tran Cong Vinh</p>
                 <p>- Member: Nguyen Huu Huan</p>
                 <p>- Member: Bui Quang Lam</p>
@@ -118,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 
     </div>
-</div>
+</div> --}}
 
 <!-- //Gallery -->
 

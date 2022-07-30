@@ -1,7 +1,7 @@
 @extends('user.pro')
 @section('action', 'INFORMATION')
 @section('content')
-<div><h3 class="heading-agileinfo">Details <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
+<div><h3 class="heading-agileinfo" style="margin-top: 50px">Details <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,10 +54,10 @@ https://templatemo.com/tm-556-catalog-z
             <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">               
                 <div class="tm-bg-gray tm-video-details" >
                     <p class="mb-4">
-                        <h1 class="tm-text-gray-dark mb-3" data-selected="true" data-label-id="0" style="position: relative; left: -3px; top: -64px; transition: none 0s ease 0s; cursor: move;">{{$blogs->name}}</h1>
+                        <h1 class="tm-text-gray-dark mb-3" data-selected="true" data-label-id="0" style="position: relative; left: -3px; top: -64px; transition: none 0s ease 0s; cursor: move;color:darkblue;">{{$blogs->name}}</h1>
                     </p>
                     <div class="text mb-5" style="position: relative; left: -2px; top: -62px;">    
-                        <a><span style="font-family: 'Times New Roman', serif; font-size: 16pt;">{{$blogs->intro}}</span></a>
+                        <a><span style="font-family: 'Times New Roman', serif; font-size: 22px;">{{$blogs->intro}}</span></a>
                     </div>
                     <div class="mb-4">
                         {{-- <span style="font-size: 16pt;">{!!$blogs->content!!}</span> --}}
@@ -79,14 +79,14 @@ https://templatemo.com/tm-556-catalog-z
             </div>        
         </div>  
         <div class="row mb-4">
-            <span style="font-family: 'Times New Roman', serif; font-size: 16pt;">{!!$blogs->content!!}</span>
+            <span style="font-family: 'Times New Roman', serif; font-size: 22px;">{!!$blogs->content!!}</span>
             <h2 class="col-12 tm-text-primary">
             </h2>
         </div>
 
     
             <div class="be-comment-block">
-                <h1 class="comments-title">Comments ( {{$sum}})</h1>
+                <h1 class="comments-title">Evaluate ( {{$sum}})</h1>
                 <h1 class="comments-title">Rating  <span style="color: red; font-size:18px">
                     @if (empty($sum))
                       <?php 
@@ -102,7 +102,7 @@ https://templatemo.com/tm-556-catalog-z
                 @else
                 <div id="comments_abc">
                     @foreach($comments as $comment)
-                @if($comment->status == 1)
+                @if($comment->status == 0)
                     <div class="be-comment">
                         
                         
@@ -113,13 +113,11 @@ https://templatemo.com/tm-556-catalog-z
                         </div>
                         
                         <div class="be-comment-content">
-                            
-                                <span class="be-comment-name">
-                                    <a href="">{{$comment->name_user}}</a>
-                                    <p style="color: red; font-size:18px">{{$comment->rating}}☆</p>
-                                    <p class="be-comment-time"><i class="fa fa-clock-o"></i>{{ date('d/m/Y : H:i:s', strtotime($comment->created_at)) }}</p>
-                                    <p class="be-comment-text">{{$comment->comment_body}}</p>
-                                </span>
+                                <p class="be-comment-name">
+                                    <span style="color:darkblue;font-size:16px;">{{$comment->name_user}}<span style="color: red; font-size:18px; margin-left: 20px;">{{$comment->rating}}☆</span></span>
+                                    <span class="be-comment-time" style="font-size:15px;"><i class="fa fa-clock-o"></i>{{ date('d/m/Y : H:i:s', strtotime($comment->created_at)) }}</span>
+                                    <p class="be-comment-text" data-selected="true" data-label-id="0" style="position: relative; left: 3px; top: -38px; transition: none 0s ease 0s; cursor: move;">{{$comment->comment_body}}</p>
+                                </p>
                                 
                         </div>
                     </div>
@@ -156,7 +154,7 @@ https://templatemo.com/tm-556-catalog-z
             
                         <div class="col-xs-12">									
                             <div class="form-group">
-                                <textarea class="form-input" required="" placeholder="Your text" name="comment_body"></textarea>
+                                <textarea class="form-input"placeholder="Your text" name="comment_body"></textarea>
                             </div>
                         </div>
             

@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('module', 'Comment')
+@section('module', 'Evaluate')
 @section('action', 'List')
 
 @push('css')
@@ -60,12 +60,13 @@
                     <td>
 
                     @if($comment->status == 1)
-                        <a href="{{route('admin.comment.active', ['id'=> $comment->id])}}"><span
-                            style="color:rgb(28, 212, 44);font-size:2.0em;"
-                            class="fa-thumbs-styling fa fa-thumbs-up"></span></a>
-                    @else 
-                       <a href="{{route('admin.comment.unactive', ['id'=> $comment->id])}}"><span
+                    <a href="{{route('admin.comment.unactive', ['id'=> $comment->id])}}"><span
                         style="color:red;font-size:2.0em;"class="fa-thumbs-styling fa fa-thumbs-down"></span></a>
+                        
+                    @else
+                    <a href="{{route('admin.comment.active', ['id'=> $comment->id])}}"><span
+                            style="color:rgb(28, 212, 44);font-size:2.0em;"
+                            class="fa-thumbs-styling fa fa-thumbs-up"></span></a> 
                     @endif
                     </td>
                         <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.comment.delete', ['id'=> $comment->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>

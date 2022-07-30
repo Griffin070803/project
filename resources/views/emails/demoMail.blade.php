@@ -7,9 +7,9 @@
 
 <p>Hello {{$fullname}},</p>
 <br />
-{{$name_events}}
-{{$timestart}}
-{{$timeend}}
+<p>Name Event: {{$name_events}}</p>
+<p>Time Start: {{ date('d/m/Y : H:i:s', strtotime($timestart)) }}</p>
+<p>Time End: {{ date('d/m/Y : H:i:s', strtotime($timeend)) }}</p>
 
 <p>Thank you for booking this event trip</p>
 <p>Number of tickets booked: {{$adult+$children}}</p>

@@ -2,7 +2,7 @@
 @section('action', 'FISH')
 @section('content')
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<div><h3 class="heading-agileinfo">Fish <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
+<div><h3 class="heading-agileinfo" style="margin-top: 40px">Fish <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 
 
 <!DOCTYPE html>

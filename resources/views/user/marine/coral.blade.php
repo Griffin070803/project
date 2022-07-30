@@ -1,7 +1,7 @@
 @extends('user.pro')
 @section('action', 'CORAL')
 @section('content')
-<div><h3 class="heading-agileinfo">Coral <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
+<div><h3 class="heading-agileinfo" style="margin-top: 40px">Coral <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 
 <!DOCTYPE html>
 <html lang="en">

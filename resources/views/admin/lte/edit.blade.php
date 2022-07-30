@@ -30,7 +30,7 @@
     <div class="form-group card-body">
       <label>Image</label>
       <input type="file" name="image" class="form-control" id="customFile" style="height:100%"> 
-      {{-- <input type="button" value="Add" id="addmore"> --}}
+      <input type="button" value="Add" id="addmore">
   </div>
   <table>
   </table>

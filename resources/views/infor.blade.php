@@ -98,8 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					$image_url = asset('assets/dist/img/'.$images)
 				@endphp	
 				<img src="{{$image_url}}" class="event">
-				<p class="para-agileits-w3layouts">- Time Start: {{$events->timestart}}</p>
-				<p class="para-agileits-w3layouts">- Time End: {{$events->timeend}}</p>
+				<p class="para-agileits-w3layouts">- Time Start: {{ date('d/m/Y : H:i:s', strtotime($events->timestart)) }}</p>
+				<p class="para-agileits-w3layouts">- Time End: {{ date('d/m/Y : H:i:s', strtotime($events->timeend)) }}</p>
 				<p class="para-agileits-w3layouts">- Slot: {{$events->slot}}</p>
 				<p class="para-agileits-w3layouts" style="display:none" id="slot">{{$events->slot}}</p>
 				<p class="para-agileits-w3layouts">- Buyer: {{$sum_adult + $sum_children}}</p>

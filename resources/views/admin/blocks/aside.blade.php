@@ -13,7 +13,7 @@
                 <img src="{{ asset('assets/dist/img/9.jpg') }}" class="img-circle elevation-2" alt="User Image" />
             </div>
             <div class="info">
-                {{-- <a href="#" class="d-block">{{ auth()->user()->username }}</a> --}}
+                <a href="#" class="d-block">{{ auth()->user()->username }}</a>
             </div>
             <div class="info">
                 <a href="#" class="d-block"></a> 
@@ -132,7 +132,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-comment"></i>
                         <p style="margin-left: 9px">
-                            Comment
+                            Evaluate
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -140,7 +140,7 @@
                         <li class="nav-item">
                             <a href="{{route('admin.comment.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Comment</p>
+                                <p>List Evaluate</p>
                             </a>
                         </li>
                     </ul>

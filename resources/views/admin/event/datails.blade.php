@@ -47,7 +47,12 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        <div style="float: right;">
+            <span style="font-size: 18px;">Total Buyer: </span>
+            <span style="color:mediumblue;font-size: 22px;">{{$sum_adult + $sum_children}}</span>
+        </div>
     <table id="example1" class="table table-bordered table-striped">
+        
         <thead>
             <tr>
                 <th>Id</th>
@@ -75,6 +80,7 @@
                 <td>{{ date('d/m/Y : H:i:s', strtotime($detail->created_at)) }}</td>
             </tr> 
             @endforeach
+            
         </tbody>    
     </table>
     </div>

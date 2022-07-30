@@ -26,7 +26,7 @@ class ContactRequest extends FormRequest
         return [
             'fname' => 'required|max:40',
             'lname' => 'required|max:20',  
-            'email' => 'required|email',
+            'email' => 'required|email|unique:contacts',
             'message' => 'required',
             'phone' => 'required|alpha_num',
         ];
@@ -37,6 +37,7 @@ class ContactRequest extends FormRequest
             'fname.required' => 'please enter your first name',
             'lname.required' => 'please enter your last name',
             'email.required' => 'please enter your email',
+            'email.unique' => 'You have been contacted before, please check your email',
             'email.email' => 'please enter your email address again',
             'phone.required' => 'please enter your phone',
             'phone.alpha_num' => 'please enter your phone is number',
@@ -46,4 +47,5 @@ class ContactRequest extends FormRequest
 
         ];
     }
+    
 }

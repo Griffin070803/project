@@ -21,12 +21,12 @@ class CommentController extends Controller
     }
 
     public function unactive($id){
-        DB::table('comments')->where('id','=',$id)->update(['status' => 1]);
+        DB::table('comments')->where('id','=',$id)->update(['status' => 0]);
         return redirect()->route('admin.comment.index');
     }
     public function active($id)
     {
-        DB::table('comments')->where('id','=',$id)->update(['status' => 0]);
+        DB::table('comments')->where('id','=',$id)->update(['status' => 1]);
         return redirect()->route('admin.comment.index');
     }
 }

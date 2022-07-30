@@ -13,7 +13,7 @@ class ContactController extends Controller
         return view('admin.contact.index', ['contacts'=> $result]);
     }
     public function delete($id){
-        DB::table('category')->where('id','=',$id)->delete();
+        DB::table('contacts')->where('id','=',$id)->delete();
         return redirect()->route('admin.contact.index');
     }
 }

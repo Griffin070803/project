@@ -17,7 +17,8 @@ class EventController extends Controller
 
     public function details ($id) {
         $events = DB::table('events')->where('id', $id)->get();
-
+        $sum_adult = DB::table('information_people')->where('events_id',$id)->sum('adult');
+        $sum_children = DB::table('information_people')->where('events_id',$id)->sum('children');
         $details=DB::table('information_people')
         ->join('events','information_people.events_id','=','events.id')
         ->select('events.*','information_people.*')
@@ -25,7 +26,7 @@ class EventController extends Controller
         ->get();
         // return view('admin.event.details',['details'=>$details]);
         // $details = DB::table('information_people')->where('id', $id)->get();
-        return view('admin.event.datails',['id' => $id],['details'=>$details,'events'=>$events]);
+        return view('admin.event.datails',['id' => $id],['details'=>$details,'events'=>$events,'sum_children'=>$sum_children,'sum_adult'=>$sum_adult]);
     } 
 
 

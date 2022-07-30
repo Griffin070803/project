@@ -87,17 +87,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </ul>
     </div>
 @endif
-<div>
-    @if (Session::has('success'))
-    <div class="alert alert-success alert-block">
-        <button type="button" class="close" data-dismiss="alert">×</button>	
-            <strong>{{ Session::get('success') }}</strong>
-    </div>
-    @endif
-</div>
+
 	<div class="welcome contact">
 		<div class="container">  
 				<h3 class="heading-agileinfo">Contact Us <i class="fa fa-anchor" aria-hidden="true"></i></h3>
+				<div>
+					@if (Session::has('success'))
+					<div class="alert alert-success alert-block">
+						<button type="button" class="close" data-dismiss="alert">×</button>	
+							<strong>{{ Session::get('success') }}</strong>
+					</div>
+					@endif
+				</div>
 			<div class="contact-w3ls-row">
 				<form action="{{route('storeContact')}}" method="post">
 					@csrf

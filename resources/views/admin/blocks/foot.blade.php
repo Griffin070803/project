@@ -58,7 +58,7 @@ $(document).ready(function(){
         let total= 0;
                 let so_luong = parseInt($("#adult").val()) + parseInt($("#children").val());
                     if (so_luong > slot_du) {
-                        alert(`Slot chỉ còn dư: `+slot_du);
+                        alert(`The remaining amount: `+slot_du);
                         $("#so-tien-nguoi-lon").text(value_adult+`*`+formatter.format(gia_ve));
                         $("#adult").val(value_adult);
                         $("#so-tien-tre-em").text(value_children+`*`+formatter.format(gia_ve/2));
