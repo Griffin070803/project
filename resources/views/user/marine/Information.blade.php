@@ -1,6 +1,14 @@
 @extends('user.pro')
 @section('action', 'INFORMATION')
 @section('content')
+<div>
+    @if (Session::has('success'))
+    <div class="alert alert-success alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>	
+            <strong>{{ Session::get('success') }}</strong>
+    </div>
+    @endif
+</div>
 <div><h3 class="heading-agileinfo" style="margin-top: 50px">Details <i class="fa fa-anchor" aria-hidden="true"></i></h3></div>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +38,7 @@ https://templatemo.com/tm-556-catalog-z
 -->
 </head>
 <body>
+    
     <!-- Page Loader -->
     <div id="loader-wrapper">
         <div id="loader"></div>
@@ -85,14 +94,7 @@ https://templatemo.com/tm-556-catalog-z
 
         
             <div class="be-comment-block">
-                <div>
-                    @if (Session::has('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>	
-                            <strong>{{ Session::get('success') }}</strong>
-                    </div>
-                    @endif
-                </div>
+                
                 <h1 class="comments-title">Evaluate ( {{$sum}})</h1>
                 <h1 class="comments-title">Rating  <span style="color: red; font-size:18px">
                     @if (empty($sum))
