@@ -132,7 +132,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-comment"></i>
                         <p style="margin-left: 9px">
-                            Evaluate
+                            Comment
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -140,7 +140,7 @@
                         <li class="nav-item">
                             <a href="{{route('admin.comment.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>List Evaluate</p>
+                                <p>List Comment</p>
                             </a>
                         </li>
                     </ul>

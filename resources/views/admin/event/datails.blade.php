@@ -49,7 +49,7 @@
     <div class="card-body">
         <div style="float: right;">
             <span style="font-size: 18px;">Total Buyer: </span>
-            <span style="color:mediumblue;font-size: 22px;">{{$sum_adult + $sum_children}}</span>
+            <span style="color:mediumblue;font-size: 22px;">{{$sum_adult + $sum_children}}/@foreach($events as $event){{$event->slot}}@endforeach</span>
         </div>
     <table id="example1" class="table table-bordered table-striped">
         

@@ -110,6 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-6 services-right-agileits">
 				<h4>{{$events->name}}</h4>
 				<p class="para-agileits-w3layouts">{!!$events->schedule!!}</p>
+				<p></p>
 				<p class="para-agileits-w3layouts">{!!$events->details!!}</p>	
 			</div>
     	</div>

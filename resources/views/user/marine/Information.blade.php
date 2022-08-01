@@ -12,7 +12,6 @@
     {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/templatemo-style.css')}}">
     <link rel="stylesheet" href="{{ asset('css/comment.css')}}">
-    
     <style type="text/css">
         #comments_abc{
             /* border:3px solid #00ff00; */
@@ -84,8 +83,16 @@ https://templatemo.com/tm-556-catalog-z
             </h2>
         </div>
 
-    
+        
             <div class="be-comment-block">
+                <div>
+                    @if (Session::has('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">×</button>	
+                            <strong>{{ Session::get('success') }}</strong>
+                    </div>
+                    @endif
+                </div>
                 <h1 class="comments-title">Evaluate ( {{$sum}})</h1>
                 <h1 class="comments-title">Rating  <span style="color: red; font-size:18px">
                     @if (empty($sum))

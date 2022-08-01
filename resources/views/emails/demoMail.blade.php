@@ -7,7 +7,7 @@
 
 <p>Hello {{$fullname}},</p>
 <br />
-<p>Name Event: {{$name_events}}</p>
+<p>Name Event: {{$name}}</p>
 <p>Time Start: {{ date('d/m/Y : H:i:s', strtotime($timestart)) }}</p>
 <p>Time End: {{ date('d/m/Y : H:i:s', strtotime($timeend)) }}</p>
 

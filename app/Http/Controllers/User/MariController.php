@@ -61,6 +61,6 @@ class MariController extends Controller
         $data['created_at'] = new \DateTime();
         $blogs_id = $data['blogs_id'];
         DB::table('comments')->insert($data);
-        return redirect()->route('user.marine.information',['id'=>$blogs_id]);        
+        return redirect()->route('user.marine.information',['id'=>$blogs_id])->with('success','You commented successfully, your comment is being moderated');        
     }
 }

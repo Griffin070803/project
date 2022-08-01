@@ -1,5 +1,5 @@
 @extends('admin.master')
-@section('module', 'Evaluate')
+@section('module', 'Comment')
 @section('action', 'List')
 
 @push('css')
@@ -38,11 +38,12 @@
                 <thead>
                     <tr>
                         <td>Id</td>
-                        <td>Marine  Name</td>
+                        <td>Marine Name</td>
                         <td>Name</td>
                         <td>Rating</td>
                         <td>Comment_body</td>
                         <td>Status</td>
+                        <td>Created_at</td>
                         <td>Delete</td>
                     </tr>
                 </thead>
@@ -69,6 +70,7 @@
                             class="fa-thumbs-styling fa fa-thumbs-up"></span></a> 
                     @endif
                     </td>
+                    <td>{{ date('d/m/Y : H:i:s', strtotime($comment->created_at)) }}</td>
                         <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.comment.delete', ['id'=> $comment->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                         
                     </tr>

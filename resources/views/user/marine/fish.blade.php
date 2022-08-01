@@ -13,7 +13,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- <title>Catalog-Z Bootstrap 5.0 HTML Template</title> --}}
     <link rel="stylesheet" href="{{ asset('temple556/css/bootstrap.min.css')}}">
-
    
 
     {{-- <link rel="stylesheet" href="{{ asset('temple556/fontawesome/css/all.min.css')}}"> --}}

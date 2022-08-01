@@ -46,6 +46,13 @@ Route::get('login', [LoginController::class, 'getlogin'])->name('getlogin');
 Route::post('login', [LoginController::class, 'postlogin'])->name('postlogin');
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+//paypal
+
+Route::get('create-transaction', [CartController::class, 'createTransaction'])->name('createTransaction');
+Route::get('process-transaction', [CartController::class, 'processTransaction'])->name('processTransaction');
+Route::get('success-transaction', [CartController::class, 'successTransaction'])->name('successTransaction');
+Route::get('cancel-transaction', [CartController::class, 'cancelTransaction'])->name('cancelTransaction');
+
 //gửi mail
 // Route::get('/register',[RegisterController::class,'getRegister'])->name('getRegister');
 Route::get('/send-email/{id}',[CartController::class,'sendEmail'])->name('sendEmail');

@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--fonts-->
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700') }}" rel="stylesheet">
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}" rel="stylesheet">
+<link rel="icon" type="image/jpg" href="{{asset('assets/images/logo.jpg')}}">
 <!--//fonts-->
 </head>
 <style>

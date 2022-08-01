@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ContactController extends Controller
 {
     public function index(){
-        $result = DB::table('contacts')->get();
+        $result = DB::table('contacts')->orderBy('created_at', 'DESC')->get();
         return view('admin.contact.index', ['contacts'=> $result]);
     }
     public function delete($id){

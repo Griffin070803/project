@@ -59,9 +59,9 @@ $(document).ready(function(){
                 let so_luong = parseInt($("#adult").val()) + parseInt($("#children").val());
                     if (so_luong > slot_du) {
                         alert(`The remaining amount: `+slot_du);
-                        $("#so-tien-nguoi-lon").text(value_adult+`*`+formatter.format(gia_ve));
+                        $("#so-tien-nguoi-lon").text(`Adult: `+value_adult+`*`+formatter.format(gia_ve));
                         $("#adult").val(value_adult);
-                        $("#so-tien-tre-em").text(value_children+`*`+formatter.format(gia_ve/2));
+                        $("#so-tien-tre-em").text(`Children: `+value_children+`*`+formatter.format(gia_ve/2));
 $("#children").val(value_children);
                 }
 total += parseInt(($("#adult").val()*gia_ve)) + parseInt(($("#children").val()*gia_ve/2));

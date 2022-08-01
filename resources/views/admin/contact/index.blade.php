@@ -52,6 +52,7 @@
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Message</th>
+                        <th>Created_at</th>
                         <th style="width: 40px">Delete</th>
                     </tr>
                 </thead>
@@ -59,11 +60,12 @@
                     @foreach ($contacts as $contact)
                 
                     <tr>
-                        <th>{{ $contact->id}}</th>
+                        <th>{{ $loop->iteration}}</th>
                         <th>{{ $contact->fname}} {{ $contact->lname }}</th>
                         <th>{{ $contact->phone}}</th>
                         <th>{{ $contact->email}}</th>
                         <th>{{ $contact->message}}</th>
+                        <td>{{ date('d/m/Y : H:i:s', strtotime($contact->created_at)) }}</td>
                         <td class="project-actions text-right"><a onclick="return confirmDelete()" href="{{route('admin.contact.delete', ['id'=> $contact->id])}}" class="btn btn-danger btn-sm" href="#"><i class="fas fa-trash"></i></a></td>
                     </tr>
                     @endforeach

@@ -79,11 +79,11 @@
                 <p class="para-agileits-w3layouts" style="display:inline-block;font-size:18px" id="slot">{{$datas->slot}}</p>
                 <div style="margin-bottom:13px">
                     <h4>Start the event</h4>
-                    <p>{{$datas->timestart}}</p>
+                    <p>{{ date('d/m/Y : H:i:s', strtotime($datas->timestart)) }}</p>
                 </div>
                 <div style="margin-bottom:13px">
                     <h4>End of event</h4>
-                    <p>{{$datas->timeend}}</p>
+                    <p>{{ date('d/m/Y : H:i:s', strtotime($datas->timeend)) }}</p>
                 </div>
                 <div style="margin-bottom:13px;display:none">
                     <h5>Gia ve</h5>

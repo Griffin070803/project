@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--fonts-->
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700') }}" rel="stylesheet">
 <link href="{{ asset('assets//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700') }}" rel="stylesheet">
-
+<link rel="icon" type="image/jpg" href="{{asset('assets/images/logo.jpg')}}">
 <!--//fonts-->
 </head>
 <body>
@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!--//banner-below-->
 <!-- Gallery -->
 <div class="about">
-    <h2 class="heading-agileinfo">Event <i class="fa fa-anchor" aria-hidden="true"></i></h2>
+    <h2 class="heading-agileinfo">Event<i class="fa fa-anchor" aria-hidden="true"></i></h2>
     @foreach($events as $event)   
         <div class="col-md-4 about-w3-grids" style="margin-left: 10px; margin-right: 10px; background: #f5f5f5;">
             <h3 style="padding-bottom: 20px; color:midnightblue;">{{$event->name}}</h3>
